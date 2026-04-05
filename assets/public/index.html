@@ -29,9 +29,38 @@
   img {
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   .rounded-md, .rounded-lg, .rounded-xl {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover effects for cards/images */
+  .cursor-pointer:hover img, .cursor-pointer:hover .rounded-md, .cursor-pointer:hover .rounded-lg {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Category Page Specific Enhancements */
+  .grid {
+    gap: 1rem !important; /* Increase gap between grid items */
+  }
+  .grid > div {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  /* Tag & Chip Enhancements */
+  .bg-gray-100, .bg-gray-200 {
+    border-radius: 20px !important;
+    padding: 0.25rem 0.75rem !important;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  .bg-gray-100:hover, .bg-gray-200:hover {
+    background-color: rgba(255, 123, 0, 0.1) !important;
+    color: #ff7b00 !important;
   }
 
   /* Buttons & Interactions */
@@ -52,6 +81,22 @@
     color: #ff7b00 !important;
     text-shadow: 0 1px 2px rgba(255, 123, 0, 0.1);
   }
+  
+  /* Active/Selected State Enhancements */
+  .text-og.font-bold {
+    position: relative;
+  }
+  .text-og.font-bold::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 3px;
+    background-color: #ff7b00;
+    border-radius: 2px;
+  }
 
   /* Glassmorphism for Nav & Headers */
   .fixed.top-0, .fixed.bottom-0, .sticky.top-0, .sticky.bottom-0 {
@@ -60,6 +105,7 @@
     -webkit-backdrop-filter: blur(16px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    z-index: 50;
   }
 
   /* Dark Mode Enhancements */
@@ -72,6 +118,14 @@
   .dark .text-gray-800, .dark .text-gray-900 {
     color: #f0f0f0 !important;
   }
+  .dark .bg-gray-100, .dark .bg-gray-200 {
+    background-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+  }
+  .dark .bg-gray-100:hover, .dark .bg-gray-200:hover {
+    background-color: rgba(255, 123, 0, 0.15) !important;
+    color: #ff9500 !important;
+  }
   .dark .fixed.top-0, .dark .fixed.bottom-0, .dark .sticky.top-0, .dark .sticky.bottom-0 {
     background-color: rgba(30, 30, 30, 0.85) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -79,6 +133,9 @@
   }
   .dark .rounded-md, .dark .rounded-lg, .dark .rounded-xl {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  .dark .cursor-pointer:hover img, .dark .cursor-pointer:hover .rounded-md, .dark .cursor-pointer:hover .rounded-lg {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   }
 </style>
 <script defer="defer" src="/static/js/main.f4aaa06c.js"></script><link href="/static/css/main.5da8a208.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
