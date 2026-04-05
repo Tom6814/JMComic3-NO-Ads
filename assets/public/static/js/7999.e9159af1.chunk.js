@@ -1,0 +1,6701 @@
+"use strict";
+(self.webpackChunk_18comic_react = self.webpackChunk_18comic_react || []).push([
+  [7999],
+  {
+    1060: (e, t, s) => {
+      s.d(t, { A: () => n });
+      var a = s(9379),
+        l = s(6580),
+        i = s(579);
+      const n = (e) => {
+        const {
+          t: t,
+          queryId: s,
+          seriesGroups: n,
+          setSeriesGroups: r,
+          msgOpen: o,
+          handlerReadStorage: d,
+          readHistory: c,
+          setDialogOpen: m,
+        } = e;
+        return (0, i.jsx)(i.Fragment, {
+          children: (0, i.jsx)("div", {
+            className: "p-3 text-gy dark:bg-bk",
+            children:
+              n.menus.length > 0
+                ? n.menus.map((e, x) =>
+                    (0, i.jsxs)(
+                      "div",
+                      {
+                        children: [
+                          (0, i.jsxs)("p", {
+                            className:
+                              "flex border-[1px] border-solid border-[#ccc] rounded-md p-3 mb-4 ".concat(
+                                n.episode === x
+                                  ? "bg-og text-white"
+                                  : null !== o &&
+                                      void 0 !== o &&
+                                      o.detailDownload
+                                    ? "bg-defaultBg dark:bg-bbk dark:text-tgy"
+                                    : "",
+                              ),
+                            onClick: () => {
+                              r((e) =>
+                                (0, a.A)((0, a.A)({}, e), {}, { episode: x }),
+                              );
+                            },
+                            children: [
+                              t("detail.episode_prefix"),
+                              e[0].sort,
+                              t("detail.episode_suffix"),
+                              "~",
+                              t("detail.episode_prefix"),
+                              10 * Math.ceil(e[0].sort / 10),
+                              t("detail.episode_suffix"),
+                            ],
+                          }),
+                          n.episode === x &&
+                            (0, i.jsx)("div", {
+                              className: "grid grid-cols-2 gap-2 my-2 mb-10",
+                              children: e.map((e, g) => {
+                                var h;
+                                return null !== o &&
+                                  void 0 !== o &&
+                                  o.detailDownload
+                                  ? (0, i.jsx)(
+                                      l.N_,
+                                      {
+                                        to: "/comic/detail/download?id=".concat(
+                                          e.id,
+                                        ),
+                                        onClick: () => {
+                                          r((t) =>
+                                            (0, a.A)(
+                                              (0, a.A)({}, t),
+                                              {},
+                                              {
+                                                subEpisode: e.sort,
+                                                currentChapterId: e.id,
+                                              },
+                                            ),
+                                          );
+                                        },
+                                        children: (0, i.jsxs)("p", {
+                                          className:
+                                            "flex border-[1px] border-solid border-[#bbb] rounded-md p-3 ".concat(
+                                              n.subEpisode === e.sort
+                                                ? "bg-og text-white"
+                                                : "dark:bg-bbk dark:text-tgy",
+                                            ),
+                                          children: [
+                                            t("detail.episode_prefix"),
+                                            e.sort,
+                                            t("detail.episode_suffix"),
+                                            "\xa0",
+                                            e.name,
+                                          ],
+                                        }),
+                                      },
+                                      g,
+                                    )
+                                  : (0, i.jsx)(
+                                      l.N_,
+                                      {
+                                        to: "/comic/detail/read?id="
+                                          .concat(s, "&readId=")
+                                          .concat(e.id, "&episode=")
+                                          .concat(x, "&subEpisode=")
+                                          .concat(e.sort),
+                                        onClick: () => {
+                                          (d(s, String(e.id)),
+                                            r((t) =>
+                                              (0, a.A)(
+                                                (0, a.A)({}, t),
+                                                {},
+                                                {
+                                                  subEpisode: e.sort,
+                                                  currentChapterId: e.id,
+                                                },
+                                              ),
+                                            ),
+                                            m((e) =>
+                                              (0, a.A)(
+                                                (0, a.A)({}, e),
+                                                {},
+                                                { series: !1 },
+                                              ),
+                                            ));
+                                        },
+                                        children: (0, i.jsxs)("p", {
+                                          className:
+                                            "flex border-[1px] border-solid border-[#bbb] rounded-md p-3 \n                            ".concat(
+                                              n.subEpisode === e.sort
+                                                ? "bg-og text-white"
+                                                : null !== (h = c[s]) &&
+                                                    void 0 !== h &&
+                                                    h.includes(e.id)
+                                                  ? "bg-white text-og"
+                                                  : "",
+                                              "\n                                ",
+                                            ),
+                                          children: [
+                                            t("detail.episode_prefix"),
+                                            e.sort,
+                                            t("detail.episode_suffix"),
+                                            "\xa0",
+                                            e.name,
+                                          ],
+                                        }),
+                                      },
+                                      g,
+                                    );
+                              }),
+                            }),
+                        ],
+                      },
+                      x,
+                    ),
+                  )
+                : (0, i.jsx)("p", {
+                    className: "text-center my-8",
+                    children: t("detail.no_more_chapters"),
+                  }),
+          }),
+        });
+      };
+    },
+    3492: (e, t, s) => {
+      s.d(t, { A: () => b });
+      var a = s(9379),
+        l = s(5043),
+        i = s(6580),
+        n = s(6148),
+        r = s(5244),
+        o = s(2782),
+        d = s(3752),
+        c = s(9506),
+        m = s(1100),
+        x = s(7680),
+        g = s(2432),
+        h = s(3344),
+        u = s(7947),
+        p = s(5412),
+        f = s(579);
+      const b = (e) => {
+        const {
+            t: t,
+            listName: s,
+            logined: b,
+            list: j,
+            title: v,
+            link: y,
+            smImgSize: k,
+            setting: A,
+            cols: w,
+            comicTags: N,
+            comicMark: _,
+            comicCheck: C,
+            cardPadding: S,
+            editFolder: L,
+            setEditFolder: I,
+            showSnackbar: F,
+            setDialogOpen: O,
+            dialogOpen: M,
+            isWeekly: T,
+          } = e,
+          E = (0, n.j)(),
+          { favoriteList: z } = (0, n.G)((e) => e.member),
+          D = (0, l.useRef)(null),
+          R = (0, l.useRef)(!1),
+          B = JSON.parse(localStorage.getItem("likedItems") || "[]"),
+          [P, W] = (0, l.useState)(!1),
+          [V, G] = (0, l.useState)(() => {
+            const e = localStorage.getItem("likedItems");
+            return { like: e ? JSON.parse(e) : [], mark: [] };
+          }),
+          J = (e) => {
+            window.location.pathname.includes("member") &&
+              "watchList" === s &&
+              ((R.current = !1),
+              (D.current = setTimeout(() => {
+                I(
+                  (0, a.A)(
+                    (0, a.A)({}, L),
+                    {},
+                    {
+                      edit: !0,
+                      type: "del_watch_history",
+                      alert: !0,
+                      message: t("snack.confirm_delete"),
+                      aid: e,
+                    },
+                  ),
+                );
+              }, 500)));
+          },
+          q = () => {
+            D.current && clearTimeout(D.current);
+          },
+          H = () => {
+            ((R.current = !0), clearTimeout(D.current));
+          },
+          U = async (e, s) => {
+            if ("like" === e) {
+              if (B.includes(s))
+                return void F(t("snack.already_rated"), "success");
+              localStorage.setItem("likedItems", JSON.stringify([...B, s]));
+              const e = await E((0, m.c1)({ id: s })).unwrap(),
+                { code: a, msg: l, status: i } = e.data;
+              200 === a && F(l, "success" !== i ? "error" : "success");
+            }
+            if ("mark" === e)
+              if (b) {
+                (W(!0),
+                  Z(),
+                  ((e, t) => {
+                    G((s) => {
+                      const l = s[e] || [],
+                        i = l.includes(t)
+                          ? l.filter((e) => e !== t)
+                          : [...l, t];
+                      return (0, a.A)((0, a.A)({}, s), {}, { [e]: i });
+                    });
+                  })("mark", s));
+                const e = await E((0, m.df)(s)).unwrap(),
+                  { code: t, data: l } = e,
+                  i = "ok" !== l.status ? "error" : "success";
+                if ("ok" === l.status)
+                  switch (l.type) {
+                    case "add":
+                    case "edit":
+                    case "move":
+                      (I((e) =>
+                        (0, a.A)((0, a.A)({}, e), {}, { aid: s, alert: !1 }),
+                      ),
+                        O((0, a.A)((0, a.A)({}, M), {}, { folder: !0 })));
+                      break;
+                    case "remove":
+                      I((e) => (0, a.A)((0, a.A)({}, e), u.x));
+                  }
+                F(l.msg, i);
+              } else
+                (F(t("login.please_login"), "error"),
+                  O((0, a.A)((0, a.A)({}, M), {}, { login: !0 })));
+          },
+          Z = () => {
+            E((0, x.a9)("favoriteList"));
+            const { folder_id: e, o: t } = L;
+            E((0, m.an)({ page: 1, folder_id: e, o: t }));
+          },
+          Y = async (e) => {
+            (W(!0),
+              "del" === e && O((0, a.A)((0, a.A)({}, M), {}, { alert: !0 })));
+            const { folder_id: s, folder_name: l, aid: i } = L;
+            if ("" !== l) {
+              const t = await E(
+                  (0, m.Je)({ type: e, folder_id: s, folder_name: l, aid: i }),
+                ).unwrap(),
+                { status: a, msg: n } = t.data;
+              a && n && F(n, "ok" !== a ? "error" : "success");
+            } else F(t("comic.added_to_favorites_success"), "success");
+            I((e) => (0, a.A)((0, a.A)({}, e), u.x));
+          };
+        return (0, f.jsxs)(f.Fragment, {
+          children: [
+            Array.isArray(j) &&
+              j.length > 0 &&
+              (null === j || void 0 === j
+                ? void 0
+                : j
+                    .reduce(
+                      (e, t, s) => (
+                        s % (w || 3) === 0 && e.push([]),
+                        e[e.length - 1].push(t),
+                        e
+                      ),
+                      [],
+                    )
+                    .map((e, s) =>
+                      (0, f.jsx)(
+                        "div",
+                        {
+                          className:
+                            "grid grid-cols-3 bg-white gap-2 my-3 p-2 relative dark:bg-nbk dark:text-white",
+                          style: { paddingTop: S || "" },
+                          children: e.map((e, l) => {
+                            var n, m, x;
+                            return (0, f.jsxs)(
+                              "div",
+                              {
+                                children: [
+                                  "new" === v &&
+                                    0 === s &&
+                                    (0, f.jsx)("div", {
+                                      className:
+                                        "left-1 top-1 w-full h-6 rounded-sm mb-3",
+                                      children:
+                                        0 === l
+                                          ? t("comic.latest_uploads")
+                                          : "",
+                                    }),
+                                  (0, f.jsxs)("div", {
+                                    className: "relative mt-3",
+                                    onMouseDown: () => J(e.id),
+                                    onMouseUp: q,
+                                    onMouseLeave: q,
+                                    onTouchStart: () => J(e.id),
+                                    onTouchEnd: q,
+                                    onTouchMove: H,
+                                    children: [
+                                      (0, f.jsx)(i.N_, {
+                                        to: y
+                                          ? "/comic/detail?id=".concat(e.id)
+                                          : "#",
+                                        children: (0, f.jsx)("img", {
+                                          src:
+                                            (null === A || void 0 === A
+                                              ? void 0
+                                              : A.img_host) &&
+                                            A.img_host +
+                                              "/media/albums/" +
+                                              e.id +
+                                              "_3x4.jpg?v=" +
+                                              e.update_at,
+                                          alt: e.id,
+                                          loading: "lazy",
+                                          onLoad: (e) => {},
+                                          onError: (e) => {
+                                            e.target.src =
+                                              "/images/cover_default.jpg";
+                                          },
+                                          className:
+                                            "animation-click-item object-cover rounded-md\n                          "
+                                              .concat(
+                                                k
+                                                  ? "h-[150px] w-[130px]"
+                                                  : "w-[128px] h-[171px]",
+                                                " \n                         ",
+                                              )
+                                              .concat(
+                                                L.edit &&
+                                                  null !== (n = L.aid) &&
+                                                  void 0 !== n &&
+                                                  n
+                                                    .split(",")
+                                                    .includes(e.id.toString())
+                                                  ? "opacity-75"
+                                                  : "",
+                                                "\n                         ",
+                                              ),
+                                          style: {},
+                                        }),
+                                      }),
+                                      L.edit &&
+                                        C &&
+                                        (0, f.jsx)("div", {
+                                          className:
+                                            "absolute left-2 top-2 rounded text-white px-[0.2rem]",
+                                          onClick: () => {
+                                            var t;
+                                            const s =
+                                                (null === (t = L.aid) ||
+                                                void 0 === t
+                                                  ? void 0
+                                                  : t.split(",")) || [],
+                                              l = s.includes(e.id)
+                                                ? s.filter((t) => t !== e.id)
+                                                : [...s, e.id];
+                                            I((e) =>
+                                              (0, a.A)(
+                                                (0, a.A)({}, e),
+                                                {},
+                                                {
+                                                  aid: l
+                                                    .join(",")
+                                                    .replace(/^,/, ""),
+                                                },
+                                              ),
+                                            );
+                                          },
+                                          children: (0, f.jsx)("p", {
+                                            className:
+                                              "border-2 border-solid border-og w-6 h-6 flex",
+                                            children:
+                                              (null === (m = L.aid) ||
+                                              void 0 === m
+                                                ? void 0
+                                                : m
+                                                    .split(",")
+                                                    .includes(e.id)) &&
+                                              (0, f.jsx)(
+                                                c.A,
+                                                {
+                                                  sx: {
+                                                    fontSize: 14,
+                                                    color: "#ff6f00",
+                                                    stroke: "#ff6f00",
+                                                    strokeWidth: 2,
+                                                  },
+                                                },
+                                                e.id,
+                                              ),
+                                          }),
+                                        }),
+                                      T &&
+                                        (0, p._2)(Number(e.update_at)) <= 3 &&
+                                        (0, f.jsx)("span", {
+                                          className:
+                                            "absolute left-2 top-2 rounded bg-red-600 text-white px-[0.1rem]",
+                                          children: t("library.update"),
+                                        }),
+                                      N &&
+                                        (0, f.jsx)("div", {
+                                          className:
+                                            "absolute right-2 top-2 rounded bg-og text-white px-[0.2rem]",
+                                          children:
+                                            null === (x = e.category) ||
+                                            void 0 === x
+                                              ? void 0
+                                              : x.title,
+                                        }),
+                                      _ &&
+                                        (0, f.jsxs)(f.Fragment, {
+                                          children: [
+                                            (0, f.jsx)("div", {
+                                              className:
+                                                "bg-[rgb(117,117,117,0.6)] absolute left-2 bottom-3 rounded p-[0.1rem]",
+                                              onClick: () => U("like", e.id),
+                                              children: (0, f.jsx)(r.A, {
+                                                className: "".concat(
+                                                  e.liked || B.includes(e.id)
+                                                    ? "text-red-600"
+                                                    : "text-og",
+                                                ),
+                                              }),
+                                            }),
+                                            (0, f.jsx)("div", {
+                                              className:
+                                                "bg-[rgb(117,117,117,0.6)] absolute right-2 bottom-3 rounded p-[0.1rem]",
+                                              onClick: () => U("mark", e.id),
+                                              children:
+                                                e.is_favorite ||
+                                                V.mark.includes(e.id)
+                                                  ? (0, f.jsx)(d.A, {
+                                                      className: "text-og",
+                                                    })
+                                                  : (0, f.jsx)(o.A, {
+                                                      className:
+                                                        "text-2xl text-white",
+                                                    }),
+                                            }),
+                                          ],
+                                        }),
+                                    ],
+                                  }),
+                                  (0, f.jsxs)(i.N_, {
+                                    to: y
+                                      ? "/comic/detail?id=".concat(e.id)
+                                      : "#",
+                                    children: [
+                                      (0, f.jsx)("p", {
+                                        className: "truncate py-2",
+                                        children: e.name,
+                                      }),
+                                      (0, f.jsx)("p", {
+                                        className:
+                                          "truncate text-gy text-t08 dark:text-lgy",
+                                        children: e.author,
+                                      }),
+                                    ],
+                                  }),
+                                ],
+                              },
+                              e.id,
+                            );
+                          }),
+                        },
+                        s,
+                      ),
+                    )),
+            "mainList" !== s &&
+              "watchList" !== s &&
+              M.folder &&
+              (0, f.jsx)(h.A, {
+                folderList: z.folder_list,
+                dialogOpen: M,
+                setDialogOpen: O,
+                editFolder: L,
+                setEditFolder: I,
+                handleEditFolder: Y,
+                tagsList: [],
+              }),
+            L.alert &&
+              (0, f.jsx)(g.Fc, {
+                setEdit: I,
+                edit: L,
+                handleEdit: Y,
+                handleAction: U,
+                handleDelWatchComic: async () => {
+                  if ("del_watch_history" === L.type && "" !== L.aid) {
+                    const e = await E((0, m.Zx)(L.aid)).unwrap(),
+                      { status: t, msg: s } = e;
+                    (F(s, 1 !== t ? "error" : "success"),
+                      I((e) => (0, a.A)((0, a.A)({}, e), u.x)),
+                      E((0, m.gW)(1)));
+                  }
+                },
+                showSnackbar: F,
+              }),
+          ],
+        });
+      };
+    },
+    5360: (e, t, s) => {
+      s.d(t, { A: () => I });
+      var a = s(9379),
+        l = s(45),
+        i = s(5043),
+        n = s(6580),
+        r = s(8038),
+        o = s(3392),
+        d = s(1637),
+        c = s(7353),
+        m = s(8293),
+        x = s(2108),
+        g = s(2110),
+        h = s(9958),
+        u = s(6494),
+        p = s(7600),
+        f = s(279),
+        b = s(1045),
+        j = s(7392),
+        v = s(4496),
+        y = s(2432),
+        k = s(5412),
+        A = s(2873),
+        w = s(5843),
+        N = s(6148),
+        _ = s(5073),
+        C = s(579);
+      const S = ["expand"],
+        L = (0, x.Ay)((e) => {
+          const { expand: t } = e,
+            s = (0, l.A)(e, S);
+          return (0, C.jsx)(j.A, (0, a.A)({}, s));
+        })((e) => {
+          let { theme: t } = e;
+          return {
+            marginLeft: "auto",
+            transition: t.transitions.create("transform", {
+              duration: t.transitions.duration.shortest,
+            }),
+            variants: [
+              {
+                props: (e) => {
+                  let { expand: t } = e;
+                  return !t;
+                },
+                style: { transform: "rotate(0deg)" },
+              },
+              {
+                props: (e) => {
+                  let { expand: t } = e;
+                  return !!t;
+                },
+                style: { transform: "rotate(180deg)" },
+              },
+            ],
+          };
+        }),
+        I = (e) => {
+          var t, s;
+          const {
+              t: l,
+              setting: x,
+              list: S,
+              isLoading: I,
+              responds: F,
+              setResponds: O,
+              page: M,
+              setPage: T,
+              loadList: E,
+              showSnackbar: z,
+              section: D,
+            } = e,
+            R = (0, n.Zp)(),
+            B = (0, n.zy)(),
+            P = (0, N.j)(),
+            W = new URLSearchParams(B.search).get("id") || "",
+            V =
+              null !== (t = B.pathname) && void 0 !== t && t.includes("detail")
+                ? W
+                : "",
+            [G, J] = (0, i.useState)({}),
+            [q, H] = (0, i.useState)((0, k.hb)()),
+            [U, Z] = (0, i.useState)(""),
+            [Y, X] = (0, i.useState)(null),
+            [K, Q] = (0, i.useState)(!0),
+            { ref: $, inView: ee } = (0, w.Wx)(),
+            { forumList: te, isLoadMore: se } = (0, N.G)((e) => e.forum),
+            ae = te.total ? Math.ceil(Number(te.total) / 10) : 0,
+            le = M <= ae,
+            ie = () => {
+              const e = (0, k.hb)();
+              (H(e), Z(""), X(null));
+            },
+            ne = () => {
+              U === q.answer
+                ? (X(!0),
+                  (async () => {
+                    const { comment: e, comment_id: t, aid: s } = F;
+                    if ("" !== e && "" !== t) {
+                      const l = await P(
+                        (0, A.T)({ comment: e, aid: s, comment_id: t }),
+                      ).unwrap();
+                      if (200 === l.code) {
+                        const { msg: e, status: t } = l.data;
+                        (z(e, "ok" !== t ? "error" : "success"),
+                          O((e) =>
+                            (0, a.A)(
+                              (0, a.A)({}, e),
+                              {},
+                              { comment: "", comment_id: "", aid: "" },
+                            ),
+                          ));
+                      }
+                    }
+                  })(),
+                  Z(""))
+                : (X(!1), Z(""));
+            },
+            re = (e, t) => {
+              J((s) =>
+                (0, a.A)((0, a.A)({}, s), {}, { [e]: !s[e], replyArea: t }),
+              );
+            },
+            oe = () => {
+              z("".concat(l("novel.report"), "\u6210\u529f"), "success");
+            },
+            de = (0, i.useCallback)(() => {
+              if (!ee || !le) return;
+              const e = M + 1;
+              (T(e), E(!0, !1, 1e3, "all", e));
+            }, [ee, le]);
+          return (
+            (0, i.useEffect)(() => {
+              de();
+            }, [ee]),
+            (0, C.jsxs)("div", {
+              children: [
+                (null === S || void 0 === S ? void 0 : S.length) > 0
+                  ? S.map((e, t) => {
+                      var s, a, i;
+                      return (0, C.jsxs)(
+                        "div",
+                        {
+                          className: "text-base mx-2 mt-3",
+                          children: [
+                            t > 0 &&
+                              t % 7 === 0 &&
+                              (0, C.jsxs)(g.A, {
+                                className: "dark:bg-nbk dark:text-tgy my-3",
+                                children: [
+                                  (0, C.jsx)(h.A, {
+                                    className:
+                                      "flex justify-center items-start pb-0",
+                                    avatar: (0, C.jsx)(b.A, {
+                                      "aria-label": "recipe",
+                                      sx: { width: 45, height: 45 },
+                                      children: (0, C.jsx)("img", {
+                                        src: "".concat(
+                                          null === x || void 0 === x
+                                            ? void 0
+                                            : x.img_host,
+                                          "/media/users/nopic-Male.gif",
+                                        ),
+                                        alt: "avatar" + t,
+                                      }),
+                                    }),
+                                    title: (0, C.jsx)(c.A, {
+                                      className: "text-base text-og",
+                                      children: l("forum.sponsor_JM"),
+                                    }),
+                                    subheader: (0, C.jsx)(c.A, {
+                                      className: "mt-1 text-base dark:text-tgy",
+                                      children: l(
+                                        "forum.LV100_click_to_save_forbidden_comics",
+                                      ),
+                                    }),
+                                  }),
+                                  (0, C.jsx)("div", {
+                                    className: "bg-white py-4 p-2 dark:bg-nbk",
+                                    children: (0, C.jsx)("div", {
+                                      className:
+                                        "w-full flex justify-center flex-row",
+                                      children: (0, C.jsx)(r.A, {
+                                        adKey: "app_forum_middle",
+                                        comicId: V,
+                                      }),
+                                    }),
+                                  }),
+                                ],
+                              }),
+                            (0, C.jsx)("div", {
+                              children: (0, C.jsx)(
+                                "div",
+                                {
+                                  children: (0, C.jsxs)(g.A, {
+                                    className: "dark:bg-nbk dark:text-tgy my-3",
+                                    children: [
+                                      (0, C.jsx)(h.A, {
+                                        className:
+                                          "flex justify-center items-start pb-0",
+                                        avatar: (0, C.jsxs)(c.A, {
+                                          className:
+                                            "flex flex-col items-center",
+                                          children: [
+                                            (0, C.jsx)(b.A, {
+                                              "aria-label": "recipe",
+                                              sx: { width: 45, height: 45 },
+                                              children: (0, C.jsx)("img", {
+                                                src: ""
+                                                  .concat(
+                                                    null === x || void 0 === x
+                                                      ? void 0
+                                                      : x.img_host,
+                                                    "/media/users/",
+                                                  )
+                                                  .concat(e.photo),
+                                                alt: e.nickname,
+                                                onError: (e) => {
+                                                  e.target.src =
+                                                    "/images/ic_head.png";
+                                                },
+                                                width: "100%",
+                                                height: "100%",
+                                                className: "bg-gy",
+                                              }),
+                                            }),
+                                            (0, C.jsxs)(v.A, {
+                                              variant: "body2",
+                                              className:
+                                                "mt-1 text-base text-lgy dark:text-tgy",
+                                              children: [
+                                                "Lv.",
+                                                e.expinfo.level,
+                                              ],
+                                            }),
+                                          ],
+                                        }),
+                                        action: (0, C.jsxs)(j.A, {
+                                          "aria-label": "settings",
+                                          className: "text-og text-sm",
+                                          onClick: oe,
+                                          children: [
+                                            (0, C.jsx)(o.A, {
+                                              className: "text-base",
+                                            }),
+                                            l("novel.report"),
+                                          ],
+                                        }),
+                                        title: (0, C.jsxs)(c.A, {
+                                          className:
+                                            "flex items-center text-base",
+                                          children: [
+                                            (0, C.jsx)("p", {
+                                              className: "text-og font-bold",
+                                              children: e.nickname,
+                                            }),
+                                            (0, C.jsxs)("span", {
+                                              className:
+                                                "text-lgy dark:text-tgy",
+                                              children: [
+                                                "\xa0\xb7\xa0",
+                                                e.expinfo.level_name,
+                                              ],
+                                            }),
+                                          ],
+                                        }),
+                                        subheader: (0, C.jsxs)(c.A, {
+                                          children: [
+                                            (0, C.jsx)("p", {
+                                              className: "dark:text-tgy",
+                                              children: e.addtime,
+                                            }),
+                                            (0, C.jsx)(c.A, {
+                                              className:
+                                                "mt-2 flex items-center",
+                                              children:
+                                                null ===
+                                                  (s = e.expinfo.badges) ||
+                                                void 0 === s
+                                                  ? void 0
+                                                  : s.map((e, t) =>
+                                                      (0, C.jsx)(
+                                                        "img",
+                                                        {
+                                                          src:
+                                                            (null === x ||
+                                                            void 0 === x
+                                                              ? void 0
+                                                              : x.img_host) +
+                                                            e.content,
+                                                          alt: e.name,
+                                                          className:
+                                                            "w-8 h-8 rounded-full mr-1",
+                                                        },
+                                                        t,
+                                                      ),
+                                                    ),
+                                            }),
+                                          ],
+                                        }),
+                                      }),
+                                      (0, C.jsx)(u.A, {
+                                        className:
+                                          "w-[82%] text-gy text-lg flex justify-start ml-auto py-0 dark:text-tgy",
+                                        children: (0, C.jsx)("div", {
+                                          className:
+                                            "w-[80%] break-words whitespace-pre-wrap",
+                                          dangerouslySetInnerHTML: {
+                                            __html:
+                                              null === e || void 0 === e
+                                                ? void 0
+                                                : e.content,
+                                          },
+                                        }),
+                                      }),
+                                      (0, C.jsx)("button", {
+                                        className:
+                                          "text-gy text-sm flex justify-end ml-auto pr-5 dark:text-tgy",
+                                        onClick: () =>
+                                          ((e) => {
+                                            const t = e.split("JM")[1];
+                                            W !== t &&
+                                              R("/comic/detail?id=".concat(t));
+                                          })(e.name),
+                                        children: e.name,
+                                      }),
+                                      (0, C.jsxs)(p.A, {
+                                        disableSpacing: !0,
+                                        className: "pl-20",
+                                        children: [
+                                          (0, C.jsx)(j.A, {
+                                            "aria-label": "add reply",
+                                            className: "text-base dark:text-og",
+                                            onClick: () => re(t, !0),
+                                            children: l("novel.reply"),
+                                          }),
+                                          (null === (a = e.replys) ||
+                                          void 0 === a
+                                            ? void 0
+                                            : a.length) > 0 &&
+                                            (0, C.jsxs)(C.Fragment, {
+                                              children: [
+                                                (0, C.jsx)(j.A, {
+                                                  "aria-label": "more reply",
+                                                  className:
+                                                    "text-base dark:text-og",
+                                                  onClick: () => re(t, !1),
+                                                  children:
+                                                    l("novel.more_replies"),
+                                                }),
+                                                (0, C.jsx)(L, {
+                                                  expand: G[t],
+                                                  onClick: () => re(t, !1),
+                                                  "aria-expanded": G[t],
+                                                  "aria-label": "show more",
+                                                  children: (0, C.jsx)(m.A, {
+                                                    className: "dark:text-og",
+                                                  }),
+                                                }),
+                                              ],
+                                            }),
+                                        ],
+                                      }),
+                                      (0, C.jsxs)(f.A, {
+                                        in: G[t],
+                                        timeout: "auto",
+                                        unmountOnExit: !0,
+                                        children: [
+                                          G[t] &&
+                                            G.replyArea &&
+                                            (0, C.jsx)(_.A, {
+                                              t: l,
+                                              ncid: "",
+                                              aid: e.AID,
+                                              comment_id: e.CID,
+                                              responds: F,
+                                              setResponds: O,
+                                              problem: q,
+                                              userAnswer: U,
+                                              setUserAnswer: Z,
+                                              handleRegenerateProblem: ie,
+                                              checkAnswer: ne,
+                                            }),
+                                          (null === (i = e.replys) ||
+                                          void 0 === i
+                                            ? void 0
+                                            : i.length) > 0 &&
+                                            G[t] &&
+                                            !G.replyArea &&
+                                            e.replys.map((e, t) => {
+                                              var s;
+                                              return (0, C.jsxs)(
+                                                g.A,
+                                                {
+                                                  className:
+                                                    "w-[95%] ml-auto shadow-none dark:bg-nbk dark:text-tgy",
+                                                  children: [
+                                                    (0, C.jsx)(h.A, {
+                                                      className:
+                                                        "flex justify-center items-start pb-0",
+                                                      avatar: (0, C.jsxs)(c.A, {
+                                                        className:
+                                                          "flex flex-col items-center",
+                                                        children: [
+                                                          (0, C.jsx)(b.A, {
+                                                            "aria-label":
+                                                              "recipe",
+                                                            sx: {
+                                                              width: 35,
+                                                              height: 35,
+                                                            },
+                                                            children: (0,
+                                                            C.jsx)("img", {
+                                                              src: ""
+                                                                .concat(
+                                                                  null === x ||
+                                                                    void 0 === x
+                                                                    ? void 0
+                                                                    : x.img_host,
+                                                                  "/media/users/",
+                                                                )
+                                                                .concat(
+                                                                  e.photo,
+                                                                ),
+                                                              alt: e.nickname,
+                                                              onError: (e) => {
+                                                                e.target.src =
+                                                                  "/images/ic_head.png";
+                                                              },
+                                                              width: "100%",
+                                                              height: "100%",
+                                                              className:
+                                                                "bg-gy",
+                                                            }),
+                                                          }),
+                                                          (0, C.jsxs)(v.A, {
+                                                            variant: "body2",
+                                                            className:
+                                                              "mt-1 text-sm text-lgy dark:text-tgy",
+                                                            children: [
+                                                              "Lv.",
+                                                              e.expinfo.level,
+                                                            ],
+                                                          }),
+                                                        ],
+                                                      }),
+                                                      action: (0, C.jsxs)(j.A, {
+                                                        "aria-label":
+                                                          "settings",
+                                                        className:
+                                                          "text-og text-sm pt-1",
+                                                        onClick: oe,
+                                                        children: [
+                                                          (0, C.jsx)(o.A, {
+                                                            className:
+                                                              "text-base",
+                                                          }),
+                                                          l("novel.report"),
+                                                        ],
+                                                      }),
+                                                      title: (0, C.jsxs)(c.A, {
+                                                        className:
+                                                          "flex items-center",
+                                                        children: [
+                                                          (0, C.jsx)("p", {
+                                                            className:
+                                                              "text-og",
+                                                            children:
+                                                              e.nickname,
+                                                          }),
+                                                          (0, C.jsxs)("span", {
+                                                            className:
+                                                              "text-lgy dark:text-tgy",
+                                                            children: [
+                                                              "\xa0\xb7\xa0",
+                                                              e.expinfo
+                                                                .level_name,
+                                                            ],
+                                                          }),
+                                                        ],
+                                                      }),
+                                                      subheader: (0, C.jsxs)(
+                                                        c.A,
+                                                        {
+                                                          children: [
+                                                            (0, C.jsx)("p", {
+                                                              className:
+                                                                "dark:text-tgy",
+                                                              children:
+                                                                e.addtime,
+                                                            }),
+                                                            (0, C.jsx)(c.A, {
+                                                              className:
+                                                                "mt-2 flex items-center",
+                                                              children:
+                                                                null ===
+                                                                  (s =
+                                                                    e.expinfo
+                                                                      .badges) ||
+                                                                void 0 === s
+                                                                  ? void 0
+                                                                  : s.map(
+                                                                      (e, t) =>
+                                                                        (0,
+                                                                        C.jsx)(
+                                                                          "img",
+                                                                          {
+                                                                            src:
+                                                                              (null ===
+                                                                                x ||
+                                                                              void 0 ===
+                                                                                x
+                                                                                ? void 0
+                                                                                : x.img_host) +
+                                                                              e.content,
+                                                                            alt: e.name,
+                                                                            className:
+                                                                              "w-8 h-8 rounded-full mr-1",
+                                                                          },
+                                                                          t,
+                                                                        ),
+                                                                    ),
+                                                            }),
+                                                          ],
+                                                        },
+                                                      ),
+                                                    }),
+                                                    (0, C.jsx)(u.A, {
+                                                      className:
+                                                        "w-[82%] text-gy text-lg flex justify-start ml-auto dark:text-tgy pt-0",
+                                                      children: (0, C.jsx)(
+                                                        "div",
+                                                        {
+                                                          className:
+                                                            "w-[80%] break-words whitespace-pre-wrap",
+                                                          dangerouslySetInnerHTML:
+                                                            {
+                                                              __html: e.content,
+                                                            },
+                                                        },
+                                                      ),
+                                                    }),
+                                                  ],
+                                                },
+                                                t,
+                                              );
+                                            }),
+                                        ],
+                                      }),
+                                    ],
+                                  }),
+                                },
+                                e.nickname + t,
+                              ),
+                            }),
+                          ],
+                        },
+                        e.nickname + t,
+                      );
+                    })
+                  : !I &&
+                    (0, C.jsx)("p", {
+                      className: "text-center my-10",
+                      children: l("forum.no_comments_yet"),
+                    }),
+                "member_comments" !== D &&
+                  (0, C.jsx)("button", {
+                    ref: $,
+                    onClick: de,
+                    className: "w-full flex justify-center py-4",
+                    children:
+                      (null === (s = te.list) || void 0 === s
+                        ? void 0
+                        : s.length) > 0 &&
+                      (le && se
+                        ? (0, C.jsxs)("div", {
+                            className: "flex items-center",
+                            children: [
+                              (0, C.jsx)(d.A, { color: "inherit", size: 12 }),
+                              (0, C.jsx)("p", {
+                                className: "ml-2",
+                                children: l("comic.pull_to_load"),
+                              }),
+                            ],
+                          })
+                        : (0, C.jsx)("p", {
+                            className: "text-center",
+                            children: l("comic.no_more"),
+                          })),
+                  }),
+                (!K || (!Y && null !== Y)) &&
+                  (0, C.jsx)(y.Fe, {
+                    isLogined: K,
+                    setIsLogined: Q,
+                    isCorrect: Y,
+                    setIsCorrect: X,
+                    setUserAnswer: Z,
+                  }),
+              ],
+            })
+          );
+        };
+    },
+    787: (e, t, s) => {
+      s.d(t, { A: () => f });
+      var a = s(5043),
+        l = s(6580),
+        i = s(6148),
+        n = s(9275),
+        r = s(1500),
+        o = s(6671),
+        d = s(9354),
+        c = s(8390),
+        m = s(4149),
+        x = s(4117),
+        g = s(8038),
+        h = s(1100),
+        u = s(3944),
+        p = s(579);
+      const f = (e) => {
+        const { currentPage: t } = e,
+          {
+            config: { logined: s, ads: f },
+          } = (0, u.H)(),
+          { t: b } = (0, x.Bd)(),
+          j = (0, i.j)(),
+          { unread: v, notifResult: y } = (0, i.G)((e) => e.member),
+          k = sessionStorage.getItem("catTab") || "";
+        (0, a.useEffect)(() => {
+          s && 0 === Object.keys(v).length && j((0, h.Zg)());
+        }, [s, y]);
+        const A = [
+            {
+              icon: (0, p.jsx)(n.A, { className: "text-3xl" }),
+              nav: "main",
+              label: b("nav.home"),
+              link: "/",
+            },
+            {
+              icon: (0, p.jsx)(r.A, { className: "text-3xl" }),
+              nav: "categories",
+              label: b("nav.categories"),
+              link: "/categories?slug=".concat(k),
+            },
+            {
+              icon: (0, p.jsx)(d.A, { className: "text-3xl" }),
+              nav: "movies",
+              label: b("nav.movie"),
+              link: "/movies",
+            },
+            {
+              icon: (0, p.jsx)(c.A, { className: "text-3xl" }),
+              nav: "forum",
+              label: b("nav.forum"),
+              link: "/forum",
+            },
+            {
+              icon: (0, p.jsx)(m.A, { className: "text-3xl" }),
+              nav: "member",
+              label: b("nav.member"),
+              link: "/member",
+            },
+          ],
+          [w, N] = (0, a.useState)(!1),
+          _ = (0, a.useRef)(null),
+          C = {
+            main: "app_bottom_bar_jm3",
+            categories: "app_categories_bottom_jm3",
+            movies: "app_movies_fixed_bottom_jm3",
+            member: "board1",
+          }[t];
+        return (0, p.jsxs)(p.Fragment, {
+          children: [
+            "forum" !== t &&
+              (0, p.jsx)("div", {
+                ref: _,
+                className:
+                  "fixed left-0 right-0 flex justify-center transition-all duration-300 ease-in-out ".concat(
+                    w ? "bottom-[3rem]" : "bottom-[4.5em]",
+                  ),
+                children:
+                  C &&
+                  (0, p.jsx)(g.A, {
+                    adKey: C,
+                    closeBtn: !0,
+                    handleAdResize: () => {
+                      N(!0);
+                    },
+                  }),
+              }),
+            (0, p.jsx)("div", {
+              className: "fixed bottom-0 left-0 right-0 w-full z-30",
+              children: (0, p.jsx)("div", {
+                className:
+                  "flex justify-around items-start bg-bbk text-gy z-50 min-h-[6rem] pt-3 overflow-hidden",
+                children: A.map((e, a) =>
+                  (0, p.jsxs)(
+                    l.N_,
+                    {
+                      to: e.link,
+                      className:
+                        "animation-click-item flex flex-col items-center relative ".concat(
+                          e.nav === t ? "text-og" : "",
+                        ),
+                      children: [
+                        (0, p.jsxs)("div", {
+                          className: "relative",
+                          children: [
+                            e.icon,
+                            s &&
+                              5 === a &&
+                              v.comic_follow + v.site_notice > 0 &&
+                              (0, p.jsx)("span", {
+                                className:
+                                  "absolute -top-1 -right-5 bg-red-600 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center",
+                                children: v.comic_follow + v.site_notice,
+                              }),
+                          ],
+                        }),
+                        (0, p.jsx)("span", {
+                          className: "text-center",
+                          children: e.label,
+                        }),
+                      ],
+                    },
+                    a,
+                  ),
+                ),
+              }),
+            }),
+          ],
+        });
+      };
+    },
+    3344: (e, t, s) => {
+      s.d(t, { A: () => y });
+      var a = s(9379),
+        l = s(5043),
+        i = s(3438),
+        n = s(7392),
+        r = s(1906),
+        o = s(35),
+        d = s(4219),
+        c = s(5316),
+        m = s(9347),
+        x = s(4836),
+        g = s(6990),
+        h = s(5954),
+        u = s(6258),
+        p = s(688),
+        f = s(9506),
+        b = s(4117),
+        j = s(579);
+      const v = l.forwardRef(function (e, t) {
+          return (0, j.jsx)(x.A, (0, a.A)({ direction: "up", ref: t }, e));
+        }),
+        y = (e) => {
+          const {
+              dialogOpen: t,
+              setDialogOpen: s,
+              editFolder: x,
+              setEditFolder: y,
+              handleEditFolder: k,
+              folderList: A,
+              tagsList: w,
+            } = e,
+            [N, _] = (0, l.useState)(null),
+            C = Boolean(N),
+            { t: S } = (0, b.Bd)(),
+            L =
+              (null === w || void 0 === w ? void 0 : w.length) > 0 &&
+              x.tags_select === w.toString(),
+            I = (e, l) => {
+              "backdropClick" !== l &&
+                s((0, a.A)((0, a.A)({}, t), {}, { folder: !1 }));
+            };
+          return (0, j.jsx)(j.Fragment, {
+            children:
+              t.folder &&
+              (0, j.jsxs)(o.A, {
+                onClose: I,
+                "aria-labelledby": "customized-dialog-title",
+                open: t.folder,
+                TransitionComponent: v,
+                className: "text-white",
+                slotProps: {
+                  backdrop: { sx: { backgroundColor: "rgba(0, 0, 0, 0.3)" } },
+                },
+                sx: () => ({
+                  "& .MuiPaper-root": { paddingY: "1rem", width: "90%" },
+                }),
+                children: [
+                  (0, j.jsx)(n.A, {
+                    "aria-label": "close",
+                    onClick: I,
+                    sx: (e) => ({
+                      position: "absolute",
+                      right: 8,
+                      top: 8,
+                      color: e.palette.grey[700],
+                      stroke: e.palette.grey[700],
+                      strokeWidth: 2,
+                    }),
+                    children: (0, j.jsx)(i.A, {}),
+                  }),
+                  "add" === x.type &&
+                    (0, j.jsx)(d.A, {
+                      className: "text-center",
+                      id: "customized-dialog-title",
+                      children: S("member.add_folder"),
+                    }),
+                  "edit" === x.type &&
+                    (0, j.jsx)(d.A, {
+                      className: "text-center",
+                      id: "customized-dialog-title",
+                      children: S("member.rename_folder"),
+                    }),
+                  "move" === x.type &&
+                    (0, j.jsx)(d.A, {
+                      id: "customized-dialog-title",
+                      children: S("member.Select_favorite_folder"),
+                    }),
+                  (0, j.jsxs)(c.A, {
+                    className: "",
+                    children: [
+                      ("add" === x.type || "edit" === x.type) &&
+                        (0, j.jsx)("input", {
+                          type: "text",
+                          placeholder: S("member.enter_folder_name"),
+                          className:
+                            "w-11/12 h-10 p-4 border border-solid border-gy",
+                          onChange: (e) =>
+                            y(
+                              (0, a.A)(
+                                (0, a.A)({}, x),
+                                {},
+                                { folder_name: e.target.value },
+                              ),
+                            ),
+                        }),
+                      "move" === x.type &&
+                        (0, j.jsxs)("div", {
+                          children: [
+                            (0, j.jsxs)(r.A, {
+                              id: "fade-button",
+                              "aria-controls": C ? "fade-menu" : void 0,
+                              "aria-haspopup": "true",
+                              "aria-expanded": C ? "true" : void 0,
+                              onClick: (e) => _(e.currentTarget),
+                              className:
+                                "flex justify-between p-0 w-8/12 text-[#aaa] text-lg",
+                              children: [
+                                (0, j.jsx)("span", {
+                                  className: "pr-10",
+                                  children:
+                                    x.folder_name || S("member.select_folder"),
+                                }),
+                                (0, j.jsx)(h.A, {
+                                  sx: { color: "#ff6f00", fontSize: 24 },
+                                }),
+                              ],
+                            }),
+                            (0, j.jsx)(p.A, {
+                              id: "fade-menu",
+                              MenuListProps: {
+                                "aria-labelledby": "fade-button",
+                              },
+                              anchorEl: N,
+                              open: C,
+                              onClose: () => _(null),
+                              TransitionComponent: u.A,
+                              sx: (e) => ({
+                                "& .MuiPaper-root": {
+                                  marginTop: e.spacing(0),
+                                  marginLeft: e.spacing(-2),
+                                  width: "50%",
+                                  color: "#757575",
+                                },
+                              }),
+                              children:
+                                (null === A || void 0 === A
+                                  ? void 0
+                                  : A.length) > 0 &&
+                                A.map((e, t) =>
+                                  (0, j.jsx)(
+                                    g.A,
+                                    {
+                                      onClick: () => {
+                                        (_(null),
+                                          y(
+                                            (0, a.A)(
+                                              (0, a.A)({}, x),
+                                              {},
+                                              {
+                                                folder_name: e.name,
+                                                folder_id: e.FID,
+                                              },
+                                            ),
+                                          ));
+                                      },
+                                      children: e.name,
+                                    },
+                                    e.FID,
+                                  ),
+                                ),
+                            }),
+                          ],
+                        }),
+                      (null === w || void 0 === w ? void 0 : w.length) > 0 &&
+                        (0, j.jsxs)(j.Fragment, {
+                          children: [
+                            (0, j.jsx)("hr", {
+                              className: "border-2 border-tgy my-4",
+                            }),
+                            (0, j.jsxs)("div", {
+                              className: "text-left",
+                              children: [
+                                (0, j.jsxs)("div", {
+                                  className: "flex items-center",
+                                  children: [
+                                    (0, j.jsx)("p", {
+                                      className:
+                                        "border-2 border-solid border-og w-5 h-5 flex justify-center items-center overflow-hidden mr-2",
+                                      onClick: () => {
+                                        const e = L ? "" : w.toString();
+                                        y((t) =>
+                                          (0, a.A)(
+                                            (0, a.A)({}, t),
+                                            {},
+                                            { tags_select: e },
+                                          ),
+                                        );
+                                      },
+                                      children:
+                                        L &&
+                                        (0, j.jsx)(f.A, {
+                                          sx: {
+                                            fontSize: 14,
+                                            color: "#ff6f00",
+                                            stroke: "#ff6f00",
+                                            strokeWidth: 2,
+                                          },
+                                        }),
+                                    }),
+                                    (0, j.jsx)("span", {
+                                      children: S("detail.favorite_all_tags"),
+                                    }),
+                                  ],
+                                }),
+                                (0, j.jsx)("div", {
+                                  className:
+                                    "flex flex-wrap items-center text-gy mt-4 dark:text-gy",
+                                  children: w.map((e) => {
+                                    var t;
+                                    return (0, j.jsx)(
+                                      "span",
+                                      {
+                                        className:
+                                          "border-[1px] border-solid border-gy rounded-md p-1 m-1\n                         ".concat(
+                                            null !== (t = x.tags_select) &&
+                                              void 0 !== t &&
+                                              t.split(",").includes(e)
+                                              ? "bg-og text-white border-og"
+                                              : "",
+                                          ),
+                                        onClick: () => {
+                                          var t;
+                                          const s =
+                                              (null === (t = x.tags_select) ||
+                                              void 0 === t
+                                                ? void 0
+                                                : t.split(",")) || [],
+                                            l = s.includes(e)
+                                              ? s.filter((t) => t !== e)
+                                              : [...s, e];
+                                          y((e) =>
+                                            (0, a.A)(
+                                              (0, a.A)({}, e),
+                                              {},
+                                              {
+                                                tags_select: l
+                                                  .join(",")
+                                                  .replace(/^,/, ""),
+                                              },
+                                            ),
+                                          );
+                                        },
+                                        children: "#" + e,
+                                      },
+                                      e,
+                                    );
+                                  }),
+                                }),
+                              ],
+                            }),
+                          ],
+                        }),
+                    ],
+                  }),
+                  (0, j.jsx)(m.A, {
+                    className: "flex justify-center",
+                    children: (0, j.jsx)(r.A, {
+                      className:
+                        "bg-og text-white rounded border-solid border-2 border-og w-8/12",
+                      onClick: (e) => {
+                        (I(),
+                          "add" === x.type && k("add"),
+                          "edit" === x.type && k("edit"),
+                          "move" === x.type && k("move"));
+                      },
+                      children: S("member.confirm"),
+                    }),
+                  }),
+                ],
+              }),
+          });
+        };
+    },
+    6733: (e, t, s) => {
+      s.d(t, { A: () => j });
+      var a = s(9379),
+        l = s(5043),
+        i = s(3438),
+        n = s(2101),
+        r = s(8293),
+        o = s(7392),
+        d = s(1906),
+        c = s(35),
+        m = s(4219),
+        x = s(5316),
+        g = s(9347),
+        h = s(4836),
+        u = s(1060),
+        p = s(3944),
+        f = s(579);
+      const b = l.forwardRef(function (e, t) {
+          return (0, f.jsx)(h.A, (0, a.A)({ direction: "up", ref: t }, e));
+        }),
+        j = (e) => {
+          const {
+              t: t,
+              logined: s,
+              queryId: h,
+              detailList: j,
+              setSeriesGroups: v,
+              seriesGroups: y,
+              content: k,
+              msgOpen: A,
+              setMsgOpen: w,
+              handleTracking: N,
+              handleSetDontShow: _,
+            } = e,
+            { config: C } = (0, p.H)(),
+            { darkMode: S } = C,
+            [L, I] = (0, l.useState)(null),
+            F = (e, t) => {
+              "backdropClick" !== t &&
+                w(
+                  (0, a.A)(
+                    (0, a.A)({}, A),
+                    {},
+                    {
+                      search: !1,
+                      detail: !1,
+                      detailDownload: !1,
+                      member: !1,
+                      readTrack: !1,
+                    },
+                  ),
+                );
+            };
+          return (0, f.jsxs)(f.Fragment, {
+            children: [
+              A.search &&
+                (0, f.jsxs)(c.A, {
+                  onClose: F,
+                  "aria-labelledby": "customized-dialog-title",
+                  open: A.search,
+                  TransitionComponent: b,
+                  className: "text-white",
+                  sx: () => ({
+                    "& .MuiPaper-root": {
+                      paddingY: "1rem",
+                      width: "90%",
+                      background: S ? "#323232" : "",
+                      color: S ? "#d1d1d1" : "#323232",
+                    },
+                  }),
+                  children: [
+                    (0, f.jsxs)(m.A, {
+                      className: "text-center",
+                      id: "customized-dialog-title",
+                      children: [
+                        k.title,
+                        (0, f.jsx)("hr", {
+                          className: "w-9/12 border-[#aaa] m-auto",
+                        }),
+                      ],
+                    }),
+                    (0, f.jsxs)(x.A, {
+                      className: "text-center py-0",
+                      children: [
+                        (0, f.jsx)("img", {
+                          src: k.image ? k.image : "/images/help_cover.png",
+                          alt: "help_cover",
+                          className: "w-10/12 m-auto",
+                        }),
+                        k.text_sections.map((e, t) =>
+                          (0, f.jsxs)(
+                            "div",
+                            {
+                              children: [
+                                (0, f.jsx)("p", {
+                                  className: "font-black mt-3",
+                                  children: e.title,
+                                }),
+                                (0, f.jsx)("span", { children: e.content }),
+                                (0, f.jsx)("span", { children: e.example }),
+                              ],
+                            },
+                            t,
+                          ),
+                        ),
+                      ],
+                    }),
+                    (0, f.jsx)(g.A, {
+                      className: "flex justify-center",
+                      children: (0, f.jsx)(d.A, {
+                        className:
+                          "bg-og text-white rounded border-solid border-2 border-og w-8/12",
+                        onClick: F,
+                        children: k.btn_text,
+                      }),
+                    }),
+                  ],
+                }),
+              A.detail &&
+                (0, f.jsxs)(c.A, {
+                  onClose: F,
+                  "aria-labelledby": "customized-dialog-title",
+                  open: A.detail,
+                  TransitionComponent: b,
+                  sx: () => ({
+                    "& .MuiPaper-root": {
+                      paddingY: "1rem",
+                      width: "90%",
+                      background: S ? "#323232" : "",
+                      color: S ? "#d1d1d1" : "#323232",
+                    },
+                  }),
+                  children: [
+                    (0, f.jsxs)(m.A, {
+                      className: "text-center",
+                      id: "customized-dialog-title",
+                      children: [
+                        k.title,
+                        (0, f.jsx)("hr", {
+                          className: "w-9/12 border-[#aaa] m-auto",
+                        }),
+                      ],
+                    }),
+                    (0, f.jsxs)(x.A, {
+                      children: [
+                        (0, f.jsx)("img", {
+                          src: k.image,
+                          alt: "help_cover",
+                          className: "w-8/12 m-auto",
+                        }),
+                        (0, f.jsx)("div", {
+                          children: k.text_sections.map((e, t) =>
+                            (0, f.jsxs)(
+                              "div",
+                              {
+                                className: "mt-2",
+                                children: [
+                                  (0, f.jsx)("p", {
+                                    className: "font-black",
+                                    children: e.title,
+                                  }),
+                                  (0, f.jsx)("span", { children: e.content }),
+                                ],
+                              },
+                              t,
+                            ),
+                          ),
+                        }),
+                      ],
+                    }),
+                    (0, f.jsx)(g.A, {
+                      className: "flex justify-center",
+                      children: (0, f.jsx)(d.A, {
+                        className:
+                          "bg-og text-white rounded border-solid border-2 border-og w-8/12 text-base",
+                        onClick: F,
+                        children: k.btn_text,
+                      }),
+                    }),
+                  ],
+                }),
+              A.detailDownload &&
+                (0, f.jsxs)(c.A, {
+                  onClose: F,
+                  "aria-labelledby": "customized-dialog-title",
+                  open: A.detailDownload,
+                  TransitionComponent: b,
+                  sx: () => ({
+                    "& .MuiPaper-root": {
+                      width: "90%",
+                      height: "60%",
+                      color: S ? "#d1d1d1" : "",
+                      backgroundColor: S ? "#323232" : "",
+                    },
+                    "& .MuiDialogContent-root": { padding: 0 },
+                  }),
+                  children: [
+                    (0, f.jsx)(m.A, {
+                      id: "customized-dialog-title",
+                      children: t("detail.select_episode_to_download"),
+                    }),
+                    (0, f.jsx)(o.A, {
+                      "aria-label": "close",
+                      onClick: F,
+                      sx: (e) => ({
+                        position: "absolute",
+                        right: 8,
+                        top: 8,
+                        color: S ? "#d1d1d1" : e.palette.grey[900],
+                      }),
+                      children: (0, f.jsx)(i.A, {}),
+                    }),
+                    (0, f.jsx)(x.A, {
+                      children: (0, f.jsx)(u.A, {
+                        t: t,
+                        queryId: h,
+                        detailList: j,
+                        seriesGroups: y,
+                        setSeriesGroups: v,
+                        msgOpen: A,
+                      }),
+                    }),
+                  ],
+                }),
+              A.member &&
+                (0, f.jsxs)(c.A, {
+                  onClose: F,
+                  "aria-labelledby": "customized-dialog-title",
+                  open: A.member,
+                  TransitionComponent: b,
+                  className: "text-white",
+                  sx: () => ({
+                    "& .MuiPaper-root": {
+                      paddingY: "1rem",
+                      width: "90%",
+                      margin: "1rem",
+                    },
+                  }),
+                  children: [
+                    (0, f.jsx)(m.A, {
+                      className: "text-center text-4xl text-og",
+                      id: "customized-dialog-title",
+                      children: k[0].title,
+                    }),
+                    (0, f.jsx)(o.A, {
+                      "aria-label": "close",
+                      onClick: F,
+                      sx: (e) => ({
+                        position: "absolute",
+                        right: 8,
+                        top: 8,
+                        color: e.palette.grey[700],
+                        stroke: e.palette.grey[700],
+                        strokeWidth: 2,
+                      }),
+                      children: (0, f.jsx)(i.A, {}),
+                    }),
+                    (0, f.jsx)(x.A, {
+                      sx: { paddingTop: 0 },
+                      children: (0, f.jsx)("div", {
+                        children: k[0].text_section.map((e, s) =>
+                          (0, f.jsxs)(
+                            "div",
+                            {
+                              className: "mt-3",
+                              children: [
+                                (0, f.jsxs)("div", {
+                                  className:
+                                    "bg-og border-1 border-solid border-og text-white text-xl flex justify-between rounded-t-lg p-4",
+                                  onClick: () => I(L === s ? null : s),
+                                  children: [
+                                    (0, f.jsx)("p", {
+                                      className: "flex",
+                                      children:
+                                        Array.isArray(e.FAQ) &&
+                                        e.FAQ.map((e, s) =>
+                                          (0, f.jsxs)(
+                                            l.Fragment,
+                                            {
+                                              children: [
+                                                e,
+                                                e.includes(
+                                                  t("common_q.jJar"),
+                                                ) &&
+                                                  (0, f.jsx)("img", {
+                                                    src: k[0].list[0].img,
+                                                    alt: "jJar",
+                                                  }),
+                                                e.includes(
+                                                  t("common_q.jCharge"),
+                                                ) &&
+                                                  (0, f.jsx)("img", {
+                                                    src: k[0].list[1].img,
+                                                    alt: "jCharge",
+                                                  }),
+                                              ],
+                                            },
+                                            s,
+                                          ),
+                                        ),
+                                    }),
+                                    L === s
+                                      ? (0, f.jsx)(n.A, {})
+                                      : (0, f.jsx)(r.A, {}),
+                                  ],
+                                }),
+                                L === s
+                                  ? (0, f.jsx)("p", {
+                                      className:
+                                        "text-lg border border-solid border-gy border-t-og p-3",
+                                      children: e.content.map((e) =>
+                                        (0, f.jsx)(
+                                          "span",
+                                          {
+                                            className: "block ".concat(
+                                              1 === s ? "text-center" : "",
+                                            ),
+                                            children: e,
+                                          },
+                                          e,
+                                        ),
+                                      ),
+                                    })
+                                  : null,
+                              ],
+                            },
+                            s,
+                          ),
+                        ),
+                      }),
+                    }),
+                  ],
+                }),
+              A.readTrack &&
+                (0, f.jsxs)(c.A, {
+                  onClose: F,
+                  "aria-labelledby": "customized-dialog-title",
+                  open: A.readTrack,
+                  TransitionComponent: b,
+                  className: "text-white",
+                  sx: (e) => ({
+                    "& .MuiPaper-root": {
+                      paddingY: "1rem",
+                      width: "90%",
+                      background: S ? "#323232" : "",
+                      color: S ? "#d1d1d1" : e.palette.grey[500],
+                    },
+                  }),
+                  children: [
+                    (0, f.jsx)(m.A, {
+                      id: "customized-dialog-title",
+                      children: t("common_q.finalChapter"),
+                    }),
+                    (0, f.jsx)(o.A, {
+                      "aria-label": "close",
+                      onClick: F,
+                      sx: (e) => ({
+                        position: "absolute",
+                        right: 8,
+                        top: 8,
+                        color: e.palette.grey[500],
+                      }),
+                      children: (0, f.jsx)(i.A, {}),
+                    }),
+                    (0, f.jsx)(x.A, {
+                      dividers: !0,
+                      className: "py-10",
+                      children: t("common_q.stayUpdated"),
+                    }),
+                    (0, f.jsxs)(g.A, {
+                      className: "flex justify-between items-center px-6",
+                      children: [
+                        (0, f.jsxs)("div", {
+                          className: "flex items-center",
+                          children: [
+                            (0, f.jsx)("input", {
+                              type: "checkbox",
+                              id: "dontShow",
+                              name: "dontShow",
+                              className: "mr-1",
+                              onChange: (e) => _(e),
+                            }),
+                            (0, f.jsx)("label", {
+                              htmlFor: "dontShow",
+                              children: t("common_q.dontShow"),
+                            }),
+                          ],
+                        }),
+                        (0, f.jsx)(d.A, {
+                          className:
+                            "bg-og text-white rounded border-solid border-2 border-og w-32",
+                          onClick: (e) => {
+                            (N(h), s && F());
+                          },
+                          children: t("common_q.followSeries"),
+                        }),
+                      ],
+                    }),
+                  ],
+                }),
+            ],
+          });
+        };
+    },
+    5073: (e, t, s) => {
+      s.d(t, { A: () => m });
+      var a = s(9379),
+        l = s(8911),
+        i = s(7353),
+        n = s(802),
+        r = s(2110),
+        o = s(6494),
+        d = s(7392),
+        c = s(579);
+      const m = (e) => {
+        const {
+          t: t,
+          aid: s,
+          ncid: m,
+          comment_id: x,
+          responds: g,
+          setResponds: h,
+          problem: u,
+          userAnswer: p,
+          setUserAnswer: f,
+          handleRegenerateProblem: b,
+          checkAnswer: j,
+        } = e;
+        return (
+          console.log(g),
+          (0, c.jsx)(r.A, {
+            className: "dark:bg-nbk dark:text-tgy",
+            children: (0, c.jsxs)(o.A, {
+              className: "",
+              children: [
+                (0, c.jsxs)(i.A, {
+                  className: "w-full flex justify-end ml-auto pt-0",
+                  children: [
+                    (0, c.jsx)("label", { htmlFor: "reply" }),
+                    (0, c.jsx)(n.A, {
+                      value: g.reply,
+                      id: "reply",
+                      "aria-label": "reply textarea",
+                      minRows: 3,
+                      maxLength: 200,
+                      placeholder: "\u5206\u4eab\u4f60\u7684\u60f3\u6cd5\u5427",
+                      className:
+                        "border-2 border-tgy text-base text-lgy w-full rounded-md p-1 focus:border-gray-500 focus:outline-none dark:bg-bbk",
+                      onChange: (e) =>
+                        h((t) =>
+                          (0, a.A)(
+                            (0, a.A)({}, t),
+                            {},
+                            {
+                              comment: e.target.value,
+                              comment_id: x,
+                              ncid: m,
+                              aid: s,
+                            },
+                          ),
+                        ),
+                    }),
+                  ],
+                }),
+                u.problem
+                  ? (0, c.jsxs)(i.A, {
+                      className:
+                        "flex justify-center items-center text-base pt-4",
+                      children: [
+                        (0, c.jsxs)("p", {
+                          className: "text-2xl",
+                          children: [u.problem, " ="],
+                        }),
+                        (0, c.jsx)("input", {
+                          type: "text",
+                          id: "captcha-answer",
+                          value: p,
+                          maxLength: 10,
+                          onChange: (e) => f(e.target.value),
+                          placeholder: t("detail.enter_answer"),
+                          className:
+                            "w-28 h-12 text-lgy text-base border-2 border-tgy rounded-md px-2 ml-2 dark:bg-bbk",
+                        }),
+                        (0, c.jsx)(d.A, {
+                          "aria-label": "reset",
+                          className: "rounded-full bg-gray-200 ml-2 p-1",
+                          onClick: b,
+                          children: (0, c.jsx)(l.A, { className: "text-2xl" }),
+                        }),
+                        (0, c.jsx)("button", {
+                          className:
+                            "bg-og rounded-md text-white ml-8 py-2 px-5",
+                          onClick: () => j(),
+                          children: t("detail.responds"),
+                        }),
+                      ],
+                    })
+                  : (0, c.jsx)("div", {
+                      className: "text-center py-6 text-gray-500",
+                      children: "Loading captcha...",
+                    }),
+              ],
+            }),
+          })
+        );
+      };
+    },
+    7999: (e, t, s) => {
+      (s.r(t), s.d(t, { default: () => Le }));
+      var a = s(5043),
+        l = s(3944),
+        i = s(6148),
+        n = s(4117),
+        r = s(1100),
+        o = s(4694),
+        d = s(7680),
+        c = s(579);
+      const m = (e) => {
+        const {
+            logined: t,
+            tabItems: s,
+            tab: l,
+            setTab: n,
+            unread: d,
+            openIndex: m,
+            notifResult: x,
+          } = e,
+          g = (0, i.j)(),
+          h = (0, a.useRef)([]),
+          u = (0, a.useRef)(null);
+        ((0, a.useEffect)(() => {
+          t &&
+            0 === Object.keys(d).length &&
+            Object.keys(x).length > 0 &&
+            g((0, r.Zg)());
+        }, [t, m, x]),
+          (0, a.useEffect)(() => {
+            const e = u.current,
+              t = h.current[l - 1];
+            e &&
+              t &&
+              setTimeout(() => {
+                const s = e.offsetWidth,
+                  a = t.offsetLeft - s / 2 + t.offsetWidth / 2;
+                e.scrollTo({ left: a });
+              }, 0);
+          }, []));
+        return (0, c.jsx)(c.Fragment, {
+          children: (0, c.jsx)("nav", {
+            ref: u,
+            className:
+              "bg-nbk sticky top-28 w-full mx-auto flex items-center overflow-x-auto whitespace-nowrap pt-4 px-3 z-50",
+            style: { scrollbarWidth: "none", msOverflowStyle: "none" },
+            children:
+              Array.isArray(s) &&
+              s.map((e, t) =>
+                (0, c.jsxs)(
+                  "ul",
+                  {
+                    ref: (e) => (h.current[t] = e),
+                    className: "pt-2 ".concat(
+                      l === t + 1 ? "bg-bbk rounded-t-lg" : "",
+                    ),
+                    children: [
+                      (0, c.jsxs)("li", {
+                        className:
+                          "animation-click-item mx-4 pt-1 flex items-center space-x-2",
+                        onClick: () => {
+                          (n(t + 1),
+                            sessionStorage.setItem(
+                              "memberTab",
+                              JSON.stringify(t + 1),
+                            ));
+                        },
+                        children: [
+                          (0, c.jsx)("span", {
+                            className: "py-1",
+                            children: e,
+                          }),
+                          3 === t &&
+                            d.comic_follow + d.site_notice > 0 &&
+                            (0, c.jsx)("span", {
+                              className:
+                                "bg-red-600 text-white rounded-full w-6 h-6 text-sm flex items-center justify-center",
+                              children: d.comic_follow + d.site_notice,
+                            }),
+                        ],
+                      }),
+                      l === t + 1 &&
+                        (0, c.jsx)(o.P.div, {
+                          className: "border-b-4 border-solid border-og",
+                          initial: { scaleX: 0 },
+                          animate: { scaleX: 1 },
+                          transition: { duration: 0.3 },
+                          style: { transformOrigin: "center" },
+                        }),
+                    ],
+                  },
+                  e,
+                ),
+              ),
+          }),
+        });
+      };
+      var x,
+        g,
+        h = s(9379),
+        u = s(7528),
+        p = s(9758),
+        f = s(6973),
+        b = s(319),
+        j = s(7805),
+        v = s(8645),
+        y = s(8638),
+        k = s(3290),
+        A = s(2108);
+      const w = (e) => {
+        var t, s;
+        const {
+            t: a,
+            logined: l,
+            setting: i,
+            infoData: n,
+            MemberCard: r,
+            scrollUp: o,
+            setDialogOpen: d,
+            dialogOpen: m,
+            memberProgress: w,
+            memberProgressMax: N,
+            setMsgOpen: _,
+            msgOpen: C,
+            isInfoRefreshing: S,
+            handleRefresh: L,
+          } = e,
+          I = (0, k.i7)(
+            x ||
+              (x = (0, u.A)([
+                "\n  100% {\n    transform: rotate(360deg);\n  }\n",
+              ])),
+          ),
+          F = (0, A.Ay)(j.A)(
+            g ||
+              (g = (0, u.A)(["\n    animation: ", " 1s linear infinite;\n  "])),
+            I,
+          ),
+          O = { color: "#aaa", fontSize: "2rem", marginTop: "2rem" };
+        return (0, c.jsxs)(c.Fragment, {
+          children: [
+            (0, c.jsx)("div", {
+              className:
+                "bg-nbk sticky top-0 flex justify-center items-center text-xl h-28 z-50",
+              children: o
+                ? l
+                  ? (0, c.jsxs)("div", {
+                      className:
+                        "w-7/12 flex flex-wrap justify-around items-center text-base",
+                      children: [
+                        (0, c.jsx)("img", {
+                          src: "".concat(
+                            (null === i || void 0 === i ? void 0 : i.img_host) +
+                              "/media/users/" +
+                              n.photo,
+                          ),
+                          alt: n.username || "users-head",
+                          onError: (e) => {
+                            e.target.src = "/images/ic_head.png";
+                          },
+                          className: "object-cover w-12 h-12",
+                        }),
+                        (0, c.jsxs)("div", {
+                          className: "flex flex-col",
+                          children: [
+                            (0, c.jsxs)("p", {
+                              children: [
+                                "Hi! ",
+                                n.username,
+                                "\xa0\xb7",
+                                (0, c.jsx)("span", {
+                                  className: "text-og ml-1",
+                                  children: n.level_name,
+                                }),
+                              ],
+                            }),
+                            (0, c.jsx)("p", {
+                              className: "flex mt-1",
+                              children:
+                                (null === (t = n.badges) || void 0 === t
+                                  ? void 0
+                                  : t.length) > 0 &&
+                                i &&
+                                n.badges.map((e, t) =>
+                                  (0, c.jsx)(
+                                    "img",
+                                    {
+                                      src:
+                                        (null === i || void 0 === i
+                                          ? void 0
+                                          : i.img_host) + e.content,
+                                      alt: e.content,
+                                      loading: "lazy",
+                                      onLoad: (e) => {
+                                        e.target.style.opacity = "1";
+                                      },
+                                      onError: (e) => {
+                                        e.target.src = "/images/loading.gif";
+                                      },
+                                      style: {
+                                        opacity: "0",
+                                        transition: "opacity 0.5s ease-in-out",
+                                      },
+                                      width: 22,
+                                      height: 22,
+                                      className: "mr-1 object-cover",
+                                    },
+                                    t,
+                                  ),
+                                ),
+                            }),
+                          ],
+                        }),
+                      ],
+                    })
+                  : (0, c.jsx)("span", { children: a("login.please_login") })
+                : null,
+            }),
+            (0, c.jsx)(b.u, {
+              completeDelay: 1e3,
+              refreshing: S,
+              onRefresh: L,
+              renderText: (e) => {
+                switch (e) {
+                  case "normal":
+                  case "pulling":
+                    return (0, c.jsx)(v.A, { style: O });
+                  case "canRelease":
+                    return (0, c.jsx)(j.A, { style: O });
+                  case "refreshing":
+                    return (0, c.jsx)(F, { style: O });
+                  case "complete":
+                    return (0, c.jsx)(y.A, { style: O });
+                  default:
+                    return null;
+                }
+              },
+              children: (0, c.jsxs)("div", {
+                className: "flex flex-col mb-4",
+                children: [
+                  l
+                    ? (0, c.jsxs)("div", {
+                        className: "w-11/12 h-20 m-10 flex items-end",
+                        children: [
+                          (0, c.jsxs)("div", {
+                            className: "mr-6 relative",
+                            onClick: () =>
+                              d((0, h.A)((0, h.A)({}, m), {}, { invite: !0 })),
+                            children: [
+                              (0, c.jsx)("img", {
+                                src: ""
+                                  .concat(
+                                    null === i || void 0 === i
+                                      ? void 0
+                                      : i.img_host,
+                                    "/media/users/",
+                                  )
+                                  .concat(n.photo),
+                                alt: n.username,
+                                onError: (e) => {
+                                  e.target.src = "/images/ic_head.png";
+                                },
+                                className: "object-cover w-20 h-20",
+                              }),
+                              (0, c.jsx)(p.A, {
+                                sx: { fontSize: 22 },
+                                className:
+                                  "absolute right-0 top-1/2 transform -translate-y-2",
+                              }),
+                            ],
+                          }),
+                          (0, c.jsxs)("div", {
+                            className: "h-20 flex flex-col justify-around",
+                            children: [
+                              (0, c.jsxs)("p", {
+                                children: [
+                                  "Hi! ",
+                                  n.username,
+                                  "\xa0\xb7",
+                                  (0, c.jsx)("span", {
+                                    className: "text-og ml-1",
+                                    children: n.level_name,
+                                  }),
+                                ],
+                              }),
+                              (0, c.jsx)("p", {
+                                className: "flex my-2",
+                                children:
+                                  (null === (s = n.badges) || void 0 === s
+                                    ? void 0
+                                    : s.length) > 0 &&
+                                  n.badges.map((e, t) =>
+                                    (0, c.jsx)(
+                                      "img",
+                                      {
+                                        src:
+                                          (null === i || void 0 === i
+                                            ? void 0
+                                            : i.img_host) + e.content,
+                                        alt: e.content,
+                                        loading: "lazy",
+                                        onLoad: (e) => {
+                                          e.target.style.opacity = "1";
+                                        },
+                                        onError: (e) => {
+                                          e.target.src = "/images/loading.gif";
+                                        },
+                                        style: {
+                                          opacity: "0",
+                                          transition:
+                                            "opacity 0.5s ease-in-out",
+                                        },
+                                        width: 22,
+                                        height: 22,
+                                        className: "mr-1 object-cover",
+                                      },
+                                      t,
+                                    ),
+                                  ),
+                              }),
+                              (0, c.jsxs)("p", {
+                                children: [
+                                  a("member_card.status"),
+                                  "\uff1a",
+                                  (0, c.jsx)("span", {
+                                    className: "text-og ml-2",
+                                    children: n.ad_free
+                                      ? a("member_card.super_JM_person")
+                                      : a("member_card.JM_person"),
+                                  }),
+                                  (0, c.jsx)("span", {
+                                    className:
+                                      "bg-bbk rounded-full ml-4 p-2 text-t08",
+                                    children: n.ad_free_before,
+                                  }),
+                                ],
+                              }),
+                            ],
+                          }),
+                        ],
+                      })
+                    : (0, c.jsx)("div", {
+                        className: "text-center text-xl pb-20 z-10",
+                        children: (0, c.jsx)("button", {
+                          className:
+                            "px-4 py-2 rounded-md border-2 border-solid border-stone-900 bg-og",
+                          onClick: () =>
+                            d((0, h.A)((0, h.A)({}, m), {}, { login: !0 })),
+                          children: a("login.login_register"),
+                        }),
+                      }),
+                  (0, c.jsxs)("div", {
+                    className: "w-11/12 bg-bbk rounded-md mx-auto text-[#bbb]",
+                    children: [
+                      (0, c.jsx)("ul", {
+                        className: "flex justify-around items-center",
+                        children:
+                          Array.isArray(r) &&
+                          r.map((e) =>
+                            (0, c.jsxs)(
+                              "li",
+                              {
+                                className: "flex flex-col text-center p-2",
+                                children: [
+                                  (0, c.jsx)("p", {
+                                    className: "py-2",
+                                    children: e.title,
+                                  }),
+                                  l && !S
+                                    ? (0, c.jsx)("p", {
+                                        className: "text-og",
+                                        children: ""
+                                          .concat(n[e.key[0]])
+                                          .concat(
+                                            n[e.key[1]]
+                                              ? "/".concat(n[e.key[1]])
+                                              : "",
+                                          ),
+                                      })
+                                    : (0, c.jsx)("hr", {
+                                        className:
+                                          "border border-solid border-og w-5 mx-auto",
+                                      }),
+                                ],
+                              },
+                              e.title,
+                            ),
+                          ),
+                      }),
+                      (0, c.jsxs)("div", {
+                        className:
+                          "w-full flex justify-between p-4 text-center",
+                        children: [
+                          (0, c.jsxs)("div", {
+                            className: "w-9/12",
+                            children: [
+                              (0, c.jsx)("p", {
+                                className: "mb-2",
+                                children: a("common_q.jCharge"),
+                              }),
+                              (0, c.jsxs)("div", {
+                                className:
+                                  "relative flex items-center border-2 border-solid border-og bg-white rounded-full h-5",
+                                children: [
+                                  (0, c.jsx)("div", {
+                                    className: "bg-og h-full rounded-full",
+                                    style: {
+                                      width:
+                                        l && !S
+                                          ? "".concat(w * (245 / N), "px")
+                                          : "",
+                                    },
+                                  }),
+                                  (0, c.jsx)("div", {
+                                    className:
+                                      "absolute top=0 left-[-5px] bg-white rounded-full p-0.5 px-1.5",
+                                    children: (0, c.jsx)("img", {
+                                      src: "/images/jCharge.png",
+                                      alt: "jCharge",
+                                      width: 8,
+                                      height: 8,
+                                    }),
+                                  }),
+                                  l && !S
+                                    ? (0, c.jsx)("p", {
+                                        className:
+                                          "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2",
+                                        children: n.charge,
+                                      })
+                                    : (0, c.jsx)("p", {
+                                        className:
+                                          "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2",
+                                        children: "????",
+                                      }),
+                                ],
+                              }),
+                            ],
+                          }),
+                          (0, c.jsxs)("div", {
+                            className: "w-3/12",
+                            children: [
+                              (0, c.jsx)("p", {
+                                className: "mb-2",
+                                children: a("common_q.jJar"),
+                              }),
+                              (0, c.jsxs)("p", {
+                                className:
+                                  "text-og flex justify-center items-center",
+                                children: [
+                                  (0, c.jsx)("img", {
+                                    src: "images/jJar.png",
+                                    alt: "jJar",
+                                    width: 14,
+                                    height: 14,
+                                  }),
+                                  l && !S
+                                    ? (0, c.jsx)("span", {
+                                        className: "ml-1",
+                                        children: n.jar,
+                                      })
+                                    : (0, c.jsx)("span", {
+                                        className: "ml-1",
+                                        children: "??/??",
+                                      }),
+                                ],
+                              }),
+                            ],
+                          }),
+                        ],
+                      }),
+                      (0, c.jsxs)("div", {
+                        className:
+                          "w-full flex items-center justify-between p-4",
+                        children: [
+                          (0, c.jsxs)("div", {
+                            className: "",
+                            children: [
+                              (0, c.jsx)("button", {
+                                className:
+                                  "rounded-md bg-og text-white p-1 px-2",
+                                onClick: () =>
+                                  l &&
+                                  d(
+                                    (0, h.A)(
+                                      (0, h.A)({}, m),
+                                      {},
+                                      { charge: !0 },
+                                    ),
+                                  ),
+                                children: a("member_card.promote_charging"),
+                              }),
+                              (0, c.jsx)("button", {
+                                className:
+                                  "rounded-md bg-og text-white p-1 px-2 ml-6",
+                                onClick: () =>
+                                  l &&
+                                  d(
+                                    (0, h.A)(
+                                      (0, h.A)({}, m),
+                                      {},
+                                      { invincible: !0 },
+                                    ),
+                                  ),
+                                children: a(
+                                  "member_card.activate_invincibility",
+                                ),
+                              }),
+                            ],
+                          }),
+                          (0, c.jsxs)("div", {
+                            className: "flex text-og",
+                            onClick: () =>
+                              _((0, h.A)((0, h.A)({}, C), {}, { member: !0 })),
+                            children: [
+                              (0, c.jsx)(f.A, {}),
+                              (0, c.jsx)("span", {
+                                children: a("member_card.charging_and_J_cans"),
+                              }),
+                            ],
+                          }),
+                        ],
+                      }),
+                    ],
+                  }),
+                ],
+              }),
+            }),
+          ],
+        });
+      };
+      var N = s(6990),
+        _ = s(5954),
+        C = s(8911),
+        S = s(264),
+        L = s(1387),
+        I = s(1906),
+        F = s(688),
+        O = s(6258),
+        M = s(1637),
+        T = s(3492);
+      const E = (e) => {
+        var t, s, l, n;
+        const { t: o, setting: m, logined: x, showSnackbar: g } = e,
+          u = (0, i.j)(),
+          {
+            editResult: p,
+            favoriteList: f,
+            isLoading: b,
+            isRefreshing: j,
+          } = (0, i.G)((e) => e.member),
+          [v, y] = (0, a.useState)(null),
+          [k, A] = (0, a.useState)({ folder: !1 }),
+          [w, E] = (0, a.useState)({
+            edit: !1,
+            type: "",
+            folder_id: "",
+            folder_name: "",
+            aid: "",
+            o: "mr",
+            select: "",
+            alert: !1,
+            confirm: !1,
+            message: "",
+            tags_select: "",
+          }),
+          [z, D] = (0, a.useState)(1),
+          R =
+            null !== (t = f.list) && void 0 !== t && t.length
+              ? Math.ceil(f.total / 20)
+              : 0,
+          B = z < R && R > 1,
+          P = function () {
+            let e =
+                arguments.length > 0 && void 0 !== arguments[0] && arguments[0],
+              t =
+                arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
+              s =
+                arguments.length > 2 && void 0 !== arguments[2]
+                  ? arguments[2]
+                  : 0,
+              a =
+                arguments.length > 3 && void 0 !== arguments[3]
+                  ? arguments[3]
+                  : 1,
+              l =
+                arguments.length > 4 && void 0 !== arguments[4]
+                  ? arguments[4]
+                  : "",
+              i =
+                arguments.length > 5 && void 0 !== arguments[5]
+                  ? arguments[5]
+                  : "mr";
+            (t && (D(1), u((0, d.a9)("favoriteList"))),
+              u((0, d.VW)({ isLoading: !0, isLoadMore: e, isRefreshing: t })),
+              setTimeout(() => {
+                u((0, r.an)({ page: a, folder_id: l, o: i }));
+              }, s));
+          };
+        (0, a.useEffect)(() => {
+          var e;
+          x &&
+            0 === (null === (e = f.list) || void 0 === e ? void 0 : e.length) &&
+            P();
+        }, [x, null === (s = f.list) || void 0 === s ? void 0 : s.length]);
+        return (0, c.jsx)(c.Fragment, {
+          children: (0, c.jsxs)("div", {
+            className: "w-full bg-white text-bbk dark:bg-bbk dark:text-tgy",
+            children: [
+              (0, c.jsxs)("div", {
+                className: "flex justify-between items-center px-6 h-20",
+                children: [
+                  w.edit
+                    ? (0, c.jsx)("div", { className: "w-4/10" })
+                    : (0, c.jsxs)("div", {
+                        className: "w-4/10",
+                        children: [
+                          (0, c.jsxs)(I.A, {
+                            id: "fade-button",
+                            "aria-controls": Boolean(v) ? "fade-menu" : void 0,
+                            "aria-haspopup": "true",
+                            "aria-expanded": Boolean(v) ? "true" : void 0,
+                            onClick: (e) => y(e.currentTarget),
+                            sx: { color: "#aaa", fontSize: 15, paddingLeft: 0 },
+                            children: [
+                              (0, c.jsx)("span", {
+                                className: "pr-10",
+                                children: w.folder_name || "\u5168\u90e8",
+                              }),
+                              (0, c.jsx)(_.A, {
+                                sx: { color: "#ff6f00", fontSize: 24 },
+                              }),
+                            ],
+                          }),
+                          (0, c.jsxs)(F.A, {
+                            id: "fade-menu",
+                            MenuListProps: { "aria-labelledby": "fade-button" },
+                            anchorEl: v,
+                            open: Boolean(v),
+                            onClose: () => y(null),
+                            TransitionComponent: O.A,
+                            sx: (e) => ({
+                              "& .MuiPaper-root": {
+                                marginTop: e.spacing(0),
+                                marginLeft: e.spacing(-2),
+                                width: "30%",
+                                color: "#757575",
+                              },
+                            }),
+                            children: [
+                              (0, c.jsx)(N.A, {
+                                onClick: () => {
+                                  (E(
+                                    (0, h.A)(
+                                      (0, h.A)({}, w),
+                                      {},
+                                      { folder_name: "" },
+                                    ),
+                                  ),
+                                    P(!1, !1, 100, z, "", w.o),
+                                    y(null));
+                                },
+                                children: "\u5168\u90e8",
+                              }),
+                              (null === (l = f.folder_list) || void 0 === l
+                                ? void 0
+                                : l.length) > 0 &&
+                                f.folder_list.map((e, t) =>
+                                  (0, c.jsx)(
+                                    N.A,
+                                    {
+                                      onClick: () => {
+                                        (P(!1, !1, 100, z, e.FID, w.o),
+                                          E(
+                                            (0, h.A)(
+                                              (0, h.A)({}, w),
+                                              {},
+                                              {
+                                                folder_id: e.FID,
+                                                folder_name: e.name,
+                                              },
+                                            ),
+                                          ),
+                                          y(null));
+                                      },
+                                      children: e.name,
+                                    },
+                                    e.FID,
+                                  ),
+                                ),
+                            ],
+                          }),
+                        ],
+                      }),
+                  w.edit
+                    ? w.folder_name
+                      ? (0, c.jsxs)("div", {
+                          className: "w-8/12 flex justify-between items-center",
+                          children: [
+                            (0, c.jsx)("span", {
+                              onClick: () => {
+                                (A(
+                                  (0, h.A)((0, h.A)({}, k), {}, { folder: !0 }),
+                                ),
+                                  E(
+                                    (0, h.A)(
+                                      (0, h.A)({}, w),
+                                      {},
+                                      { type: "edit" },
+                                    ),
+                                  ));
+                              },
+                              children: o("member.rename"),
+                            }),
+                            (0, c.jsx)("span", {
+                              onClick: () =>
+                                E(
+                                  (0, h.A)(
+                                    (0, h.A)({}, w),
+                                    {},
+                                    {
+                                      type: "del",
+                                      alert: !0,
+                                      message: o("snack.confirm_delete"),
+                                    },
+                                  ),
+                                ),
+                              children: o("member.delete_folder"),
+                            }),
+                            (0, c.jsx)("span", {
+                              onClick: () => {
+                                (A(
+                                  (0, h.A)((0, h.A)({}, k), {}, { folder: !0 }),
+                                ),
+                                  E(
+                                    (0, h.A)(
+                                      (0, h.A)({}, w),
+                                      {},
+                                      { type: "move" },
+                                    ),
+                                  ));
+                              },
+                              children: o("member.move"),
+                            }),
+                            (0, c.jsx)(L.A, {
+                              onClick: () => {
+                                E(
+                                  (0, h.A)(
+                                    (0, h.A)({}, w),
+                                    {},
+                                    {
+                                      type: "del_comic",
+                                      alert: !0,
+                                      message: o("snack.confirm_delete"),
+                                    },
+                                  ),
+                                );
+                              },
+                            }),
+                            (0, c.jsx)("span", {
+                              onClick: () =>
+                                E(
+                                  (0, h.A)(
+                                    (0, h.A)({}, w),
+                                    {},
+                                    { edit: !1, aid: "" },
+                                  ),
+                                ),
+                              children: o("member.cancel"),
+                            }),
+                          ],
+                        })
+                      : (0, c.jsxs)("div", {
+                          className: "w-7/12 flex justify-between items-center",
+                          children: [
+                            (0, c.jsx)("span", {
+                              onClick: () => {
+                                (A(
+                                  (0, h.A)((0, h.A)({}, k), {}, { folder: !0 }),
+                                ),
+                                  E(
+                                    (0, h.A)(
+                                      (0, h.A)({}, w),
+                                      {},
+                                      { type: "add" },
+                                    ),
+                                  ));
+                              },
+                              children: o("member.add_folder"),
+                            }),
+                            (0, c.jsx)("span", {
+                              onClick: () => {
+                                (A(
+                                  (0, h.A)((0, h.A)({}, k), {}, { folder: !0 }),
+                                ),
+                                  E(
+                                    (0, h.A)(
+                                      (0, h.A)({}, w),
+                                      {},
+                                      { type: "move" },
+                                    ),
+                                  ));
+                              },
+                              children: o("member.add_to_folder"),
+                            }),
+                            (0, c.jsx)("span", {
+                              onClick: () =>
+                                E((0, h.A)((0, h.A)({}, w), {}, { edit: !1 })),
+                              children: o("member.cancel"),
+                            }),
+                          ],
+                        })
+                    : (0, c.jsxs)("div", {
+                        children: [
+                          (0, c.jsx)("span", {
+                            className: "w-8 mr-4",
+                            children:
+                              j || b
+                                ? (0, c.jsx)(M.A, {
+                                    size: 18,
+                                    className: "text-gy",
+                                  })
+                                : (0, c.jsx)(C.A, {
+                                    sx: {
+                                      color: "#ff6f00",
+                                      fontSize: 24,
+                                      stroke: "#ff6f00",
+                                      strokeWidth: 1,
+                                    },
+                                    onClick: () => {
+                                      P(!1, !0, 1e3, 1);
+                                    },
+                                  }),
+                          }),
+                          (0, c.jsx)(S.A, {
+                            sx: {
+                              color: "#ff6f00",
+                              fontSize: 28,
+                              stroke: "#ff6f00",
+                              strokeWidth: 1,
+                            },
+                            onClick: () =>
+                              E((0, h.A)((0, h.A)({}, w), {}, { edit: !0 })),
+                          }),
+                        ],
+                      }),
+                ],
+              }),
+              (0, c.jsxs)("div", {
+                className: "flex justify-end items-center text-lg px-2",
+                children: [
+                  o("cat_sort.sort_by"),
+                  "\uff1a",
+                  (0, c.jsx)("span", {
+                    className: "".concat("mr" === w.o ? "text-og" : ""),
+                    onClick: () => {
+                      (P(!1, !1, 100, z, w.folder_id, "mr"),
+                        E((0, h.A)((0, h.A)({}, w), {}, { o: "mr" })));
+                    },
+                    children: o("member.favorite_time"),
+                  }),
+                  "\uff5c",
+                  (0, c.jsx)("span", {
+                    className: "".concat("mp" === w.o ? "text-og" : ""),
+                    onClick: () => {
+                      (P(!1, !1, 100, z, w.folder_id, "mp"),
+                        E((0, h.A)((0, h.A)({}, w), {}, { o: "mp" })));
+                    },
+                    children: o("member.update_time"),
+                  }),
+                ],
+              }),
+              (0, c.jsxs)("div", {
+                className: "flex flex-col justify-center items-center pb-48",
+                children: [
+                  (0, c.jsx)(T.A, {
+                    t: o,
+                    cols: 3,
+                    link: !0,
+                    setting: m,
+                    listName: "favoriteList",
+                    list: f.list,
+                    comicTags: !0,
+                    comicCheck: !0,
+                    logined: x,
+                    editFolder: w,
+                    setEditFolder: E,
+                    setDialogOpen: A,
+                    dialogOpen: k,
+                    showSnackbar: g,
+                  }),
+                  b &&
+                    (0, c.jsx)("img", {
+                      src: "/images/loading.gif",
+                      alt: "loading",
+                      width: "80px",
+                    }),
+                  (null === (n = f.list) || void 0 === n ? void 0 : n.length) >
+                    0 &&
+                    (B
+                      ? (0, c.jsx)("button", {
+                          onClick: () =>
+                            ((e) => {
+                              if (!B) return;
+                              D(e);
+                              const { folder_id: t, o: s } = w;
+                              P(!0, !1, 1e3, e, t, s);
+                            })(z + 1),
+                          className:
+                            "w-11/12 rounded-sm text-white p-2 bg-og shadow-lg shadow-stone-700/50",
+                          children: o("comic.load_more"),
+                        })
+                      : (0, c.jsx)("p", {
+                          className: "text-center mt-10",
+                          children: o("comic.end_of_list"),
+                        })),
+                ],
+              }),
+            ],
+          }),
+        });
+      };
+      var z = s(6580),
+        D = s(9506);
+      const R = (e) => {
+        var t, s, l;
+        const { t: n, logined: o, showSnackbar: m } = e,
+          x = (0, z.Zp)(),
+          g = (0, i.j)(),
+          {
+            tagsList: u,
+            isLoading: p,
+            isRefreshing: f,
+          } = (0, i.G)((e) => e.member),
+          [b, j] = (0, a.useState)({ edit: !1, select: [] }),
+          v = function () {
+            let e =
+                arguments.length > 0 && void 0 !== arguments[0] && arguments[0],
+              t =
+                arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
+            (g((0, d.VW)({ isLoading: !0, isLoadMore: e, isRefreshing: t })),
+              t && g((0, d.a9)("tagsList")),
+              g((0, r.s3)()));
+          };
+        (0, a.useEffect)(() => {
+          var e;
+          o &&
+            0 === (null === (e = u.list) || void 0 === e ? void 0 : e.length) &&
+            v();
+        }, [o, null === (t = u.list) || void 0 === t ? void 0 : t.length]);
+        return (0, c.jsx)(c.Fragment, {
+          children: (0, c.jsxs)("div", {
+            className: "w-full bg-white text-bbk dark:bg-bbk dark:text-tgy",
+            children: [
+              (0, c.jsx)("div", {
+                className: "flex justify-between items-end px-4 py-4 text-lg",
+                children: b.edit
+                  ? (0, c.jsxs)(c.Fragment, {
+                      children: [
+                        (0, c.jsxs)("p", {
+                          className: "my-2",
+                          children: [
+                            n("member.selected"),
+                            "\xa0",
+                            (0, c.jsx)("span", {
+                              className: "font-black text-og text-2xl",
+                              children: b.select.length,
+                            }),
+                            "\xa0",
+                            n("member.items"),
+                          ],
+                        }),
+                        (0, c.jsxs)("div", {
+                          className: "my-2",
+                          children: [
+                            (0, c.jsx)("span", {
+                              onClick: async () => {
+                                const e = await g(
+                                  (0, r.rV)({
+                                    type: "remove",
+                                    tags: b.select.toString(),
+                                  }),
+                                ).unwrap();
+                                if (200 === e.code) {
+                                  const { status: t, msg: s } = e.data;
+                                  (m(s, "ok" !== t ? "error" : "success"),
+                                    j(
+                                      (0, h.A)(
+                                        (0, h.A)({}, b),
+                                        {},
+                                        { edit: !1, select: [] },
+                                      ),
+                                    ),
+                                    v());
+                                }
+                              },
+                              children: n("member.delete"),
+                            }),
+                            (0, c.jsx)("span", {
+                              className: "text-og ml-4",
+                              onClick: () =>
+                                j((e) =>
+                                  (0, h.A)(
+                                    (0, h.A)({}, e),
+                                    {},
+                                    { edit: !1, select: [] },
+                                  ),
+                                ),
+                              children: n("member.cancel"),
+                            }),
+                          ],
+                        }),
+                      ],
+                    })
+                  : (0, c.jsxs)(c.Fragment, {
+                      children: [
+                        (0, c.jsxs)("p", {
+                          className: "text-2xl my-2",
+                          children: [
+                            "\u5171\xa0",
+                            (0, c.jsxs)("span", {
+                              className: "font-black",
+                              children: [
+                                (null === (s = u.list) || void 0 === s
+                                  ? void 0
+                                  : s.length) || 0,
+                                "\uff0f50",
+                              ],
+                            }),
+                            "\xa0",
+                            n("member.tags"),
+                          ],
+                        }),
+                        (0, c.jsxs)("div", {
+                          children: [
+                            (0, c.jsx)("span", {
+                              className: "w-8 mr-4",
+                              children:
+                                f || p
+                                  ? (0, c.jsx)(M.A, {
+                                      size: 18,
+                                      className: "text-gy",
+                                    })
+                                  : (0, c.jsx)(C.A, {
+                                      sx: {
+                                        color: "#ff6f00",
+                                        fontSize: 24,
+                                        stroke: "#ff6f00",
+                                        strokeWidth: 1,
+                                      },
+                                      onClick: () => {
+                                        v(!1, !0);
+                                      },
+                                    }),
+                            }),
+                            (0, c.jsx)(S.A, {
+                              sx: {
+                                color: "#ff6f00",
+                                fontSize: 28,
+                                stroke: "#ff6f00",
+                                strokeWidth: 1,
+                              },
+                              onClick: () =>
+                                j((e) =>
+                                  (0, h.A)((0, h.A)({}, e), {}, { edit: !0 }),
+                                ),
+                            }),
+                          ],
+                        }),
+                      ],
+                    }),
+              }),
+              p
+                ? (0, c.jsx)("div", {
+                    className: "w-full flex justify-center pb-40",
+                    children: (0, c.jsx)("img", {
+                      src: "/images/loading.gif",
+                      alt: "loading",
+                      width: "80px",
+                    }),
+                  })
+                : (0, c.jsx)("div", {
+                    className: "grid grid-cols-2 gap-4 w-11/12 mx-auto pb-48",
+                    children:
+                      (null === (l = u.list) || void 0 === l
+                        ? void 0
+                        : l.length) > 0 &&
+                      u.list.map((e, t) =>
+                        (0, c.jsxs)(
+                          "div",
+                          {
+                            className: "flex items-center",
+                            onClick: () => {
+                              if (b.edit)
+                                if (b.select.includes(e.tag)) {
+                                  const t = b.select.filter((t) => t !== e.tag);
+                                  j((e) =>
+                                    (0, h.A)(
+                                      (0, h.A)({}, e),
+                                      {},
+                                      { select: t },
+                                    ),
+                                  );
+                                } else
+                                  j((t) =>
+                                    (0, h.A)(
+                                      (0, h.A)({}, t),
+                                      {},
+                                      { select: [...t.select, e.tag] },
+                                    ),
+                                  );
+                              else x("/search?filter=".concat(e.tag));
+                            },
+                            children: [
+                              b.edit &&
+                                (0, c.jsx)("div", {
+                                  className: "pr-2",
+                                  children: (0, c.jsx)("p", {
+                                    className:
+                                      "border-2 border-solid border-og w-5 h-5 flex justify-center items-center overflow-hidden",
+                                    children: b.select.map(
+                                      (t) =>
+                                        t === e.tag &&
+                                        (0, c.jsx)(
+                                          D.A,
+                                          {
+                                            sx: {
+                                              fontSize: 14,
+                                              color: "#ff6f00",
+                                              stroke: "#ff6f00",
+                                              strokeWidth: 2,
+                                            },
+                                          },
+                                          t,
+                                        ),
+                                    ),
+                                  }),
+                                }),
+                              (0, c.jsxs)("p", {
+                                className:
+                                  "text-center w-28 text-wrap border border-solid border-bk rounded-md p-1 mr-2 dark:border-white\n                     ".concat(
+                                    b.edit && b.select.find((t) => t === e.tag)
+                                      ? "bg-og text-white border-og dark:border-og"
+                                      : "",
+                                  ),
+                                children: ["#", e.tag],
+                              }),
+                              (0, c.jsx)("span", {
+                                className: "text-sm",
+                                children: e.updated_at,
+                              }),
+                            ],
+                          },
+                          e.tag + t,
+                        ),
+                      ),
+                  }),
+            ],
+          }),
+        });
+      };
+      var B = s(7548),
+        P = s(5090),
+        W = s(7738),
+        V = s(2432);
+      const G = (e) => {
+        var t, s, l, n, o, m;
+        const {
+            t: x,
+            setConfig: g,
+            logined: u,
+            memberInfo: p,
+            setting: f,
+            showSnackbar: b,
+          } = e,
+          j = x("member.finished", { returnObjects: !0 }),
+          v = (0, i.j)(),
+          {
+            tasksList: y,
+            isLoading: k,
+            isRefreshing: A,
+          } = (0, i.G)((e) => e.member),
+          [w, C] = (0, a.useState)({ achievement: !1 }),
+          [L, M] = (0, a.useState)({ title: !1, filter: !1 }),
+          [T, E] = (0, a.useState)(null),
+          z = (0, P.Ir)(),
+          [D, R] = (0, a.useState)({
+            alert: !1,
+            message: "",
+            confirm: !1,
+            id: "",
+          }),
+          G = sessionStorage.getItem("taskType") || "title",
+          J = sessionStorage.getItem("taskFilter") || "my",
+          q = {
+            edit: !1,
+            change: "",
+            type: G,
+            typeName:
+              ((H = G),
+              x("title" === H ? "achievement.title" : "achievement.badge")),
+            filter: J,
+            filterName: ((e, t) =>
+              x(
+                "my" === t
+                  ? "title" === e
+                    ? "achievement.my_title"
+                    : "achievement.my_badge"
+                  : "title" === e
+                    ? "achievement.all_titles"
+                    : "achievement.all_badges",
+              ))(G, J),
+            option: [],
+            isModalData: !1,
+          };
+        var H;
+        const [U, Z] = (0, a.useState)(q),
+          Y = (e, t) => {
+            (E(e.currentTarget),
+              M((e) => (0, h.A)((0, h.A)({}, e), {}, { [t]: !0 })));
+          },
+          X = (e) => {
+            (M((t) => (0, h.A)((0, h.A)({}, t), {}, { [e]: !1 })), E(null));
+          },
+          K = async function () {
+            let e =
+                arguments.length > 0 && void 0 !== arguments[0]
+                  ? arguments[0]
+                  : "",
+              t =
+                arguments.length > 1 && void 0 !== arguments[1]
+                  ? arguments[1]
+                  : "",
+              s =
+                arguments.length > 2 && void 0 !== arguments[2] && arguments[2];
+            v((0, d.VW)({ isLoading: !0, isRefreshing: s, isLoadMore: !1 }));
+            const a = await v((0, r.g3)({ type: e, filter: t })).unwrap();
+            if ("" !== a.msg) {
+              const { status: e, msg: t } = a;
+              b(t, "ok" !== e && "error");
+            }
+          },
+          Q = function () {
+            let e =
+              arguments.length > 0 && void 0 !== arguments[0] && arguments[0];
+            (K(U.type, U.filter, e), K("coin"), K("exp"));
+          };
+        ((0, a.useEffect)(() => {
+          var e;
+          u &&
+            0 === (null === (e = y.all) || void 0 === e ? void 0 : e.length) &&
+            Q();
+        }, [u, null === (t = y.all) || void 0 === t ? void 0 : t.length]),
+          (0, a.useEffect)(() => {
+            var e;
+            if (
+              (null === (e = y.all) || void 0 === e ? void 0 : e.length) > 0 &&
+              "title" === U.type
+            ) {
+              var t, s;
+              const e = y.all.find((e) => e.content === p.level_name),
+                a =
+                  (null === e || void 0 === e ? void 0 : e.id) ||
+                  (null === (t = y.all) ||
+                  void 0 === t ||
+                  null === (s = t[0]) ||
+                  void 0 === s
+                    ? void 0
+                    : s.id) ||
+                  "";
+              Z((e) => (0, h.A)((0, h.A)({}, e), {}, { change: a }));
+            }
+          }, [
+            null === (s = y.all) || void 0 === s ? void 0 : s.length,
+            U.type,
+          ]),
+          (0, a.useEffect)(() => {
+            var e;
+            const t =
+              (null === (e = z.find((e) => e.type === U.type)) || void 0 === e
+                ? void 0
+                : e.option) || z[0].option;
+            Z((e) => (0, h.A)((0, h.A)({}, e), {}, { option: t }));
+          }, [U.type, U.edit, w.achievement, Z]));
+        return (0, c.jsxs)(c.Fragment, {
+          children: [
+            (0, c.jsxs)("div", {
+              className: "bg-defaultBg text-bbk dark:bg-bbk dark:text-tgy",
+              children: [
+                (0, c.jsxs)("div", {
+                  className:
+                    "w-full bg-white dark:bg-bbk flex justify-between items-center px-6 h-20",
+                  children: [
+                    (0, c.jsxs)("div", {
+                      className: "flex",
+                      children: [
+                        (0, c.jsxs)("div", {
+                          children: [
+                            (0, c.jsxs)(I.A, {
+                              id: "fade-button-title",
+                              "aria-controls": L.title ? "fade-menu" : void 0,
+                              "aria-haspopup": "true",
+                              "aria-expanded": L.title ? "true" : void 0,
+                              onClick: (e) => Y(e, "title"),
+                              sx: {
+                                color: "#aaa",
+                                fontSize: 15,
+                                paddingLeft: 0,
+                              },
+                              children: [
+                                (0, c.jsx)("span", {
+                                  className: "pr-10",
+                                  children: U.typeName,
+                                }),
+                                (0, c.jsx)(_.A, {
+                                  sx: { color: "#ff6f00", fontSize: 24 },
+                                }),
+                              ],
+                            }),
+                            (0, c.jsx)(F.A, {
+                              id: "fade-menu",
+                              MenuListProps: {
+                                "aria-labelledby": "fade-button",
+                              },
+                              anchorEl: T,
+                              open: L.title,
+                              onClose: () => X("title"),
+                              TransitionComponent: O.A,
+                              sx: (e) => ({
+                                "& .MuiPaper-root": {
+                                  marginTop: e.spacing(0),
+                                  marginLeft: e.spacing(-2),
+                                  width: "30%",
+                                  color: "#757575",
+                                },
+                              }),
+                              children: z.map((e) =>
+                                (0, c.jsx)(
+                                  N.A,
+                                  {
+                                    onClick: () => {
+                                      (X("title"),
+                                        K(e.type, e.option[0].filter),
+                                        sessionStorage.setItem(
+                                          "taskType",
+                                          e.type,
+                                        ),
+                                        sessionStorage.setItem(
+                                          "taskFilter",
+                                          e.option[0].filter,
+                                        ),
+                                        Z(
+                                          (0, h.A)(
+                                            (0, h.A)({}, U),
+                                            {},
+                                            {
+                                              type: e.type,
+                                              typeName: e.name,
+                                              filter: e.option[0].filter,
+                                              filterName: "",
+                                              change: "",
+                                            },
+                                          ),
+                                        ));
+                                    },
+                                    children: e.name,
+                                  },
+                                  e.type,
+                                ),
+                              ),
+                            }),
+                          ],
+                        }),
+                        (0, c.jsxs)("div", {
+                          children: [
+                            (0, c.jsxs)(I.A, {
+                              id: "fade-button-filter",
+                              "aria-controls": L.filter ? "fade-menu" : void 0,
+                              "aria-haspopup": "true",
+                              "aria-expanded": L.filter ? "true" : void 0,
+                              onClick: (e) => Y(e, "filter"),
+                              sx: { color: "#aaa", fontSize: 15 },
+                              children: [
+                                (0, c.jsx)("span", {
+                                  className: "pr-10",
+                                  children:
+                                    U.filterName ||
+                                    (null === (l = U.option[0]) || void 0 === l
+                                      ? void 0
+                                      : l.name),
+                                }),
+                                (0, c.jsx)(_.A, {
+                                  sx: { color: "#ff6f00", fontSize: 24 },
+                                }),
+                              ],
+                            }),
+                            (0, c.jsx)(F.A, {
+                              id: "fade-menu",
+                              MenuListProps: {
+                                "aria-labelledby": "fade-button",
+                              },
+                              anchorEl: T,
+                              open: L.filter,
+                              onClose: () => X("filter"),
+                              TransitionComponent: O.A,
+                              sx: (e) => ({
+                                "& .MuiPaper-root": {
+                                  marginTop: e.spacing(0),
+                                  marginLeft: e.spacing(-2),
+                                  width: "30%",
+                                  color: "#757575",
+                                },
+                              }),
+                              children:
+                                U.option.length > 0 &&
+                                U.option.map((e) =>
+                                  (0, c.jsx)(
+                                    N.A,
+                                    {
+                                      onClick: () => {
+                                        (X("filter"),
+                                          K(e.type, e.filter),
+                                          sessionStorage.setItem(
+                                            "taskType",
+                                            e.type,
+                                          ),
+                                          sessionStorage.setItem(
+                                            "taskFilter",
+                                            e.filter,
+                                          ),
+                                          Z(
+                                            (0, h.A)(
+                                              (0, h.A)({}, U),
+                                              {},
+                                              {
+                                                filter: e.filter,
+                                                filterName: e.name,
+                                              },
+                                            ),
+                                          ));
+                                      },
+                                      children: e.name,
+                                    },
+                                    e.filter,
+                                  ),
+                                ),
+                            }),
+                          ],
+                        }),
+                      ],
+                    }),
+                    "all" !== U.filter &&
+                      (0, c.jsx)("div", {
+                        children: U.edit
+                          ? (0, c.jsx)("div", {
+                              className: "flex justify-around items-center",
+                              children:
+                                Array.isArray(j) &&
+                                j.map((e) =>
+                                  (0, c.jsx)(
+                                    "span",
+                                    {
+                                      className: "w-8 mr-6",
+                                      onClick: () =>
+                                        (async (e) => {
+                                          if (e !== x("member.cancel")) {
+                                            if ("" !== U.change) {
+                                              const e = await v(
+                                                (0, r.WP)({
+                                                  type: U.type,
+                                                  uid: p.uid,
+                                                  task_id: U.change,
+                                                }),
+                                              ).unwrap();
+                                              if (200 === e.code) {
+                                                const {
+                                                  msg: t,
+                                                  errorMsg: s,
+                                                  status: a,
+                                                } = e.data;
+                                                (b(
+                                                  s || t,
+                                                  "ok" !== a
+                                                    ? "error"
+                                                    : "success",
+                                                ),
+                                                  Z(
+                                                    (0, h.A)(
+                                                      (0, h.A)({}, U),
+                                                      {},
+                                                      { edit: !1 },
+                                                    ),
+                                                  ));
+                                              }
+                                            }
+                                          } else
+                                            Z(
+                                              (0, h.A)(
+                                                (0, h.A)({}, U),
+                                                {},
+                                                { edit: !1 },
+                                              ),
+                                            );
+                                        })(e),
+                                      children: e,
+                                    },
+                                    e,
+                                  ),
+                                ),
+                            })
+                          : (0, c.jsxs)("div", {
+                              children: [
+                                (0, c.jsx)("span", {
+                                  className: "w-8 mr-6",
+                                  children: (0, c.jsx)(B.A, {
+                                    sx: { color: "#ff6f00", fontSize: 24 },
+                                    onClick: () =>
+                                      C(
+                                        (0, h.A)(
+                                          (0, h.A)({}, w),
+                                          {},
+                                          { achievement: !0 },
+                                        ),
+                                      ),
+                                  }),
+                                }),
+                                (0, c.jsx)(S.A, {
+                                  sx: {
+                                    color: "#ff6f00",
+                                    fontSize: 28,
+                                    stroke: "#ff6f00",
+                                    strokeWidth: 1,
+                                  },
+                                  onClick: () =>
+                                    Z(
+                                      (0, h.A)(
+                                        (0, h.A)({}, U),
+                                        {},
+                                        { edit: !0 },
+                                      ),
+                                    ),
+                                }),
+                              ],
+                            }),
+                      }),
+                  ],
+                }),
+                (0, c.jsx)("div", {
+                  className: "flex flex-col pb-48",
+                  children: k
+                    ? (0, c.jsx)("div", {
+                        className: "mx-auto",
+                        children: (0, c.jsx)("img", {
+                          src: "/images/loading.gif",
+                          alt: "loading",
+                          width: "80px",
+                        }),
+                      })
+                    : (0, c.jsx)("ul", {
+                        className:
+                          "bg-defaultBg grid grid-cols-4 text-center px-1 overflow-hidden dark:bg-bbk dark:text-tgy",
+                        children:
+                          (null === (n = y.all) || void 0 === n
+                            ? void 0
+                            : n.length) > 0 &&
+                          y.all.map((e) =>
+                            (0, c.jsxs)(
+                              "li",
+                              {
+                                className:
+                                  "border border-solid border-[#aaa] flex flex-col justify-center items-center h-40 p-4 \n                      ".concat(
+                                    e.done ? "bg-white dark:bg-bbk" : "",
+                                    "\n                      ",
+                                  ),
+                                onClick: () =>
+                                  U.edit &&
+                                  "title" === U.type &&
+                                  Z(
+                                    (0, h.A)(
+                                      (0, h.A)({}, U),
+                                      {},
+                                      { change: e.id },
+                                    ),
+                                  ),
+                                children: [
+                                  "title" === U.type &&
+                                    (U.edit
+                                      ? (0, c.jsxs)("div", {
+                                          className: "text-lg ".concat(
+                                            U.change === e.id ? "text-og" : "",
+                                          ),
+                                          children: [
+                                            (0, c.jsx)("p", {
+                                              className: "".concat(
+                                                e.done ? "" : "text-[#aaa]",
+                                              ),
+                                              children: e.content,
+                                            }),
+                                            (0, c.jsx)("p", {
+                                              className:
+                                                "text-[#aaa] text-base",
+                                              children: e.name,
+                                            }),
+                                          ],
+                                        })
+                                      : (0, c.jsxs)("div", {
+                                          className: "text-lg ".concat(
+                                            p.level_name === e.content
+                                              ? "text-og"
+                                              : "",
+                                          ),
+                                          children: [
+                                            (0, c.jsx)("p", {
+                                              className: "".concat(
+                                                e.done ? "" : "text-[#aaa]",
+                                              ),
+                                              children: e.content,
+                                            }),
+                                            (0, c.jsx)("p", {
+                                              className:
+                                                "text-[#aaa] text-base",
+                                              children: e.name,
+                                            }),
+                                          ],
+                                        })),
+                                  "badge" === U.type &&
+                                    (0, c.jsxs)("div", {
+                                      className: "text-[#aaa]",
+                                      onClick: () => {
+                                        const t =
+                                          "\u78ba\u5b9a\u82b1\u8cbb\u300e"
+                                            .concat(
+                                              e.coin,
+                                              "\u300fJ coin \u8cfc\u8cb7\u300e",
+                                            )
+                                            .concat(
+                                              e.name,
+                                              "\u300f\u55ce\uff1f",
+                                            );
+                                        "all" === U.filter &&
+                                          R(
+                                            (0, h.A)(
+                                              (0, h.A)({}, D),
+                                              {},
+                                              {
+                                                alert: !0,
+                                                message: t,
+                                                id: e.id,
+                                              },
+                                            ),
+                                          );
+                                      },
+                                      children: [
+                                        (0, c.jsx)("img", {
+                                          src: f.img_host + e.content,
+                                          alt: e.id,
+                                          width: 50,
+                                          height: 50,
+                                        }),
+                                        (0, c.jsx)("p", {
+                                          className: "mt-2",
+                                          children: e.name,
+                                        }),
+                                        (0, c.jsxs)("p", {
+                                          className:
+                                            "flex justify-around items-center",
+                                          children: [
+                                            (0, c.jsx)("img", {
+                                              src: "/images/coin.png",
+                                              alt: "coin",
+                                              width: 15,
+                                              height: 15,
+                                            }),
+                                            (0, c.jsx)("span", {
+                                              children: e.coin,
+                                            }),
+                                          ],
+                                        }),
+                                      ],
+                                    }),
+                                ],
+                              },
+                              e.id,
+                            ),
+                          ),
+                      }),
+                }),
+              ],
+            }),
+            w.achievement &&
+              (null === (o = y.coin) || void 0 === o ? void 0 : o.length) > 0 &&
+              (null === (m = y.exp) || void 0 === m ? void 0 : m.length) > 0 &&
+              (0, c.jsx)(W.A, {
+                setConfig: g,
+                list: [...y.coin, ...y.exp],
+                dialogOpen: w,
+                setDialogOpen: C,
+                isRefreshing: A,
+                isLoading: k,
+                handleRefresh: () => {
+                  Q(!0);
+                },
+                showSnackbar: b,
+              }),
+            D.alert &&
+              (0, c.jsx)(V.T6, {
+                t: x,
+                edit: D,
+                setEdit: R,
+                handleAction: async (e) => {
+                  const t = await v(
+                    (0, r.y1)({ uid: p.uid, task_id: e }),
+                  ).unwrap();
+                  if (200 === t.code) {
+                    const { msg: e, errorMsg: s, status: a } = t.data;
+                    (b(s || e, 1 !== a ? "error" : "success"),
+                      R(
+                        (0, h.A)(
+                          (0, h.A)({}, D),
+                          {},
+                          { alert: !1, message: "", confirm: !1, id: "" },
+                        ),
+                      ));
+                  }
+                },
+              }),
+          ],
+        });
+      };
+      var J = s(7044);
+      const q = (e) => {
+          var t, s, l;
+          const { t: n, logined: o, memberInfo: m } = e,
+            x = (0, i.j)(),
+            {
+              dailyOption: g,
+              dailyFilter: u,
+              isLoading: p,
+            } = (0, i.G)((e) => e.member),
+            [f, b] = (0, a.useState)(null),
+            j = new Date().getMonth() + 1,
+            [v, y] = (0, a.useState)({ filter: "2025", list: j, img: "" }),
+            [k, A] = (0, a.useState)({ dailyImg: !1 });
+          (0, a.useEffect)(() => {
+            var e;
+            m &&
+              o &&
+              0 ===
+                (null === (e = g.list) || void 0 === e ? void 0 : e.length) &&
+              (x((0, r.dy)(m.uid)), w(v.filter));
+          }, [o, null === (t = g.list) || void 0 === t ? void 0 : t.length]);
+          const w = async (e) => {
+            (x((0, d.a9)("dailyFilter")), x((0, r.Aw)(e)));
+          };
+          return (0, c.jsx)(c.Fragment, {
+            children: (0, c.jsxs)("div", {
+              className: "bg-defaultBg text-bbk dark:bg-bbk dark:text-tgy",
+              children: [
+                (0, c.jsxs)("div", {
+                  className:
+                    "w-full bg-white dark:bg-bbk flex justify-between items-center px-6 h-20",
+                  children: [
+                    (0, c.jsx)("div", {
+                      className: "flex",
+                      children: (0, c.jsxs)("div", {
+                        className: "flex items-center",
+                        children: [
+                          (0, c.jsx)("span", {
+                            className: "font-black text-2xl mr-4",
+                            children: n("daily.annual_full_check_in_rewards"),
+                          }),
+                          (0, c.jsxs)(I.A, {
+                            id: "fade-button",
+                            "aria-controls": Boolean(f) ? "fade-menu" : void 0,
+                            "aria-haspopup": "true",
+                            "aria-expanded": Boolean(f) ? "true" : void 0,
+                            onClick: (e) => b(e.currentTarget),
+                            sx: { color: "#aaa", fontSize: 15, paddingLeft: 0 },
+                            children: [
+                              (0, c.jsx)("span", {
+                                className: "pr-10",
+                                children: v.filter || "2025",
+                              }),
+                              (0, c.jsx)(_.A, {
+                                sx: { color: "#ff6f00", fontSize: 24 },
+                              }),
+                            ],
+                          }),
+                          (0, c.jsx)(F.A, {
+                            id: "fade-menu",
+                            MenuListProps: { "aria-labelledby": "fade-button" },
+                            anchorEl: f,
+                            open: Boolean(f),
+                            onClose: () => b(null),
+                            TransitionComponent: O.A,
+                            sx: (e) => ({
+                              "& .MuiPaper-root": {
+                                marginTop: e.spacing(0),
+                                marginLeft: e.spacing(-2),
+                                color: "#757575",
+                                width: "30%",
+                              },
+                            }),
+                            children:
+                              (null === (s = g.list) || void 0 === s
+                                ? void 0
+                                : s.length) > 0
+                                ? g.list.map((e) =>
+                                    (0, c.jsx)(
+                                      N.A,
+                                      {
+                                        onClick: () => {
+                                          (w(e.title),
+                                            y(
+                                              (0, h.A)(
+                                                (0, h.A)({}, v),
+                                                {},
+                                                { filter: e.title },
+                                              ),
+                                            ),
+                                            b(null));
+                                        },
+                                        children: e.title,
+                                      },
+                                      e.title,
+                                    ),
+                                  )
+                                : ["2024", "2025"].map((e) =>
+                                    (0, c.jsx)(
+                                      N.A,
+                                      {
+                                        onClick: () => {
+                                          (w(e),
+                                            y(
+                                              (0, h.A)(
+                                                (0, h.A)({}, v),
+                                                {},
+                                                { filter: e },
+                                              ),
+                                            ),
+                                            b(null));
+                                        },
+                                        children: e,
+                                      },
+                                      e,
+                                    ),
+                                  ),
+                          }),
+                        ],
+                      }),
+                    }),
+                    (0, c.jsx)(z.N_, {
+                      to: "/daily",
+                      state: { from: "/member?tab=6" },
+                      className: "bg-og rounded text-white py-3 px-4",
+                      children: n("daily.start_this_month_check_in"),
+                    }),
+                  ],
+                }),
+                (0, c.jsxs)("ul", {
+                  className:
+                    "w-full bg-white dark:bg-bbk flex flex-col justify-center items-center pb-48",
+                  children: [
+                    p &&
+                      (0, c.jsx)("img", {
+                        src: "/images/loading.gif",
+                        alt: "loading",
+                        width: "80px",
+                      }),
+                    (null === (l = u.list) || void 0 === l
+                      ? void 0
+                      : l.length) > 0 &&
+                      u.list.map((e) =>
+                        (0, c.jsxs)(
+                          "li",
+                          {
+                            className:
+                              "relative w-11/12 border border-solid border-gy rounded my-4",
+                            children: [
+                              (0, c.jsx)("div", {
+                                className:
+                                  "absolute top-0 left-0 w-0 h-0 border-t-[80px] border-r-[80px] border-t-red-600 border-r-transparent",
+                              }),
+                              (0, c.jsxs)("span", {
+                                className:
+                                  "absolute top-4 left-4 text-xl text-white",
+                                children: [e.month, "\u6708"],
+                              }),
+                              e.img
+                                ? (0, c.jsx)("img", {
+                                    src: e.img,
+                                    alt: e.id,
+                                    loading: "lazy",
+                                    onLoad: (e) => {
+                                      e.target.style.opacity = "1";
+                                    },
+                                    onError: (e) => {
+                                      e.target.src = "/images/not_sign_yet.png";
+                                    },
+                                    width: "100%",
+                                    className:
+                                      "h-[220px] object-cover object-top",
+                                    style: {
+                                      opacity: "0",
+                                      transition: "opacity 0.5s ease-in-out",
+                                    },
+                                    onClick: () => {
+                                      (A(
+                                        (0, h.A)(
+                                          (0, h.A)({}, k),
+                                          {},
+                                          { dailyImg: !0 },
+                                        ),
+                                      ),
+                                        y(
+                                          (0, h.A)(
+                                            (0, h.A)({}, v),
+                                            {},
+                                            { img: e.img },
+                                          ),
+                                        ));
+                                    },
+                                  })
+                                : (0, c.jsx)("img", {
+                                    src: "/images/not_sign_yet.png",
+                                    alt: e.id,
+                                    loading: "lazy",
+                                    width: "100%",
+                                    className: "h-[220px] object-contain",
+                                  }),
+                            ],
+                          },
+                          e.id,
+                        ),
+                      ),
+                  ],
+                }),
+                k.dailyImg &&
+                  (0, c.jsx)(J.A, {
+                    setDialogOpen: A,
+                    dialogOpen: k,
+                    dailyImgs: v.img,
+                  }),
+              ],
+            }),
+          });
+        },
+        H = (e) => {
+          var t, s, l;
+          const { t: n, logined: o, setting: m, showSnackbar: x } = e,
+            g = (0, i.j)(),
+            { watchList: h, isLoading: u } = (0, i.G)((e) => e.member),
+            [p, f] = (0, a.useState)({ folder: !1 }),
+            [b, j] = (0, a.useState)(1),
+            v =
+              null !== (t = h.list) && void 0 !== t && t.length
+                ? Math.ceil(h.total / 20)
+                : 0,
+            y = b <= v && v > 1,
+            [k, A] = (0, a.useState)({
+              edit: !1,
+              type: "",
+              folder_id: "",
+              folder_name: "",
+              aid: "",
+              o: "mr",
+              select: "",
+              alert: !1,
+              confirm: !1,
+              message: "",
+              tags_select: "",
+            }),
+            w = function () {
+              let e =
+                  arguments.length > 0 &&
+                  void 0 !== arguments[0] &&
+                  arguments[0],
+                t =
+                  arguments.length > 1 &&
+                  void 0 !== arguments[1] &&
+                  arguments[1],
+                s = arguments.length > 2 ? arguments[2] : void 0,
+                a = arguments.length > 3 ? arguments[3] : void 0;
+              (g((0, d.VW)({ isLoading: !0, isLoadMore: e, isRefreshing: t })),
+                t && g((0, d.a9)("watchList")),
+                setTimeout(() => {
+                  g((0, r.gW)(a || 1));
+                }, s || 0));
+            };
+          (0, a.useEffect)(() => {
+            var e;
+            o &&
+              0 ===
+                (null === (e = h.list) || void 0 === e ? void 0 : e.length) &&
+              w();
+          }, [o, null === (s = h.list) || void 0 === s ? void 0 : s.length]);
+          return (0, c.jsx)(c.Fragment, {
+            children: (0, c.jsxs)("div", {
+              className: "w-full bg-white text-bbk dark:bg-bbk dark:text-tgy",
+              children: [
+                (0, c.jsx)("div", {
+                  className: "text-lg px-2 pt-4",
+                  children: (0, c.jsxs)("p", {
+                    children: [
+                      n("member.total_watched"),
+                      " ",
+                      (0, c.jsx)("span", {
+                        children:
+                          (null === (l = h.list) || void 0 === l
+                            ? void 0
+                            : l.length) || 0,
+                      }),
+                      " ",
+                      n("member.this_comic"),
+                    ],
+                  }),
+                }),
+                (0, c.jsx)("div", {
+                  className: "flex flex-col justify-center items-center pb-48 ",
+                  children: u
+                    ? (0, c.jsx)("img", {
+                        src: "/images/loading.gif",
+                        alt: "loading",
+                        width: "80px",
+                      })
+                    : (0, c.jsxs)(c.Fragment, {
+                        children: [
+                          (0, c.jsx)(T.A, {
+                            t: n,
+                            cols: 3,
+                            link: !0,
+                            setting: m,
+                            listName: "watchList",
+                            list: h.list,
+                            comicTags: !0,
+                            comicCheck: !1,
+                            logined: o,
+                            editFolder: k,
+                            setEditFolder: A,
+                            setDialogOpen: f,
+                            dialogOpen: p,
+                            showSnackbar: x,
+                          }),
+                          y
+                            ? (0, c.jsx)("button", {
+                                onClick: () => {
+                                  if (!y) return;
+                                  const e = b + 1;
+                                  (j(e), w(!0, !1, 1e3, e));
+                                },
+                                className:
+                                  "w-11/12 bg-og rounded-sm text-white p-2",
+                                children: n("comic.load_more"),
+                              })
+                            : (0, c.jsx)("p", {
+                                className: "text-center mt-10",
+                                children: n("comic.end_of_list"),
+                              }),
+                        ],
+                      }),
+                }),
+              ],
+            }),
+          });
+        };
+      var U = s(5360),
+        Z = s(2873),
+        Y = s(223);
+      const X = (e) => {
+        var t, s, l;
+        const {
+            t: n,
+            memberInfo: r,
+            logined: o,
+            setting: d,
+            showSnackbar: m,
+          } = e,
+          x = (0, i.j)(),
+          { forumList: g, isLoading: u } = (0, i.G)((e) => e.forum),
+          [p, f] = (0, a.useState)(1),
+          b =
+            (null === (t = g.list) || void 0 === t ? void 0 : t.length) > 0
+              ? Math.ceil(g.total / 10)
+              : 0,
+          j = p <= b && b > 1,
+          [v, y] = (0, a.useState)({ newTopic: !1, folder: !1 }),
+          [k, A] = (0, a.useState)({
+            newTopic: "",
+            spoilers: !1,
+            reply: "",
+            activeIndex: null,
+          }),
+          w = sessionStorage.getItem("forumFrom");
+        (0, a.useEffect)(() => {
+          var e;
+          o &&
+            ((o &&
+              0 ===
+                (null === (e = g.list) || void 0 === e ? void 0 : e.length)) ||
+              "member" !== w) &&
+            (x((0, Y.f9)("forumList")),
+            x((0, Z.e)({ uid: r.uid, page: p })),
+            sessionStorage.setItem("forumFrom", "member"));
+        }, [
+          x,
+          o,
+          null === (s = g.list) || void 0 === s ? void 0 : s.length,
+          w,
+        ]);
+        return (0, c.jsx)(c.Fragment, {
+          children: (0, c.jsxs)("div", {
+            className: "w-full text-bbk pb-48 pt-4 dark:text-tgy",
+            children: [
+              (0, c.jsx)(U.A, {
+                t: n,
+                logined: o,
+                setting: d,
+                list: g.list,
+                isLoading: u,
+                dialogOpen: v,
+                setDialogOpen: y,
+                responds: k,
+                setResponds: A,
+                handleSendRespond: async (e, t, s) => {
+                  let a = {};
+                  if (
+                    (v.newTopic && "" !== k.newTopic
+                      ? (a = await x((0, Z.T)({ comment: e, aid: t })).unwrap())
+                      : "" !== k.reply &&
+                        "" !== s &&
+                        (a = await x(
+                          (0, Z.T)({ comment: e, aid: t, comment_id: s }),
+                        ).unwrap()),
+                    A((e) =>
+                      (0, h.A)(
+                        (0, h.A)({}, e),
+                        {},
+                        { reply: "", newTopic: "" },
+                      ),
+                    ),
+                    200 === a.code)
+                  ) {
+                    const { msg: e, status: t } = a.data;
+                    m(e, "ok" !== t ? "error" : "success");
+                  }
+                },
+                showReplySection: !1,
+                hasNextPage: j,
+                section: "member_comments",
+              }),
+              (0, c.jsx)("div", {
+                className: "flex justify-center mt-10",
+                children:
+                  (null === (l = g.list) || void 0 === l ? void 0 : l.length) >
+                  0
+                    ? j
+                      ? (0, c.jsx)("button", {
+                          onClick: () => {
+                            return (
+                              (e = p + 1),
+                              void (
+                                j &&
+                                (f(e),
+                                x(
+                                  (0, Y.Ah)({
+                                    isLoading: !1,
+                                    isLoadMore: !0,
+                                    isRefreshing: !1,
+                                  }),
+                                ),
+                                x((0, Z.e)({ uid: r.uid, page: e })),
+                                sessionStorage.setItem("forumFrom", "member"))
+                              )
+                            );
+                            var e;
+                          },
+                          className: "w-11/12 bg-og rounded-sm text-white p-2",
+                          children: n("comic.load_more"),
+                        })
+                      : (0, c.jsx)("p", { children: n("comic.end_of_list") })
+                    : "",
+              }),
+            ],
+          }),
+        });
+      };
+      var K = s(7332),
+        Q = s(2314),
+        $ = s(5263),
+        ee = s(4836),
+        te = s(35),
+        se = s(7392),
+        ae = s(4496),
+        le = s(3193),
+        ie = s(4845);
+      const ne = a.forwardRef(function (e, t) {
+          return (0, c.jsx)(ee.A, (0, h.A)({ direction: "up", ref: t }, e));
+        }),
+        re = (e) => {
+          const {
+              memberInfo: t,
+              setFormData: s,
+              formData: a,
+              dialogOpen: l,
+              setDialogOpen: i,
+              handleSubmit: n,
+            } = e,
+            r =
+              ((0, P.xB)(),
+              (e, t) => {
+                "backdropClick" !== t &&
+                  i((0, h.A)((0, h.A)({}, l), {}, { editInfo: !1 }));
+              }),
+            o = (e) => {
+              const { name: t, value: a } = e.target;
+              s((e) => (0, h.A)((0, h.A)({}, e), {}, { [t]: a }));
+            };
+          return (0, c.jsx)(c.Fragment, {
+            children:
+              l.editInfo &&
+              (0, c.jsxs)(te.A, {
+                fullScreen: !0,
+                open: l.editInfo,
+                onClose: r,
+                TransitionComponent: ne,
+                sx: { "& .MuiPaper-root": { background: "#ededed" } },
+                children: [
+                  (0, c.jsx)(Q.A, {
+                    className: "relative",
+                    children: (0, c.jsx)($.A, {
+                      className: "bg-nbk flex justify-between items-center",
+                      children: (0, c.jsxs)(se.A, {
+                        edge: "start",
+                        color: "inherit",
+                        onClick: r,
+                        "aria-label": "close",
+                        children: [
+                          (0, c.jsx)(K.A, {
+                            sx: {
+                              color: "white",
+                              fontSize: 24,
+                              stroke: "white",
+                              strokeWidth: 1,
+                              marginRight: 2,
+                            },
+                          }),
+                          (0, c.jsx)(ae.A, {
+                            className: "text-lg",
+                            children: "\u500b\u4eba",
+                          }),
+                        ],
+                      }),
+                    }),
+                  }),
+                  (0, c.jsxs)("form", {
+                    className: "bg-white text-lg p-6 my-4",
+                    onSubmit: n,
+                    children: [
+                      (0, c.jsx)("p", {
+                        className: "text-xl py-2",
+                        children: "\u5e33\u6236\u4fe1\u606f",
+                      }),
+                      (0, c.jsx)("hr", {}),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "username",
+                            children: "\u7528\u6236\u540d",
+                          }),
+                          (0, c.jsx)("input", {
+                            type: "text",
+                            name: "username",
+                            id: "username",
+                            readOnly: !0,
+                            defaultValue: t.username,
+                            className:
+                              "bg-defaultBg w-full h-10 px-2 outline-none text-gy",
+                          }),
+                        ],
+                      }),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "email",
+                            children: "EMAIL",
+                          }),
+                          (0, c.jsx)("input", {
+                            type: "email",
+                            name: "email",
+                            id: "email",
+                            readOnly: !0,
+                            defaultValue: t.email,
+                            className:
+                              "bg-defaultBg w-full h-10 px-2 outline-none text-gy",
+                          }),
+                        ],
+                      }),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "nickName",
+                            children: "\u66b1\u7a31",
+                          }),
+                          (0, c.jsx)("input", {
+                            type: "text",
+                            name: "nickName",
+                            id: "nickName",
+                            maxLength: 50,
+                            onChange: (e) => o(e),
+                            defaultValue: a.nickName,
+                            className: "bg-defaultBg w-full h-10 px-2",
+                          }),
+                        ],
+                      }),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "password",
+                            children: "\u5bc6\u78bc",
+                          }),
+                          (0, c.jsx)("input", {
+                            type: "text",
+                            name: "password",
+                            id: "password",
+                            maxLength: 50,
+                            onChange: (e) => o(e),
+                            defaultValue: a.password,
+                            className: "bg-defaultBg w-full h-10 px-2",
+                          }),
+                        ],
+                      }),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "password_confirm",
+                            children: "\u91cd\u65b0\u8f38\u5165\u5bc6\u78bc",
+                          }),
+                          (0, c.jsx)("input", {
+                            type: "text",
+                            name: "password_confirm",
+                            id: "password_confirm",
+                            maxLength: 50,
+                            onChange: (e) => o(e),
+                            defaultValue: a.password_confirm,
+                            className: "bg-defaultBg w-full h-10 px-2",
+                          }),
+                        ],
+                      }),
+                      (0, c.jsx)("p", {
+                        className: "text-xl py-2",
+                        children: "\u500b\u4eba\u4fe1\u606f",
+                      }),
+                      (0, c.jsx)("hr", {}),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "lastName",
+                            children: "\u540d\u5b57",
+                          }),
+                          (0, c.jsx)("input", {
+                            type: "text",
+                            name: "lastName",
+                            id: "lastName",
+                            maxLength: 50,
+                            onChange: (e) => o(e),
+                            defaultValue: a.lastName,
+                            className: "bg-defaultBg w-full h-10 px-2",
+                          }),
+                        ],
+                      }),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "firstName",
+                            children: "\u59d3",
+                          }),
+                          (0, c.jsx)("input", {
+                            type: "text",
+                            name: "firstName",
+                            id: "firstName",
+                            maxLength: 50,
+                            onChange: (e) => o(e),
+                            defaultValue: a.firstName,
+                            className: "bg-defaultBg w-full h-10 px-2",
+                          }),
+                        ],
+                      }),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "birthday",
+                            children: "\u751f\u65e5",
+                          }),
+                          (0, c.jsx)("input", {
+                            type: "date",
+                            name: "birthday",
+                            id: "birthday",
+                            maxLength: 50,
+                            onChange: (e) => o(e),
+                            defaultValue: a.birthday,
+                            className: "bg-defaultBg w-full h-10 px-2",
+                          }),
+                        ],
+                      }),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "relations",
+                            children: "\u95dc\u4fc2",
+                          }),
+                          (0, c.jsx)(le.A, {
+                            sx: {
+                              width: "100%",
+                              "& .MuiInputBase-root": { height: "32px" },
+                            },
+                            children: (0, c.jsxs)(ie.A, {
+                              name: "relations",
+                              id: "relations",
+                              value: a.relations,
+                              onChange: (e) => o(e),
+                              children: [
+                                (0, c.jsx)(N.A, { value: "", children: "---" }),
+                                (0, c.jsx)(N.A, {
+                                  value: "Single",
+                                  children: "\u55ae\u8eab",
+                                }),
+                                (0, c.jsx)(N.A, {
+                                  value: "Taken",
+                                  children: "\u975e\u55ae\u8eab",
+                                }),
+                                (0, c.jsx)(N.A, {
+                                  value: "Open",
+                                  children: "\u958b\u653e",
+                                }),
+                              ],
+                            }),
+                          }),
+                        ],
+                      }),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "relations",
+                            children: "\u8208\u8da3",
+                          }),
+                          (0, c.jsx)(le.A, {
+                            sx: {
+                              width: "100%",
+                              "& .MuiInputBase-root": { height: "32px" },
+                            },
+                            children: (0, c.jsxs)(ie.A, {
+                              name: "sexuality",
+                              id: "sexuality",
+                              value: a.sexuality,
+                              onChange: (e) => o(e),
+                              children: [
+                                (0, c.jsx)(N.A, { value: "", children: "---" }),
+                                (0, c.jsx)(N.A, {
+                                  value: "Guys",
+                                  children: "\u7537",
+                                }),
+                                (0, c.jsx)(N.A, {
+                                  value: "Girls",
+                                  children: "\u5973",
+                                }),
+                                (0, c.jsx)(N.A, {
+                                  value: "Guys + Girls",
+                                  children: "\u7537+\u5973",
+                                }),
+                              ],
+                            }),
+                          }),
+                        ],
+                      }),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "website",
+                            children: "\u7db2\u7ad9",
+                          }),
+                          (0, c.jsx)("input", {
+                            type: "text",
+                            name: "website",
+                            id: "website",
+                            maxLength: 50,
+                            onChange: (e) => o(e),
+                            defaultValue: a.website,
+                            className: "bg-defaultBg w-full h-10 px-2",
+                          }),
+                        ],
+                      }),
+                      (0, c.jsx)("p", {
+                        className: "text-xl py-2",
+                        children: "\u4f4d\u7f6e\u4fe1\u606f",
+                      }),
+                      (0, c.jsx)("hr", {}),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "birthPlace",
+                            children: "\u51fa\u751f\u5730",
+                          }),
+                          (0, c.jsx)("input", {
+                            type: "text",
+                            name: "birthPlace",
+                            id: "birthPlace",
+                            maxLength: 50,
+                            onChange: (e) => o(e),
+                            defaultValue: a.birthPlace,
+                            className: "bg-defaultBg w-full h-10 px-2",
+                          }),
+                        ],
+                      }),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "city",
+                            children: "\u57ce\u5e02",
+                          }),
+                          (0, c.jsx)("input", {
+                            type: "text",
+                            name: "city",
+                            id: "city",
+                            maxLength: 50,
+                            onChange: (e) => o(e),
+                            defaultValue: a.city,
+                            className: "bg-defaultBg w-full h-10 px-2",
+                          }),
+                        ],
+                      }),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "country",
+                            children: "\u570b\u5bb6",
+                          }),
+                          (0, c.jsx)("input", {
+                            type: "text",
+                            name: "country",
+                            id: "country",
+                            maxLength: 50,
+                            onChange: (e) => o(e),
+                            defaultValue: a.country,
+                            className: "bg-defaultBg w-full h-10 px-2",
+                          }),
+                        ],
+                      }),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "occupation",
+                            children: "\u8077\u696d",
+                          }),
+                          (0, c.jsx)("input", {
+                            type: "text",
+                            name: "occupation",
+                            id: "occupation",
+                            maxLength: 50,
+                            onChange: (e) => o(e),
+                            defaultValue: a.occupation,
+                            className: "bg-defaultBg w-full h-10 px-2",
+                          }),
+                        ],
+                      }),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "company",
+                            children: "\u516c\u53f8",
+                          }),
+                          (0, c.jsx)("input", {
+                            type: "text",
+                            name: "company",
+                            id: "company",
+                            maxLength: 50,
+                            onChange: (e) => o(e),
+                            defaultValue: a.company,
+                            className: "bg-defaultBg w-full h-10 px-2",
+                          }),
+                        ],
+                      }),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "school",
+                            children: "\u5b78\u6821",
+                          }),
+                          (0, c.jsx)("input", {
+                            type: "text",
+                            name: "school",
+                            id: "school",
+                            maxLength: 50,
+                            onChange: (e) => o(e),
+                            defaultValue: a.school,
+                            className: "bg-defaultBg w-full h-10 px-2",
+                          }),
+                        ],
+                      }),
+                      (0, c.jsx)("p", {
+                        className: "text-xl py-2",
+                        children: "\u96a8\u6a5f\u4fe1\u606f",
+                      }),
+                      (0, c.jsx)("hr", {}),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "aboutMe",
+                            children: "\u95dc\u65bc\u6211",
+                          }),
+                          (0, c.jsx)("textarea", {
+                            name: "aboutMe",
+                            id: "aboutMe",
+                            maxLength: 200,
+                            onChange: (e) => o(e),
+                            defaultValue: a.aboutMe,
+                            className: "bg-defaultBg w-full h-28 p-2",
+                          }),
+                        ],
+                      }),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "infoHere",
+                            children: "\u9019\u88e1\u7684",
+                          }),
+                          (0, c.jsx)("textarea", {
+                            name: "infoHere",
+                            id: "infoHere",
+                            maxLength: 200,
+                            onChange: (e) => o(e),
+                            defaultValue: a.infoHere,
+                            className: "bg-defaultBg w-full h-28 p-2",
+                          }),
+                        ],
+                      }),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "collections",
+                            children: "\u6536\u85cf\u6027\u985e\u5225",
+                          }),
+                          (0, c.jsx)("textarea", {
+                            name: "collections",
+                            id: "collections",
+                            maxLength: 200,
+                            onChange: (e) => o(e),
+                            defaultValue: a.collections,
+                            className: "bg-defaultBg w-full h-28 p-2",
+                          }),
+                        ],
+                      }),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "ideal",
+                            children:
+                              "\u6700\u559c\u6b61\u7684\u7406\u60f3\u6027\u4f34\u4fb6",
+                          }),
+                          (0, c.jsx)("textarea", {
+                            name: "ideal",
+                            id: "ideal",
+                            maxLength: 200,
+                            onChange: (e) => o(e),
+                            defaultValue: a.ideal,
+                            className: "bg-defaultBg w-full h-28 p-2",
+                          }),
+                        ],
+                      }),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "erogenic",
+                            children: "\u6211\u7684Erogenic\u5340",
+                          }),
+                          (0, c.jsx)("textarea", {
+                            name: "erogenic",
+                            id: "erogenic",
+                            maxLength: 200,
+                            onChange: (e) => o(e),
+                            defaultValue: a.erogenic,
+                            className: "bg-defaultBg w-full h-28 p-2",
+                          }),
+                        ],
+                      }),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "favorite",
+                            children: "\u6700\u559c\u6b61",
+                          }),
+                          (0, c.jsx)("textarea", {
+                            name: "favorite",
+                            id: "favorite",
+                            maxLength: 200,
+                            onChange: (e) => o(e),
+                            defaultValue: a.favorite,
+                            className: "bg-defaultBg w-full h-28 p-2",
+                          }),
+                        ],
+                      }),
+                      (0, c.jsxs)("div", {
+                        className: "mt-4",
+                        children: [
+                          (0, c.jsx)("label", {
+                            htmlFor: "hate",
+                            children: "\u6700\u8a0e\u53ad",
+                          }),
+                          (0, c.jsx)("textarea", {
+                            name: "hate",
+                            id: "hate",
+                            maxLength: 200,
+                            defaultValue: a.hate,
+                            onChange: (e) => o(e),
+                            className: "bg-defaultBg w-full h-28 p-2",
+                          }),
+                        ],
+                      }),
+                      (0, c.jsx)("div", {
+                        className: "w-full flex justify-center my-10",
+                        children: (0, c.jsx)("button", {
+                          type: "submit",
+                          className:
+                            "w-11/12 rounded-sm text-white p-2 bg-og shadow-lg shadow-stone-700/50",
+                          children: "\u4fdd\u5b58\u4f7f\u7528\u504f\u597d",
+                        }),
+                      }),
+                    ],
+                  }),
+                ],
+              }),
+          });
+        },
+        oe = (e) => {
+          const { t: t, memberInfo: s, logined: l, showSnackbar: n } = e,
+            o = (0, i.j)(),
+            { infoList: m, isLoading: x } = (0, i.G)((e) => e.member),
+            [g, u] = (0, a.useState)({ editInfo: !1 }),
+            [p, f] = (0, a.useState)({}),
+            b = async () => {
+              const e = await o((0, r.jD)(s.uid)).unwrap();
+              f(e);
+            };
+          (0, a.useEffect)(() => {
+            l && 0 === Object.keys(m).length && b();
+          }, [l, Object.keys(m).length]);
+          return (0, c.jsxs)(c.Fragment, {
+            children: [
+              (0, c.jsx)("div", {
+                className:
+                  "w-full bg-defaultBg text-bbk dark:bg-bk dark:text-tgy",
+                children: x
+                  ? (0, c.jsx)("div", {
+                      className: "w-full flex justify-center pb-48",
+                      children: (0, c.jsx)("img", {
+                        src: "/images/loading.gif",
+                        alt: "loading",
+                        width: "80px",
+                      }),
+                    })
+                  : (0, c.jsxs)("ul", {
+                      className: "pt-4 text-lg",
+                      children: [
+                        (0, c.jsxs)("li", {
+                          className:
+                            "bg-white dark:bg-bbk flex justify-between px-4 py-2 my-1",
+                          children: [
+                            (0, c.jsx)("span", { children: t("info.account") }),
+                            (0, c.jsx)("span", { children: s.username }),
+                          ],
+                        }),
+                        (0, c.jsxs)("li", {
+                          className:
+                            "bg-white dark:bg-bbk flex justify-between px-4 py-2 my-1",
+                          children: [
+                            (0, c.jsx)("span", { children: "EMAIL" }),
+                            (0, c.jsx)("span", { children: s.email }),
+                          ],
+                        }),
+                        (0, c.jsxs)("li", {
+                          className:
+                            "bg-white dark:bg-bbk flex justify-between px-4 py-2 my-1",
+                          children: [
+                            (0, c.jsx)("span", {
+                              children: t("info.password"),
+                            }),
+                            (0, c.jsx)("span", {
+                              className: "text-og",
+                              onClick: () =>
+                                u(
+                                  (0, h.A)(
+                                    (0, h.A)({}, g),
+                                    {},
+                                    { editInfo: !0 },
+                                  ),
+                                ),
+                              children: t("member.modify"),
+                            }),
+                          ],
+                        }),
+                      ],
+                    }),
+              }),
+              g.editInfo &&
+                (0, c.jsx)(re, {
+                  memberInfo: s,
+                  infoList: m,
+                  formData: p,
+                  setFormData: f,
+                  dialogOpen: g,
+                  setDialogOpen: u,
+                  handleSubmit: async (e) => {
+                    (e.preventDefault(), o((0, d.a9)("infoList")));
+                    const t = await o(
+                        (0, r.rb)({ uid: s.uid, formData: p }),
+                      ).unwrap(),
+                      { errorMsg: a, code: l } = t;
+                    if (200 === l) {
+                      const e = a,
+                        t =
+                          null !== a && void 0 !== a && a.includes("failed")
+                            ? "error"
+                            : "success";
+                      n(e, t);
+                    }
+                    b();
+                  },
+                }),
+            ],
+          });
+        };
+      var de = s(2692),
+        ce = s(4290),
+        me = s(7152),
+        xe = s(5412),
+        ge = s(6596);
+      const he = (e) => {
+        var t, s;
+        const {
+            t: l,
+            i18n: n,
+            memberInfo: r,
+            setting: o,
+            setConfig: d,
+            showSnackbar: m,
+          } = e,
+          x = (0, i.j)(),
+          [g, u] = (0, a.useState)({
+            setting: !1,
+            imageSource: !1,
+            darkMode: !1,
+            lang: !1,
+            watchAds: !1,
+            logout: !1,
+          }),
+          p = (0, P.l3)(),
+          f =
+            null ===
+              (t = JSON.parse(localStorage.getItem("adsContent")).link) ||
+            void 0 === t
+              ? void 0
+              : t.exchange_link,
+          b = f
+            ? f.show_max -
+              (null === (s = f.first_links) || void 0 === s ? void 0 : s.length)
+            : 1,
+          { items: j } = (0, xe.g9)(
+            null === f || void 0 === f ? void 0 : f.second_links,
+            b,
+          ),
+          v = [
+            ...((null === f || void 0 === f ? void 0 : f.first_links) || []),
+            ...j,
+          ],
+          [y, k] = (0, a.useState)(() => {
+            const e = localStorage.getItem("lang");
+            return "0" === e ? "zh-TW" : "1" === e ? "zh-CN" : "zh-TW";
+          });
+        return (0, c.jsx)(c.Fragment, {
+          children: (0, c.jsxs)("div", {
+            className: "w-full text-[#aaa] dark:text-tgy pb-40",
+            children: [
+              (0, c.jsx)("ul", {
+                className: "pt-1 text-base",
+                children: (0, c.jsxs)("div", {
+                  className: "mt-5",
+                  children: [
+                    Array.isArray(p[0].new) &&
+                      p[0].new.map((e) =>
+                        (0, c.jsxs)(
+                          "li",
+                          {
+                            className:
+                              "bg-white flex justify-between items-center px-4 py-2 my-1 dark:bg-nbk",
+                            children: [
+                              (0, c.jsx)("span", {
+                                className: "text-bbk dark:text-tgy",
+                                children: e.title,
+                              }),
+                              e.name === l("setting.view_articles")
+                                ? (0, c.jsx)("span", {
+                                    onClick: () =>
+                                      u(
+                                        (0, h.A)(
+                                          (0, h.A)({}, g),
+                                          {},
+                                          { setting: !0 },
+                                        ),
+                                      ),
+                                    children: e.name,
+                                  })
+                                : (0, c.jsx)("a", {
+                                    href: e.link,
+                                    target: "blank",
+                                    rel: "noreferrer",
+                                    children: e.name,
+                                  }),
+                            ],
+                          },
+                          e.name,
+                        ),
+                      ),
+                    Array.isArray(v) &&
+                      v.map((e, t) =>
+                        (0, c.jsxs)(
+                          "li",
+                          {
+                            className:
+                              "bg-white flex justify-between items-center px-4 py-2 my-1 dark:bg-nbk",
+                            children: [
+                              (0, c.jsx)("span", {
+                                className: "text-bbk dark:text-tgy",
+                                children: 0 === t && l("setting.site_link"),
+                              }),
+                              (0, c.jsx)("a", {
+                                href: e.link,
+                                target: "blank",
+                                rel: "noreferrer",
+                                children: e.name,
+                              }),
+                            ],
+                          },
+                          e.name,
+                        ),
+                      ),
+                    Array.isArray(p[2].setting) &&
+                      p[2].setting.map((e) =>
+                        (0, c.jsxs)(
+                          "li",
+                          {
+                            className:
+                              "bg-white flex justify-between items-center px-4 py-2 my-1 dark:bg-nbk",
+                            children: [
+                              (0, c.jsx)("span", {
+                                className: "text-bbk dark:text-tgy",
+                                children: e.title,
+                              }),
+                              e.title === l("setting.language") &&
+                                (0, c.jsxs)("span", {
+                                  className: "text-og flex items-center",
+                                  onClick: () =>
+                                    u(
+                                      (0, h.A)(
+                                        (0, h.A)({}, g),
+                                        {},
+                                        { lang: !0 },
+                                      ),
+                                    ),
+                                  children: [
+                                    e.name,
+                                    (0, c.jsx)(de.A, {
+                                      className: "text-bbk dark:text-tgy",
+                                    }),
+                                  ],
+                                }),
+                              e.title === l("setting.switch_image_source") &&
+                                (0, c.jsxs)("span", {
+                                  className: "text-og flex items-center",
+                                  onClick: () =>
+                                    u(
+                                      (0, h.A)(
+                                        (0, h.A)({}, g),
+                                        {},
+                                        { imageSource: !0 },
+                                      ),
+                                    ),
+                                  children: [
+                                    e.name,
+                                    (0, c.jsx)(de.A, {
+                                      className: "text-bbk dark:text-tgy",
+                                    }),
+                                  ],
+                                }),
+                              e.title === l("setting.night_mode") &&
+                                (0, c.jsxs)("div", {
+                                  className: "text-og flex items-center",
+                                  children: [
+                                    (0, c.jsx)(ce.A, { isButtonVisible: !0 }),
+                                    (0, c.jsx)(de.A, {
+                                      className: "text-bbk dark:text-tgy",
+                                    }),
+                                  ],
+                                }),
+                            ],
+                          },
+                          e.name,
+                        ),
+                      ),
+                    Array.isArray(p[3].sponsor) &&
+                      p[3].sponsor.map((e, t) =>
+                        (0, c.jsxs)(
+                          "li",
+                          {
+                            className:
+                              "bg-white flex justify-between items-center px-4 py-2 my-1 dark:bg-nbk",
+                            children: [
+                              (0, c.jsx)("span", {
+                                className: "text-bbk dark:text-tgy",
+                                children: e.title,
+                              }),
+                              0 === t
+                                ? (0, c.jsx)("a", {
+                                    href: o.donate_url,
+                                    target: "blank",
+                                    rel: "noreferrer",
+                                    children: e.name,
+                                  })
+                                : (0, c.jsx)("button", {
+                                    onClick: () =>
+                                      u(
+                                        (0, h.A)(
+                                          (0, h.A)({}, g),
+                                          {},
+                                          { watchAds: !0 },
+                                        ),
+                                      ),
+                                    children: e.name,
+                                  }),
+                            ],
+                          },
+                          e.name,
+                        ),
+                      ),
+                    Array.isArray(p[4].contact) &&
+                      p[4].contact.map((e) =>
+                        (0, c.jsxs)(
+                          "li",
+                          {
+                            className:
+                              "bg-white flex justify-between items-center px-4 py-2 my-1 dark:bg-nbk",
+                            children: [
+                              (0, c.jsx)("span", {
+                                className: "text-bbk dark:text-tgy",
+                                children: e.title,
+                              }),
+                              (0, c.jsx)("a", {
+                                href: e.link,
+                                target: "blank",
+                                rel: "noreferrer",
+                                children: e.name,
+                              }),
+                            ],
+                          },
+                          e.name,
+                        ),
+                      ),
+                    null !== r &&
+                      Array.isArray(p[5].logout) &&
+                      p[5].logout.map((e) =>
+                        (0, c.jsx)(
+                          "li",
+                          {
+                            className:
+                              "bg-white flex justify-center items-center px-4 py-4 my-1  dark:bg-nbk",
+                            onClick: () =>
+                              u((0, h.A)((0, h.A)({}, g), {}, { logout: !0 })),
+                            children: (0, c.jsx)("span", {
+                              className: "text-og",
+                              children: e.name,
+                            }),
+                          },
+                          e.name,
+                        ),
+                      ),
+                  ],
+                }),
+              }),
+              (g.setting || g.lang || g.logout) &&
+                (0, c.jsx)(W.A, {
+                  setDialogOpen: u,
+                  dialogOpen: g,
+                  langChange: y,
+                  setLangChange: k,
+                  memberInfo: r,
+                  clearAuth: me.q0,
+                  switchLanguage: () => {
+                    n.changeLanguage(y);
+                    const e = "zh-CN" === y ? "1" : "0";
+                    (localStorage.setItem("lang", e),
+                      d((t) => (0, h.A)((0, h.A)({}, t), {}, { lang: e })),
+                      x((0, ge.eB)(e)));
+                  },
+                  showSnackbar: m,
+                  setConfig: d,
+                }),
+              (0, c.jsx)(J.A, { setDialogOpen: u, dialogOpen: g }),
+            ],
+          }),
+        });
+      };
+      var ue = s(7257),
+        pe = s(800);
+      const fe = (e) => {
+          var t, s;
+          const {
+              t: l,
+              logined: n,
+              unread: m,
+              unreadCount: x,
+              openIndex: g,
+              setOpenIndex: u,
+            } = e,
+            p = (0, i.j)(),
+            { isLoading: f, notificationList: b } = (0, i.G)((e) => e.member),
+            [j, v] = (0, a.useState)(1),
+            [y, k] = (0, a.useState)("all"),
+            [A, w] = (0, a.useState)({ notifAds: !1 }),
+            N = "all" !== y ? m[y] : x,
+            _ = N > 0 ? Math.ceil(N / 20) : 0,
+            C = j < _ && _ > 1,
+            S = function () {
+              let e =
+                  arguments.length > 0 &&
+                  void 0 !== arguments[0] &&
+                  arguments[0],
+                t =
+                  arguments.length > 1 &&
+                  void 0 !== arguments[1] &&
+                  arguments[1],
+                s =
+                  arguments.length > 2 && void 0 !== arguments[2]
+                    ? arguments[2]
+                    : 0,
+                a =
+                  arguments.length > 3 && void 0 !== arguments[3]
+                    ? arguments[3]
+                    : "all",
+                l =
+                  arguments.length > 4 && void 0 !== arguments[4]
+                    ? arguments[4]
+                    : 1;
+              (t && (v(1), p((0, d.a9)("notificationList"))),
+                p((0, d.VW)({ isLoading: !0, isLoadMore: e, isRefreshing: t })),
+                setTimeout(() => {
+                  p((0, r.$e)({ type: a, page: l }));
+                }, s));
+            };
+          (0, a.useEffect)(() => {
+            var e;
+            n &&
+              0 ===
+                (null === (e = b.list) || void 0 === e ? void 0 : e.length) &&
+              S();
+          }, [n, b.list]);
+          const L = async (e, t) => {
+            200 ===
+              (await p((0, r.mz)({ id: e, read: t ? 0 : 1 })).unwrap()).code &&
+              (S(), p((0, r.Zg)()));
+          };
+          return (
+            (0, a.useEffect)(() => {
+              document.querySelectorAll("img").forEach((e) => {
+                e.src.includes("discordapp") &&
+                  (e.style.setProperty("width", "300px", "important"),
+                  e.style.setProperty("height", "300px", "important"));
+              });
+            }, [b, y, g]),
+            (0, c.jsxs)(c.Fragment, {
+              children: [
+                (0, c.jsxs)("div", {
+                  className: "w-full text-bbk dark:bg-bbk dark:text-tgy",
+                  children: [
+                    (0, c.jsx)("div", {
+                      className: "flex bg-white p-4 dark:bg-bbk",
+                      children: [
+                        { title: "all", name: "\u5168\u90e8" },
+                        {
+                          title: "comic_follow",
+                          name: l("member.comic_follow"),
+                        },
+                        { title: "site_notice", name: l("member.site_notice") },
+                      ].map((e, t) =>
+                        (0, c.jsxs)(
+                          "ul",
+                          {
+                            className: "transition-colors duration-300 ".concat(
+                              y === e.title ? "text-og " : "",
+                            ),
+                            children: [
+                              (0, c.jsxs)("li", {
+                                className:
+                                  "mx-4 py-2 flex items-center space-x-2",
+                                onClick: () => {
+                                  (k(e.title), u(null), v(1));
+                                },
+                                children: [
+                                  (0, c.jsx)("span", { children: e.name }),
+                                  x > 0 &&
+                                    0 === t &&
+                                    (0, c.jsx)("span", {
+                                      className:
+                                        "bg-red-600 text-white rounded-full w-6 h-6 text-sm flex items-center justify-center",
+                                      children: x,
+                                    }),
+                                  m.comic_follow > 0 &&
+                                    1 === t &&
+                                    (0, c.jsx)("span", {
+                                      className:
+                                        "bg-red-600 text-white rounded-full w-6 h-6 text-sm flex items-center justify-center",
+                                      children: m.comic_follow,
+                                    }),
+                                  m.site_notice > 0 &&
+                                    2 === t &&
+                                    (0, c.jsx)("span", {
+                                      className:
+                                        "bg-red-600 text-white rounded-full w-6 h-6 text-sm flex items-center justify-center",
+                                      children: m.site_notice,
+                                    }),
+                                ],
+                              }),
+                              y === e.title &&
+                                (0, c.jsx)(o.P.div, {
+                                  layoutId: "tab-underline",
+                                  className: "h-1 bg-og rounded",
+                                  style: { width: "100%" },
+                                  transition: {
+                                    type: "spring",
+                                    stiffness: 500,
+                                    damping: 30,
+                                  },
+                                }),
+                            ],
+                          },
+                          e.title,
+                        ),
+                      ),
+                    }),
+                    (null === (t = b.list) || void 0 === t
+                      ? void 0
+                      : t.length) > 0 &&
+                      b.list.map(
+                        (e, t) =>
+                          ("all" === y || e.type === y) &&
+                          (0, c.jsx)(
+                            "div",
+                            {
+                              className:
+                                "w-full bg-white p-4 my-4  dark:bg-nbk",
+                              children: (0, c.jsxs)("div", {
+                                className: "flex",
+                                children: [
+                                  (0, c.jsx)("img", {
+                                    src: "/images/ic_head.png",
+                                    alt: "ic_head",
+                                    className: "w-16 h-16 rounded-full",
+                                  }),
+                                  (0, c.jsxs)("div", {
+                                    className: "flex flex-col ml-2",
+                                    children: [
+                                      (0, c.jsxs)("p", {
+                                        className: "flex items-center",
+                                        children: [
+                                          (0, c.jsx)("span", {
+                                            children:
+                                              "site_notice" === e.type
+                                                ? l("member.site_notice")
+                                                : l("member.comic_follow") +
+                                                  ".",
+                                          }),
+                                          (0, c.jsx)("span", {
+                                            className: "ml-2",
+                                            children: e.date,
+                                          }),
+                                          (0, c.jsx)("span", {
+                                            onClick: () => L(e.id, e.read),
+                                            children: e.read
+                                              ? (0, c.jsx)(pe.A, {
+                                                  className: "ml-2 text-og",
+                                                })
+                                              : (0, c.jsx)(ue.A, {
+                                                  className: "ml-2 text-og",
+                                                }),
+                                          }),
+                                        ],
+                                      }),
+                                      (0, c.jsx)("span", {
+                                        className: "text-lg font-bold",
+                                        children:
+                                          "site_notice" === e.type
+                                            ? e.title
+                                            : "["
+                                                .concat(
+                                                  l("comic.seriesUpdate"),
+                                                  "]",
+                                                )
+                                                .concat(l("comic.notice"))
+                                                .concat(e.content.length) +
+                                              l("library.update"),
+                                      }),
+                                      (0, c.jsxs)("div", {
+                                        children: [
+                                          g === t &&
+                                            (Array.isArray(e.content)
+                                              ? e.content.map(
+                                                  (t) =>
+                                                    "comic_follow" === e.type &&
+                                                    (0, c.jsxs)(
+                                                      "div",
+                                                      {
+                                                        className:
+                                                          "w-full overflow-hidden break-words whitespace-pre-wrap",
+                                                        children: [
+                                                          (0, c.jsxs)("span", {
+                                                            className:
+                                                              "text-gray-400",
+                                                            children: [
+                                                              ".\xa0\xa0",
+                                                              t.updateDate,
+                                                            ],
+                                                          }),
+                                                          (0, c.jsx)("br", {}),
+                                                          (0, c.jsx)(z.N_, {
+                                                            to: "/comic/detail?id=".concat(
+                                                              t.comicId,
+                                                            ),
+                                                            className:
+                                                              "text-og",
+                                                            children:
+                                                              t.comicTitle,
+                                                          }),
+                                                        ],
+                                                      },
+                                                      t.comicId,
+                                                    ),
+                                                )
+                                              : (0, c.jsx)(
+                                                  "div",
+                                                  {
+                                                    className:
+                                                      "text-bbk dark:text-tgy w-full overflow-hidden break-words whitespace-pre-wrap",
+                                                    dangerouslySetInnerHTML: {
+                                                      __html: e.content,
+                                                    },
+                                                  },
+                                                  e.id,
+                                                )),
+                                          (0, c.jsxs)("p", {
+                                            className: "mt-4",
+                                            children: [
+                                              (0, c.jsx)("span", {
+                                                className: "mr-4",
+                                                onClick: () => {
+                                                  L(e.id, e.read);
+                                                },
+                                                children: e.read
+                                                  ? l("member.unread") + "."
+                                                  : l("member.read"),
+                                              }),
+                                              g === t
+                                                ? (0, c.jsx)("span", {
+                                                    className: "text-[#bbb]",
+                                                    onClick: () => {
+                                                      u(g === t ? null : t);
+                                                    },
+                                                    children:
+                                                      l("member.collapse"),
+                                                  })
+                                                : (0, c.jsx)("span", {
+                                                    className: "text-[#bbb]",
+                                                    onClick: () => {
+                                                      (u(g === t ? null : t),
+                                                        e.read ||
+                                                          (L(e.id, e.read),
+                                                          w(
+                                                            (0, h.A)(
+                                                              (0, h.A)({}, J.A),
+                                                              {},
+                                                              { notifAds: !0 },
+                                                            ),
+                                                          )));
+                                                    },
+                                                    children:
+                                                      l("comic.see_more"),
+                                                  }),
+                                            ],
+                                          }),
+                                        ],
+                                      }),
+                                    ],
+                                  }),
+                                ],
+                              }),
+                            },
+                            e.id,
+                          ),
+                      ),
+                    (0, c.jsxs)("div", {
+                      className: "flex justify-center mt-10 pb-48",
+                      children: [
+                        f &&
+                          (0, c.jsx)("img", {
+                            src: "/images/loading.gif",
+                            alt: "loading",
+                            width: "80px",
+                          }),
+                        !f &&
+                          (null === (s = b.list) || void 0 === s
+                            ? void 0
+                            : s.length) > 0 &&
+                          (C
+                            ? (0, c.jsx)("button", {
+                                onClick: () => {
+                                  return (
+                                    (e = j + 1),
+                                    void (C && (v(e), S(!0, !1, 1e3, y, e)))
+                                  );
+                                  var e;
+                                },
+                                className:
+                                  "w-11/12 rounded-sm text-white p-2 bg-og shadow-lg shadow-stone-700/50",
+                                children: l("comic.load_more"),
+                              })
+                            : (0, c.jsx)("p", {
+                                className: "text-center mt-10",
+                                children: l("comic.end_of_list"),
+                              })),
+                      ],
+                    }),
+                  ],
+                }),
+                A.notifAds &&
+                  (0, c.jsx)(J.A, { dialogOpen: A, setDialogOpen: w }),
+              ],
+            })
+          );
+        },
+        be = (e) => {
+          var t, s, l, n, o;
+          const { t: m, logined: x, showSnackbar: g } = e,
+            h = (0, i.j)(),
+            {
+              trackedList: u,
+              isLoading: p,
+              isRefreshing: f,
+            } = (0, i.G)((e) => e.member),
+            [b, j] = (0, a.useState)(1),
+            v =
+              (null === (t = u.list) || void 0 === t ? void 0 : t.length) > 0
+                ? Math.ceil(u.total / 20)
+                : 0,
+            y = b <= v && v > 1,
+            k = function () {
+              let e =
+                  arguments.length > 0 &&
+                  void 0 !== arguments[0] &&
+                  arguments[0],
+                t =
+                  arguments.length > 1 &&
+                  void 0 !== arguments[1] &&
+                  arguments[1],
+                s =
+                  arguments.length > 2 && void 0 !== arguments[2]
+                    ? arguments[2]
+                    : 0,
+                a =
+                  arguments.length > 3 && void 0 !== arguments[3]
+                    ? arguments[3]
+                    : 1;
+              (h((0, d.VW)({ isLoading: !0, isLoadMore: e, isRefreshing: t })),
+                t && (j(1), h((0, d.a9)("trackedList"))),
+                setTimeout(() => {
+                  h((0, r.MM)(a));
+                }, s));
+            };
+          (0, a.useEffect)(() => {
+            var e;
+            x &&
+              0 ===
+                (null === (e = u.list) || void 0 === e ? void 0 : e.length) &&
+              k();
+          }, [x, null === (s = u.list) || void 0 === s ? void 0 : s.length]);
+          const A = () => {
+            k(!1, !0, 1e3);
+          };
+          return (0, c.jsx)(c.Fragment, {
+            children: (0, c.jsxs)("div", {
+              className: "w-full bg-white text-bbk dark:bg-bbk dark:text-tgy",
+              children: [
+                (0, c.jsxs)("div", {
+                  className: "flex justify-between items-center px-6 h-20",
+                  children: [
+                    (0, c.jsxs)("span", {
+                      className: "font-bold text-gy",
+                      children: [
+                        m("member.track_total"),
+                        "\uff1a",
+                        (null === (l = u.list) || void 0 === l
+                          ? void 0
+                          : l.length) || 0,
+                        "\xa0/\xa0500",
+                      ],
+                    }),
+                    (0, c.jsx)("span", {
+                      className: "w-8",
+                      children:
+                        f || p
+                          ? (0, c.jsx)(M.A, { size: 18, className: "text-gy" })
+                          : (0, c.jsx)(C.A, {
+                              sx: {
+                                color: "#ff6f00",
+                                fontSize: 24,
+                                stroke: "#ff6f00",
+                                strokeWidth: 1,
+                              },
+                              onClick: A,
+                            }),
+                    }),
+                  ],
+                }),
+                (0, c.jsx)("div", {
+                  className: "grid grid-cols-2 gap-6 p-3",
+                  children:
+                    (null === (n = u.list) || void 0 === n
+                      ? void 0
+                      : n.length) > 0 &&
+                    u.list.map((e) =>
+                      (0, c.jsxs)(
+                        "div",
+                        {
+                          className: "relative",
+                          children: [
+                            (0, xe._2)(Number(e.update_at)) <= 3 &&
+                              (0, c.jsx)("span", {
+                                className:
+                                  "absolute left-2 top-2 rounded-md bg-red-600 text-white py-1 px-2",
+                                children: m("library.update"),
+                              }),
+                            (0, c.jsx)("span", {
+                              className:
+                                "absolute right-2 top-2 rounded-full bg-og text-white py-1 px-2",
+                              onClick: () =>
+                                (async (e) => {
+                                  const t = await h((0, r.mI)(e)).unwrap(),
+                                    { code: s, data: a } = t;
+                                  200 === s && (g(a, "success"), A());
+                                })(e.id),
+                              children: m("member.unfollow"),
+                            }),
+                            (0, c.jsxs)(z.N_, {
+                              to: "/comic/detail?id=".concat(e.id),
+                              children: [
+                                (0, c.jsx)("img", {
+                                  src: e.image,
+                                  alt: e.id,
+                                  loading: "lazy",
+                                  onLoad: (e) => {
+                                    e.target.style.opacity = "1";
+                                  },
+                                  onError: (e) => {
+                                    e.target.src = "/images/cover_default.jpg";
+                                  },
+                                  className: "object-cover rounded-md min-h-64",
+                                  style: {
+                                    opacity: "0",
+                                    transition: "opacity 0.5s ease-in-out",
+                                  },
+                                }),
+                                (0, c.jsx)("p", {
+                                  className: "text-og truncate m-1",
+                                  children: e.name,
+                                }),
+                              ],
+                            }),
+                          ],
+                        },
+                        e.id,
+                      ),
+                    ),
+                }),
+                (0, c.jsxs)("div", {
+                  className: "flex flex-col justify-center items-center pb-48",
+                  children: [
+                    p &&
+                      (0, c.jsx)("img", {
+                        src: "/images/loading.gif",
+                        alt: "loading",
+                        width: "80px",
+                      }),
+                    (null === (o = u.list) || void 0 === o
+                      ? void 0
+                      : o.length) > 0 &&
+                      (y
+                        ? (0, c.jsx)("button", {
+                            onClick: () => {
+                              return (j((e = b + 1)), void k(!0, !1, 1e3, e));
+                              var e;
+                            },
+                            className:
+                              "w-11/12 rounded-sm text-white p-2 bg-og shadow-lg shadow-stone-700/50",
+                            children: m("comic.load_more"),
+                          })
+                        : (0, c.jsx)("p", {
+                            className: "text-center mt-4",
+                            children: m("comic.end_of_list"),
+                          })),
+                  ],
+                }),
+              ],
+            }),
+          });
+        };
+      var je = s(787),
+        ve = s(6733),
+        ye = s(7947),
+        ke = s(9011),
+        Ae = s(1299);
+      const we = (e) => {
+        const {
+          t: t,
+          logined: s,
+          list: l,
+          title: i,
+          link: n,
+          setting: r,
+          cols: o,
+          comicTags: d,
+          comicMark: m,
+          comicCheck: x,
+          cardPadding: g,
+          editFolder: u,
+          setEditFolder: p,
+          isWeekly: f,
+          handleEngagementAction: b,
+          favoriteSave: j,
+        } = e;
+        ((0, a.useRef)(null), (0, a.useRef)(!1));
+        return (0, c.jsx)("div", {
+          className:
+            "mx-auto grid grid-cols-2 gap-0 pt-8 dark:bg-nbk dark:text-white",
+          children:
+            Array.isArray(l) &&
+            l.length > 0 &&
+            l.map((e, s) => {
+              var a, l, i;
+              return (0, c.jsxs)(
+                "div",
+                {
+                  className:
+                    "flex flex-col justify-center items-center overflow-hidden",
+                  children: [
+                    (0, c.jsxs)("div", {
+                      className: "relative mt-6 w-11/12 h-auto",
+                      children: [
+                        (0, c.jsx)(z.N_, {
+                          to: n ? "/novels/detail?nid=".concat(e.id) : "#",
+                          children: (0, c.jsx)("img", {
+                            src: e.image,
+                            alt: e.id,
+                            loading: "lazy",
+                            onError: (e) => {
+                              e.target.src = "/images/cover_default.jpg";
+                            },
+                            className:
+                              "animation-click-item object-cover rounded-md w-full min-h-64\n                         ".concat(
+                                u.edit &&
+                                  null !== (a = u.aid) &&
+                                  void 0 !== a &&
+                                  a.split(",").includes(e.id.toString())
+                                  ? "opacity-75"
+                                  : "",
+                                "\n                         ",
+                              ),
+                          }),
+                        }),
+                        u.edit &&
+                          x &&
+                          (0, c.jsx)("div", {
+                            className:
+                              "absolute left-2 top-2 rounded text-white px-[0.2rem]",
+                            onClick: () => {
+                              var t;
+                              const s =
+                                  (null === (t = u.aid) || void 0 === t
+                                    ? void 0
+                                    : t.split(",")) || [],
+                                a = s.includes(e.id)
+                                  ? s.filter((t) => t !== e.id)
+                                  : [...s, e.id];
+                              p((e) =>
+                                (0, h.A)(
+                                  (0, h.A)({}, e),
+                                  {},
+                                  { aid: a.join(",").replace(/^,/, "") },
+                                ),
+                              );
+                            },
+                            children: (0, c.jsx)("p", {
+                              className:
+                                "border-2 border-solid border-og w-6 h-6 flex",
+                              children:
+                                (null === (l = u.aid) || void 0 === l
+                                  ? void 0
+                                  : l.split(",").includes(e.id)) &&
+                                (0, c.jsx)(
+                                  D.A,
+                                  {
+                                    sx: {
+                                      fontSize: 14,
+                                      color: "#ff6f00",
+                                      stroke: "#ff6f00",
+                                      strokeWidth: 2,
+                                    },
+                                  },
+                                  e.id,
+                                ),
+                            }),
+                          }),
+                        f &&
+                          (0, xe._2)(Number(e.update_at)) <= 3 &&
+                          (0, c.jsx)("span", {
+                            className:
+                              "absolute left-2 top-2 rounded bg-red-600 text-white px-[0.1rem]",
+                            children: t("library.update"),
+                          }),
+                        d &&
+                          (0, c.jsx)("div", {
+                            className:
+                              "absolute right-2 top-2 rounded bg-og text-white px-[0.2rem]",
+                            children:
+                              null === (i = e.category) || void 0 === i
+                                ? void 0
+                                : i.title,
+                          }),
+                      ],
+                    }),
+                    (0, c.jsxs)(z.N_, {
+                      to: n ? "/novels/detail?nid=".concat(e.id) : "#",
+                      className: "w-10/12 mx-auto",
+                      children: [
+                        (0, c.jsx)("p", {
+                          className: "truncate py-2 text-og",
+                          children: e.name,
+                        }),
+                        (0, c.jsx)("p", {
+                          className: "truncate text-gy text-t08 dark:text-lgy",
+                          children: e.author,
+                        }),
+                      ],
+                    }),
+                  ],
+                },
+                e.id + s,
+              );
+            }),
+        });
+      };
+      var Ne = s(5858),
+        _e = s(2226),
+        Ce = s(3344);
+      const Se = (e) => {
+          var t, s, l;
+          const { t: n, setting: r, logined: o, showSnackbar: d } = e,
+            m = (0, i.j)(),
+            {
+              novelFavoritesList: x,
+              isLoading: g,
+              isRefreshing: u,
+            } = (0, i.G)((e) => e.novel),
+            [p, f] = (0, a.useState)(null),
+            [b, j] = (0, a.useState)({ login: !1, alert: !1, folder: !1 }),
+            [v, y] = (0, a.useState)(!1),
+            [k, A] = (0, a.useState)(() => ({
+              like: JSON.parse(localStorage.getItem("novelLikeItems") || "[]"),
+              mark: JSON.parse(localStorage.getItem("novelMarkItems") || "[]"),
+            })),
+            [w, T] = (0, a.useState)(ye.x),
+            [E, z] = (0, a.useState)(1),
+            D =
+              null !== (t = x.list) && void 0 !== t && t.length
+                ? Math.ceil(x.total / 20)
+                : 0,
+            R = E < D && D > 1,
+            B = function () {
+              let e =
+                  arguments.length > 0 &&
+                  void 0 !== arguments[0] &&
+                  arguments[0],
+                t =
+                  arguments.length > 1 &&
+                  void 0 !== arguments[1] &&
+                  arguments[1],
+                s =
+                  arguments.length > 2 && void 0 !== arguments[2]
+                    ? arguments[2]
+                    : 0,
+                a =
+                  arguments.length > 3 && void 0 !== arguments[3]
+                    ? arguments[3]
+                    : 1,
+                l =
+                  arguments.length > 4 && void 0 !== arguments[4]
+                    ? arguments[4]
+                    : "",
+                i =
+                  arguments.length > 5 && void 0 !== arguments[5]
+                    ? arguments[5]
+                    : "mr";
+              (t && (z(1), m((0, _e.kX)("novelFavoritesList"))),
+                m(
+                  (0, _e.rX)({ isLoading: !0, isLoadMore: e, isRefreshing: t }),
+                ),
+                setTimeout(() => {
+                  m((0, Ne.EK)({ page: a, folder_id: l, o: i }));
+                }, s));
+            };
+          (0, a.useEffect)(() => {
+            var e;
+            o &&
+              0 ===
+                (null === (e = x.list) || void 0 === e ? void 0 : e.length) &&
+              B();
+          }, [o]);
+          const P = (e, t) => {
+              A((s) => {
+                let a;
+                return (
+                  (a =
+                    "mark" === e
+                      ? s[e].includes(t)
+                        ? s[e].filter((e) => e !== t)
+                        : [...s[e], t]
+                      : s[e].includes(t)
+                        ? s[e]
+                        : [...s[e], t]),
+                  localStorage.setItem(
+                    "novel".concat(
+                      e.charAt(0).toUpperCase() + e.slice(1),
+                      "Items",
+                    ),
+                    JSON.stringify(a),
+                  ),
+                  (0, h.A)((0, h.A)({}, s), {}, { [e]: a })
+                );
+              });
+            },
+            W = async (e, t) => {
+              if ("like" === e) {
+                if (k.like.includes(t))
+                  return void d(n("snack.already_rated"), "success");
+                P("like", t);
+                const e = await m((0, Ne.DQ)({ id: t })).unwrap(),
+                  { code: s, msg: a, status: l } = e;
+                200 === s && d(a, "success" !== l ? "error" : "success");
+              }
+              if ("mark" === e)
+                if (o) {
+                  (y(!0), G(), P("mark", t));
+                  const e = await m((0, Ne.vA)({ nid: t })).unwrap(),
+                    { status: s, msg: a, type: l } = e,
+                    i = "ok" !== s ? "error" : "success";
+                  if ("ok" === s)
+                    switch (l) {
+                      case "add":
+                      case "edit":
+                      case "move":
+                        (T((e) =>
+                          (0, h.A)((0, h.A)({}, e), {}, { aid: t, alert: !1 }),
+                        ),
+                          j((0, h.A)((0, h.A)({}, b), {}, { folder: !0 })));
+                        break;
+                      case "remove":
+                        T((e) => (0, h.A)((0, h.A)({}, e), ye.x));
+                    }
+                  d(a, i);
+                } else
+                  (d(n("login.please_login"), "error"),
+                    j((0, h.A)((0, h.A)({}, b), {}, { login: !0 })));
+            },
+            G = async () => {
+              (m((0, _e.kX)("novelFavoritesList")),
+                await m(
+                  (0, Ne.EK)({ page: 1, folder_id: "", o: "" }),
+                ).unwrap());
+            },
+            J = async (e) => {
+              (y(!0),
+                "del" === e && j((0, h.A)((0, h.A)({}, b), {}, { alert: !0 })));
+              const { folder_id: t, folder_name: s, aid: a } = w;
+              if ("" !== s) {
+                const l = await m(
+                    (0, Ne.iC)({
+                      type: e,
+                      folder_id: t,
+                      folder_name: s,
+                      nid: a,
+                    }),
+                  ).unwrap(),
+                  { status: i, msg: n } = l;
+                i && n && d(n, "ok" !== i ? "error" : "success");
+              } else d(n("comic.added_to_favorites_success"), "success");
+              T((e) => (0, h.A)((0, h.A)({}, e), ye.x));
+            };
+          return (0, c.jsxs)(c.Fragment, {
+            children: [
+              (0, c.jsxs)("div", {
+                className: "w-full bg-white text-bbk dark:bg-bbk dark:text-tgy",
+                children: [
+                  (0, c.jsxs)("div", {
+                    className: "flex justify-between items-center px-6 h-20",
+                    children: [
+                      w.edit
+                        ? (0, c.jsx)("div", { className: "w-4/10" })
+                        : (0, c.jsxs)("div", {
+                            className: "w-4/10",
+                            children: [
+                              (0, c.jsxs)(I.A, {
+                                id: "fade-button",
+                                "aria-controls": Boolean(p)
+                                  ? "fade-menu"
+                                  : void 0,
+                                "aria-haspopup": "true",
+                                "aria-expanded": Boolean(p) ? "true" : void 0,
+                                onClick: (e) => f(e.currentTarget),
+                                sx: {
+                                  color: "#aaa",
+                                  fontSize: 15,
+                                  paddingLeft: 0,
+                                },
+                                children: [
+                                  (0, c.jsx)("span", {
+                                    className: "pr-10",
+                                    children: w.folder_name || "\u5168\u90e8",
+                                  }),
+                                  (0, c.jsx)(_.A, {
+                                    sx: { color: "#ff6f00", fontSize: 24 },
+                                  }),
+                                ],
+                              }),
+                              (0, c.jsxs)(F.A, {
+                                id: "fade-menu",
+                                MenuListProps: {
+                                  "aria-labelledby": "fade-button",
+                                },
+                                anchorEl: p,
+                                open: Boolean(p),
+                                onClose: () => f(null),
+                                TransitionComponent: O.A,
+                                sx: (e) => ({
+                                  "& .MuiPaper-root": {
+                                    marginTop: e.spacing(0),
+                                    marginLeft: e.spacing(-2),
+                                    width: "30%",
+                                    color: "#757575",
+                                  },
+                                }),
+                                children: [
+                                  (0, c.jsx)(N.A, {
+                                    onClick: () => {
+                                      (T(
+                                        (0, h.A)(
+                                          (0, h.A)({}, w),
+                                          {},
+                                          { folder_name: "" },
+                                        ),
+                                      ),
+                                        B(!1, !1, 100, E, "", w.o),
+                                        f(null));
+                                    },
+                                    children: "\u5168\u90e8",
+                                  }),
+                                  (null === (s = x.folder_list) || void 0 === s
+                                    ? void 0
+                                    : s.length) > 0 &&
+                                    x.folder_list.map((e, t) =>
+                                      (0, c.jsx)(
+                                        N.A,
+                                        {
+                                          onClick: () => {
+                                            (B(!1, !1, 100, E, e.FID, w.o),
+                                              T(
+                                                (0, h.A)(
+                                                  (0, h.A)({}, w),
+                                                  {},
+                                                  {
+                                                    folder_id: e.FID,
+                                                    folder_name: e.name,
+                                                  },
+                                                ),
+                                              ),
+                                              f(null));
+                                          },
+                                          children: e.name,
+                                        },
+                                        e.FID,
+                                      ),
+                                    ),
+                                ],
+                              }),
+                            ],
+                          }),
+                      w.edit
+                        ? w.folder_name
+                          ? (0, c.jsxs)("div", {
+                              className:
+                                "w-8/12 flex justify-between items-center",
+                              children: [
+                                (0, c.jsx)("span", {
+                                  onClick: () => {
+                                    (j(
+                                      (0, h.A)(
+                                        (0, h.A)({}, b),
+                                        {},
+                                        { folder: !0 },
+                                      ),
+                                    ),
+                                      T(
+                                        (0, h.A)(
+                                          (0, h.A)({}, w),
+                                          {},
+                                          { type: "edit" },
+                                        ),
+                                      ));
+                                  },
+                                  children: n("member.rename"),
+                                }),
+                                (0, c.jsx)("span", {
+                                  onClick: () =>
+                                    T(
+                                      (0, h.A)(
+                                        (0, h.A)({}, w),
+                                        {},
+                                        {
+                                          type: "del",
+                                          alert: !0,
+                                          message: n("snack.confirm_delete"),
+                                        },
+                                      ),
+                                    ),
+                                  children: n("member.delete_folder"),
+                                }),
+                                (0, c.jsx)("span", {
+                                  onClick: () => {
+                                    (j(
+                                      (0, h.A)(
+                                        (0, h.A)({}, b),
+                                        {},
+                                        { folder: !0 },
+                                      ),
+                                    ),
+                                      T(
+                                        (0, h.A)(
+                                          (0, h.A)({}, w),
+                                          {},
+                                          { type: "move" },
+                                        ),
+                                      ));
+                                  },
+                                  children: n("member.move"),
+                                }),
+                                (0, c.jsx)(L.A, {
+                                  onClick: () => {
+                                    T(
+                                      (0, h.A)(
+                                        (0, h.A)({}, w),
+                                        {},
+                                        {
+                                          type: "del_comic",
+                                          alert: !0,
+                                          message: n("snack.confirm_delete"),
+                                        },
+                                      ),
+                                    );
+                                  },
+                                }),
+                                (0, c.jsx)("span", {
+                                  onClick: () =>
+                                    T(
+                                      (0, h.A)(
+                                        (0, h.A)({}, w),
+                                        {},
+                                        { edit: !1, aid: "" },
+                                      ),
+                                    ),
+                                  children: n("member.cancel"),
+                                }),
+                              ],
+                            })
+                          : (0, c.jsxs)("div", {
+                              className:
+                                "w-7/12 flex justify-between items-center",
+                              children: [
+                                (0, c.jsx)("span", {
+                                  onClick: () => {
+                                    (j(
+                                      (0, h.A)(
+                                        (0, h.A)({}, b),
+                                        {},
+                                        { folder: !0 },
+                                      ),
+                                    ),
+                                      T(
+                                        (0, h.A)(
+                                          (0, h.A)({}, w),
+                                          {},
+                                          { type: "add" },
+                                        ),
+                                      ));
+                                  },
+                                  children: n("member.add_folder"),
+                                }),
+                                (0, c.jsx)("span", {
+                                  onClick: () => {
+                                    (j(
+                                      (0, h.A)(
+                                        (0, h.A)({}, b),
+                                        {},
+                                        { folder: !0 },
+                                      ),
+                                    ),
+                                      T(
+                                        (0, h.A)(
+                                          (0, h.A)({}, w),
+                                          {},
+                                          { type: "move" },
+                                        ),
+                                      ));
+                                  },
+                                  children: n("member.add_to_folder"),
+                                }),
+                                (0, c.jsx)("span", {
+                                  onClick: () =>
+                                    T(
+                                      (0, h.A)(
+                                        (0, h.A)({}, w),
+                                        {},
+                                        { edit: !1 },
+                                      ),
+                                    ),
+                                  children: n("member.cancel"),
+                                }),
+                              ],
+                            })
+                        : (0, c.jsxs)("div", {
+                            children: [
+                              (0, c.jsx)("span", {
+                                className: "w-8 mr-4",
+                                children:
+                                  u || g
+                                    ? (0, c.jsx)(M.A, {
+                                        size: 18,
+                                        className: "text-gy",
+                                      })
+                                    : (0, c.jsx)(C.A, {
+                                        sx: {
+                                          color: "#ff6f00",
+                                          fontSize: 24,
+                                          stroke: "#ff6f00",
+                                          strokeWidth: 1,
+                                        },
+                                        onClick: () => {
+                                          B(!1, !0, 1e3, 1);
+                                        },
+                                      }),
+                              }),
+                              (0, c.jsx)(S.A, {
+                                sx: {
+                                  color: "#ff6f00",
+                                  fontSize: 28,
+                                  stroke: "#ff6f00",
+                                  strokeWidth: 1,
+                                },
+                                onClick: () =>
+                                  T(
+                                    (0, h.A)((0, h.A)({}, w), {}, { edit: !0 }),
+                                  ),
+                              }),
+                            ],
+                          }),
+                    ],
+                  }),
+                  (0, c.jsxs)("div", {
+                    className: "flex justify-end items-center text-lg px-2",
+                    children: [
+                      n("cat_sort.sort_by"),
+                      "\uff1a",
+                      (0, c.jsx)("span", {
+                        className: "".concat("mr" === w.o ? "text-og" : ""),
+                        onClick: () => {
+                          (B(!1, !1, 100, E, w.folder_id, "mr"),
+                            T((0, h.A)((0, h.A)({}, w), {}, { o: "mr" })));
+                        },
+                        children: n("member.favorite_time"),
+                      }),
+                      "\uff5c",
+                      (0, c.jsx)("span", {
+                        className: "".concat("mp" === w.o ? "text-og" : ""),
+                        onClick: () => {
+                          (B(!1, !1, 100, E, w.folder_id, "mp"),
+                            T((0, h.A)((0, h.A)({}, w), {}, { o: "mp" })));
+                        },
+                        children: n("member.update_time"),
+                      }),
+                    ],
+                  }),
+                  (0, c.jsx)(we, {
+                    t: n,
+                    cols: 2,
+                    link: !0,
+                    setting: r,
+                    listName: "favoriteList",
+                    list: x.list,
+                    comicTags: !0,
+                    comicCheck: !0,
+                    logined: o,
+                    editFolder: w,
+                    setEditFolder: T,
+                    setDialogOpen: j,
+                    dialogOpen: b,
+                    showSnackbar: d,
+                    handleEngagementAction: W,
+                    favoriteList: x,
+                    handleEditFolder: J,
+                    favoriteSave: k,
+                  }),
+                  (0, c.jsxs)("div", {
+                    className:
+                      "flex flex-col justify-center items-center pb-48",
+                    children: [
+                      g &&
+                        (0, c.jsx)("img", {
+                          src: "/images/loading.gif",
+                          alt: "loading",
+                          width: "80px",
+                        }),
+                      (null === (l = x.list) || void 0 === l
+                        ? void 0
+                        : l.length) > 0 &&
+                        (R
+                          ? (0, c.jsx)("button", {
+                              onClick: () =>
+                                ((e) => {
+                                  if (!R) return;
+                                  z(e);
+                                  const { folder_id: t, o: s } = w;
+                                  B(!0, !1, 1e3, e, t, s);
+                                })(E + 1),
+                              className:
+                                "w-11/12 rounded-sm text-white p-2 bg-og shadow-lg shadow-stone-700/50",
+                              children: n("comic.load_more"),
+                            })
+                          : (0, c.jsx)("p", {
+                              className: "text-center mt-10",
+                              children: n("comic.end_of_list"),
+                            })),
+                    ],
+                  }),
+                ],
+              }),
+              b.folder &&
+                (0, c.jsx)(Ce.A, {
+                  folderList: x.folder_list,
+                  dialogOpen: b,
+                  setDialogOpen: j,
+                  editFolder: w,
+                  setEditFolder: T,
+                  handleEditFolder: J,
+                  tagsList: [],
+                }),
+              w.alert &&
+                (0, c.jsx)(V.Fc, {
+                  setEdit: T,
+                  edit: w,
+                  handleEdit: J,
+                  handleAction: W,
+                  handleDelWatchComic: async () => {
+                    "del_watch_history" === w.type && w.aid;
+                  },
+                  showSnackbar: d,
+                }),
+            ],
+          });
+        },
+        Le = () => {
+          var e, t;
+          const { config: s, setConfig: o } = (0, l.H)(),
+            { setting: x, logined: g } = s,
+            { t: h, i18n: u } = (0, n.Bd)(),
+            p = ((0, z.Zp)(), (0, z.zy)()),
+            f = (0, P.jb)(),
+            b = (0, P.zk)(),
+            j = (0, ke.bs)(),
+            { snackbars: v, setSnackbars: y, showSnackbar: k } = (0, Ae.q)(),
+            A = h("member_card.tab_items", { returnObjects: !0 }),
+            N = (0, i.j)(),
+            {
+              unread: _,
+              notifResult: C,
+              isLoading: S,
+              isInfoLoading: L,
+              isInfoRefreshing: I,
+            } = (0, i.G)((e) => e.member),
+            [F, O] = (0, a.useState)({
+              login: !1,
+              signUp: !1,
+              forgot: !1,
+              invite: !1,
+              charge: !1,
+              invincible: !1,
+              newTopic: !1,
+            }),
+            [M, T] = (0, a.useState)({ member: !1, invite: !1, charge: !1 }),
+            [D, B] = (0, a.useState)(!1),
+            [V, J] = (0, a.useState)(ye.Z),
+            U = JSON.parse(localStorage.getItem("memberInfo")),
+            Z = (new URLSearchParams(p.search), g ? 0 : 1),
+            [Y, K] = (0, a.useState)(() => {
+              const e = sessionStorage.getItem("memberTab");
+              return null !== e ? JSON.parse(e) : Z;
+            }),
+            [Q, $] = (0, a.useState)(U || {}),
+            ee = Number(
+              null === U ||
+                void 0 === U ||
+                null === (e = U.charge) ||
+                void 0 === e
+                ? void 0
+                : e.split("/")[0],
+            ),
+            te = Number(
+              null === U ||
+                void 0 === U ||
+                null === (t = U.charge) ||
+                void 0 === t
+                ? void 0
+                : t.split("/")[1],
+            ),
+            [se, ae] = (0, a.useState)(null);
+          sessionStorage.setItem(
+            "fromPage",
+            "".concat(p.pathname, "?tab=").concat(Y),
+          );
+          const le = JSON.parse(localStorage.getItem("memberAccount")),
+            ie = _.comic_follow + _.site_notice || 0,
+            ne = function () {
+              let e =
+                  !(arguments.length > 0 && void 0 !== arguments[0]) ||
+                  arguments[0],
+                t =
+                  !(arguments.length > 1 && void 0 !== arguments[1]) ||
+                  arguments[1];
+              N((0, d.mj)({ isInfoLoading: e, isInfoRefreshing: t }));
+            };
+          return (
+            (0, a.useEffect)(() => {
+              const e = () => {
+                window.scrollY > 30 ? B(!0) : B(!1);
+              };
+              return (
+                window.addEventListener("scroll", e),
+                () => window.removeEventListener("scroll", e)
+              );
+            }, []),
+            (0, a.useEffect)(() => {
+              g ? (0 === Y && K(ie > 0 ? 4 : 1), $(U)) : j();
+            }, [g]),
+            (0, c.jsxs)(c.Fragment, {
+              children: [
+                (0, c.jsxs)("div", {
+                  className: "w-full bg-nbk text-white",
+                  children: [
+                    (0, c.jsx)(w, {
+                      t: h,
+                      logined: g,
+                      setting: x,
+                      infoData: Q,
+                      isInfoRefreshing: I,
+                      handleRefresh: async () => {
+                        if ((ne(), $({}), (0, me.q0)(o), L || I)) U && $(U);
+                        else {
+                          const e = await N(
+                            (0, r.in)({
+                              username: le.username,
+                              password: le.password,
+                            }),
+                          ).unwrap();
+                          200 === e.code &&
+                            setTimeout(() => {
+                              ($(e.data), ne(!1, !1));
+                            }, 2e3);
+                        }
+                      },
+                      MemberCard: f,
+                      scrollUp: D,
+                      setDialogOpen: O,
+                      dialogOpen: F,
+                      memberProgress: ee,
+                      memberProgressMax: te,
+                      setMsgOpen: T,
+                      msgOpen: M,
+                    }),
+                    (0, c.jsx)(m, {
+                      logined: g,
+                      tabItems: A,
+                      tab: Y,
+                      setTab: K,
+                      unread: _,
+                      openIndex: se,
+                      notifResult: C,
+                    }),
+                    11 !== Y
+                      ? g
+                        ? (0, c.jsxs)("div", {
+                            className: "bg-defaultBg min-h-screen dark:bg-bk",
+                            children: [
+                              1 === Y &&
+                                (0, c.jsx)(E, {
+                                  t: h,
+                                  setting: x,
+                                  logined: g,
+                                  showSnackbar: k,
+                                }),
+                              2 === Y &&
+                                (0, c.jsx)(Se, {
+                                  t: h,
+                                  setting: x,
+                                  logined: g,
+                                  showSnackbar: k,
+                                }),
+                              3 === Y &&
+                                (0, c.jsx)(R, {
+                                  t: h,
+                                  setting: x,
+                                  logined: g,
+                                  showSnackbar: k,
+                                }),
+                              4 === Y &&
+                                (0, c.jsx)(fe, {
+                                  t: h,
+                                  unread: _,
+                                  unreadCount: ie,
+                                  setting: x,
+                                  logined: g,
+                                  showSnackbar: k,
+                                  openIndex: se,
+                                  setOpenIndex: ae,
+                                }),
+                              5 === Y &&
+                                (0, c.jsx)(be, {
+                                  t: h,
+                                  unread: _,
+                                  logined: g,
+                                  showSnackbar: k,
+                                  openIndex: se,
+                                  setOpenIndex: ae,
+                                }),
+                              6 === Y &&
+                                (0, c.jsx)(G, {
+                                  t: h,
+                                  setConfig: o,
+                                  setting: x,
+                                  logined: g,
+                                  memberInfo: U,
+                                  showSnackbar: k,
+                                }),
+                              7 === Y &&
+                                (0, c.jsx)(q, {
+                                  t: h,
+                                  setting: x,
+                                  logined: g,
+                                  memberInfo: U,
+                                  showSnackbar: k,
+                                }),
+                              8 === Y &&
+                                (0, c.jsx)(H, {
+                                  t: h,
+                                  setting: x,
+                                  logined: g,
+                                  showSnackbar: k,
+                                }),
+                              9 === Y &&
+                                (0, c.jsx)(X, {
+                                  t: h,
+                                  setting: x,
+                                  logined: g,
+                                  memberInfo: U,
+                                  showSnackbar: k,
+                                }),
+                              10 === Y &&
+                                (0, c.jsx)(oe, {
+                                  t: h,
+                                  setting: x,
+                                  logined: g,
+                                  memberInfo: U,
+                                  showSnackbar: k,
+                                }),
+                            ],
+                          })
+                        : (0, c.jsx)("div", {
+                            className:
+                              "w-full bg-defaultBg text-bbk min-h-screen dark:bg-bbk dark:text-tgy",
+                            children: (0, c.jsx)("div", {
+                              className:
+                                "bg-white dark:bg-bbk flex justify-center items-center text-xl h-[400px]",
+                              children: h("login.please_login"),
+                            }),
+                          })
+                      : (0, c.jsx)("div", {
+                          className: "bg-defaultBg min-h-screen dark:bg-bk",
+                          children: (0, c.jsx)(he, {
+                            t: h,
+                            i18n: u,
+                            setting: x,
+                            setConfig: o,
+                            logined: g,
+                            memberInfo: U,
+                            showSnackbar: k,
+                          }),
+                        }),
+                  ],
+                }),
+                (0, c.jsx)(je.A, { currentPage: "member" }),
+                M.member &&
+                  (0, c.jsx)(ve.A, {
+                    t: h,
+                    content: b,
+                    msgOpen: M,
+                    setMsgOpen: T,
+                  }),
+                F.invite &&
+                  (0, c.jsx)(W.A, {
+                    setDialogOpen: O,
+                    dialogOpen: F,
+                    memberInfo: U,
+                    showSnackbar: k,
+                  }),
+                (F.charge || F.invincible) &&
+                  (0, c.jsx)(W.A, {
+                    setConfig: o,
+                    setDialogOpen: O,
+                    dialogOpen: F,
+                    handleChargeAdFree: async (e) => {
+                      let {
+                        coinCharge: t = !1,
+                        AdFree: s = !1,
+                        type: a = "",
+                      } = e;
+                      if (t) {
+                        "ok" === (await N((0, r.hr)()).unwrap()).data.status &&
+                          le &&
+                          (localStorage.removeItem("jwttoken"),
+                          N(
+                            (0, r.in)({
+                              username: le.username,
+                              password: le.password,
+                            }),
+                          ));
+                      } else if (s && "" !== a) {
+                        "ok" ===
+                          (await N((0, r.$m)({ type: a })).unwrap()).data
+                            .status &&
+                          le &&
+                          (localStorage.removeItem("jwttoken"),
+                          N(
+                            (0, r.in)({
+                              username: le.username,
+                              password: le.password,
+                            }),
+                          ));
+                      }
+                    },
+                    showSnackbar: k,
+                  }),
+                (F.login || F.signUp || F.forgot) &&
+                  !g &&
+                  (0, c.jsx)(W.A, {
+                    setFormData: J,
+                    formData: V,
+                    setConfig: o,
+                    logined: g,
+                    isLoading: S,
+                    setDialogOpen: O,
+                    dialogOpen: F,
+                    showSnackbar: k,
+                  }),
+                (0, c.jsx)(Ae.A, { snackbars: v, setSnackbars: y }),
+              ],
+            })
+          );
+        };
+    },
+  },
+]);
+//# sourceMappingURL=7999.e9159af1.chunk.js.map

@@ -1,0 +1,744 @@
+"use strict";
+(self.webpackChunk_18comic_react = self.webpackChunk_18comic_react || []).push([
+  [3319],
+  {
+    9011: (t, e, i) => {
+      i.d(e, { S0: () => s, a_: () => d, bs: () => l, ee: () => c });
+      var r = i(5043),
+        n = i(6580),
+        o = i(7332),
+        a = i(579);
+      function s() {
+        let t =
+          arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 1500;
+        const [e, i] = (0, r.useState)(!1);
+        return (
+          (0, r.useEffect)(() => {
+            const e = setTimeout(() => {
+              i(!0);
+            }, t);
+            return () => {
+              clearTimeout(e);
+            };
+          }, [t]),
+          e
+        );
+      }
+      const l = () =>
+        (0, r.useCallback)(() => {
+          try {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          } catch (t) {
+            window.scrollTo(0, 0);
+          }
+          ((document.body.scrollTop = 0),
+            (document.documentElement.scrollTop = 0));
+        }, []);
+      const c = (t) => {
+          let { back: e, state: i } = t;
+          const r = (0, n.Zp)();
+          return (0, a.jsx)(n.N_, {
+            to: "#",
+            onClick: (t) => {
+              (t.preventDefault(),
+                "number" === typeof e ? r(e) : r(e, { state: i }));
+            },
+            children: (0, a.jsx)(o.A, {
+              sx: {
+                color: "white",
+                fontSize: 28,
+                stroke: "white",
+                strokeWidth: 1,
+              },
+            }),
+          });
+        },
+        d = function () {
+          let t =
+            arguments.length > 0 && void 0 !== arguments[0]
+              ? arguments[0]
+              : 1e3;
+          const [e, i] = (0, r.useState)(0);
+          return (
+            (0, r.useEffect)(() => {
+              const e = setInterval(() => {
+                i((t) => (0 === t ? 1 : 0));
+              }, t);
+              return () => clearInterval(e);
+            }, [t]),
+            e
+          );
+        };
+    },
+    2028: (t, e, i) => {
+      i.d(e, { A: () => a });
+      var r = i(5043),
+        n = i(2101),
+        o = i(579);
+      const a = () => {
+        const [t, e] = (0, r.useState)(!1);
+        (0, r.useEffect)(() => {
+          const t = () => {
+            window.scrollY > 500 ? e(!0) : e(!1);
+          };
+          return (
+            window.addEventListener("scroll", t),
+            () => window.removeEventListener("scroll", t)
+          );
+        }, []);
+        return (0, o.jsx)(o.Fragment, {
+          children:
+            t &&
+            (0, o.jsx)("button", {
+              onClick: () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              },
+              className:
+                "w-14 h-14 rounded-full fixed bottom-[10rem] right-3 bg-og text-white z-50",
+              children: (0, o.jsx)(n.A, {}),
+            }),
+        });
+      };
+    },
+    597: (t, e, i) => {
+      i.d(e, { A: () => s });
+      var r = i(9379),
+        n = i(6580),
+        o = i(5412),
+        a = i(579);
+      const s = (t) => {
+        const { creatorId: e, list: i, title: s, setting: l } = t;
+        return (0, a.jsx)("div", {
+          children:
+            Array.isArray(i) &&
+            i.length > 0 &&
+            (null === i || void 0 === i
+              ? void 0
+              : i
+                  .reduce(
+                    (t, e, i) => (
+                      i % 2 === 0 && t.push([]),
+                      t[t.length - 1].push(e),
+                      t
+                    ),
+                    [],
+                  )
+                  .map((t, i) =>
+                    (0, a.jsx)(
+                      "div",
+                      {
+                        className: "grid-cols-2 grid gap-2 px-2",
+                        children: t.map((t, i) =>
+                          (0, a.jsxs)(
+                            "div",
+                            {
+                              className:
+                                "bg-white relative my-2 mx-1 dark:bg-nbk",
+                              children: [
+                                (0, a.jsxs)(n.N_, {
+                                  to: "/library/list/detail?creatorId="
+                                    .concat(t.author_id || e, "&id=")
+                                    .concat(t.id),
+                                  onClick: () => {
+                                    sessionStorage.removeItem("libListSource");
+                                  },
+                                  children: [
+                                    (0, a.jsx)("img", {
+                                      src:
+                                        (null === l || void 0 === l
+                                          ? void 0
+                                          : l.img_host) + t.work_image,
+                                      alt: t.id,
+                                      loading: "lazy",
+                                      onLoad: (t) => {
+                                        t.target.style.opacity = "1";
+                                      },
+                                      onError: (t) => {
+                                        t.target.src =
+                                          "/images/cover_default.jpg";
+                                      },
+                                      width: "100%",
+                                      height: "auto",
+                                      className: "object-cover h-56 bg-gy",
+                                      style: {
+                                        opacity: "0",
+                                        transition: "opacity 0.5s ease-in-out",
+                                      },
+                                    }),
+                                    (0, a.jsx)("div", {
+                                      className:
+                                        "absolute right-2 top-2 rounded-lg text-white p-[0.2rem]",
+                                      style: (0, r.A)(
+                                        {},
+                                        (0, o.bT)(t.platform_name),
+                                      ),
+                                      children: t.platform_name,
+                                    }),
+                                  ],
+                                }),
+                                s
+                                  ? (0, a.jsxs)("div", {
+                                      className: "px-2 text-gy dark:text-tgy",
+                                      children: [
+                                        (0, a.jsx)("p", {
+                                          className: "truncate py-3",
+                                          children: t.work_title,
+                                        }),
+                                        (0, a.jsx)("p", {
+                                          className:
+                                            "truncate text-gy py-1 float-right",
+                                          children: t.work_date,
+                                        }),
+                                      ],
+                                    })
+                                  : (0, a.jsxs)("div", {
+                                      className: "px-2",
+                                      children: [
+                                        (0, a.jsx)("p", {
+                                          className: "truncate py-3 font-bold",
+                                          children: t.work_title,
+                                        }),
+                                        (0, a.jsx)(n.N_, {
+                                          to: "/library/list?lib=".concat(
+                                            t.author_id,
+                                          ),
+                                          children: (0, a.jsx)("p", {
+                                            className:
+                                              "truncate text-og py-2 underline",
+                                            children: t.author_name,
+                                          }),
+                                        }),
+                                      ],
+                                    }),
+                              ],
+                            },
+                            i,
+                          ),
+                        ),
+                      },
+                      i,
+                    ),
+                  )),
+        });
+      };
+    },
+    2072: (t, e, i) => {
+      i.d(e, { A: () => d });
+      var r = i(9379),
+        n = i(5043),
+        o = i(1906),
+        a = i(688),
+        s = i(6990),
+        l = i(5954),
+        c = i(579);
+      const d = (t) => {
+        const { t: e, title: i, filtersList: d, filter: u, setFilter: g } = t,
+          [m, h] = (0, n.useState)({}),
+          [p, x] = (0, n.useState)(null),
+          v = (t) => {
+            (h((e) => (0, r.A)((0, r.A)({}, e), {}, { [t]: !1 })), x(null));
+          };
+        return (0, c.jsx)(c.Fragment, {
+          children: (0, c.jsx)("div", {
+            className: "flex justify-start py-4 ".concat(i && "text-white"),
+            children: [{ id: "language" }, { id: "source" }].map((t) => {
+              var i, n;
+              return (0, c.jsxs)(
+                "div",
+                {
+                  className: "w-1/2 pl-2 flex justify-between items-center",
+                  children: [
+                    (0, c.jsxs)("div", {
+                      className: "w-full z-20",
+                      children: [
+                        (0, c.jsxs)("span", {
+                          className: "font-bold",
+                          children: [
+                            "language" === t.id
+                              ? e("library.language")
+                              : e("library.source"),
+                            "\uff1a",
+                          ],
+                        }),
+                        (0, c.jsx)(o.A, {
+                          className:
+                            "w-9/12 bg-transparent text-lg text-[#918987] py-4",
+                          id: "demo-customized-button-".concat(t.id),
+                          "aria-controls": m[t.id]
+                            ? "demo-customized-menu-".concat(t.id)
+                            : void 0,
+                          "aria-haspopup": "true",
+                          "aria-expanded": m[t.id] ? "true" : void 0,
+                          variant: "contained",
+                          disableElevation: !0,
+                          onClick: (e) => {
+                            return (
+                              (i = e),
+                              (n = t.id),
+                              x(i.currentTarget),
+                              void h((t) =>
+                                (0, r.A)((0, r.A)({}, t), {}, { [n]: !0 }),
+                              )
+                            );
+                            var i, n;
+                          },
+                          endIcon: (0, c.jsx)(l.A, {
+                            className:
+                              "absolute top-0 right-0 text-og text-3xl",
+                          }),
+                          children: (0, c.jsx)("div", {
+                            className: "absolute left-2 top-0",
+                            children: "" === u[t.id] ? "All" : u[t.id],
+                          }),
+                        }),
+                      ],
+                    }),
+                    (0, c.jsx)(a.A, {
+                      id: "demo-customized-menu-".concat(t.id),
+                      anchorEl: p,
+                      open: m[t.id] || !1,
+                      onClose: () => v(t.id),
+                      sx: (t) => ({
+                        "& .MuiPaper-root": {
+                          marginTop: t.spacing(-3),
+                          marginLeft: t.spacing(2),
+                          width: "30%",
+                          padding: "0",
+                          position: "absolute",
+                          color: "#757575",
+                        },
+                      }),
+                      children:
+                        Array.isArray(d[t.id] || []) &&
+                        (null === (i = d[t.id]) || void 0 === i
+                          ? void 0
+                          : i.length) > 0
+                          ? null === (n = d[t.id]) || void 0 === n
+                            ? void 0
+                            : n.map((e) =>
+                                (0, c.jsx)(
+                                  s.A,
+                                  {
+                                    onClick: () => {
+                                      (v(t.id),
+                                        g(
+                                          (0, r.A)(
+                                            (0, r.A)({}, u),
+                                            {},
+                                            {
+                                              start: !0,
+                                              [t.id]:
+                                                e.service ||
+                                                ("All" !== e ? e : ""),
+                                            },
+                                          ),
+                                        ));
+                                    },
+                                    children: e.name || e,
+                                  },
+                                  e.service || e,
+                                ),
+                              )
+                          : (0, c.jsx)(s.A, {
+                              onClick: () => {
+                                v(t.id);
+                              },
+                              children: "ALL",
+                            }),
+                    }),
+                  ],
+                },
+                t.id,
+              );
+            }),
+          }),
+        });
+      };
+    },
+    874: (t, e, i) => {
+      (i.r(e), i.d(e, { default: () => v }));
+      var r = i(9379),
+        n = i(5043),
+        o = i(6580),
+        a = i(6148),
+        s = i(2028),
+        l = i(3944),
+        c = i(9011),
+        d = i(5208),
+        u = i(2012),
+        g = i(597),
+        m = i(5411),
+        h = i(2072),
+        p = i(4117),
+        x = i(579);
+      const v = () => {
+        var t;
+        const { config: e } = (0, l.H)(),
+          { setting: i, logined: v } = e,
+          y = (0, c.bs)(),
+          { t: f } = (0, p.Bd)(),
+          b = (0, a.j)(),
+          j = (0, o.zy)(),
+          { creatorAuthorWorkList: A, isLoading: w } = (0, a.G)(
+            (t) => t.creator,
+          ),
+          _ = new URLSearchParams(j.search).get("creatorId"),
+          k = sessionStorage.getItem("libCreatorId") || "",
+          E = sessionStorage.getItem("libListSource") || "",
+          N = A.list,
+          [L, S] = (0, n.useState)({ start: !1, language: "", source: E });
+        return (
+          (0, n.useEffect)(() => {
+            _ !== k || L.start
+              ? (y(),
+                sessionStorage.setItem("libCreatorId", _),
+                (function () {
+                  let t =
+                      arguments.length > 0 &&
+                      void 0 !== arguments[0] &&
+                      arguments[0],
+                    e =
+                      arguments.length > 1 &&
+                      void 0 !== arguments[1] &&
+                      arguments[1],
+                    i =
+                      arguments.length > 2 && void 0 !== arguments[2]
+                        ? arguments[2]
+                        : _;
+                  (b(
+                    (0, u.zm)({
+                      isLoading: !0,
+                      isLoadMore: t,
+                      isRefreshing: e,
+                    }),
+                  ),
+                    b((0, d.XL)({ id: i, lang: L.language, source: L.source })),
+                    sessionStorage.setItem("libListSource", L.source),
+                    S((0, r.A)((0, r.A)({}, L), {}, { start: !1 })));
+                })())
+              : b((0, u.zm)({ isLoading: !1 }));
+          }, [b, _, L.start]),
+          (0, x.jsxs)(x.Fragment, {
+            children: [
+              w && (0, x.jsx)(m.A, {}),
+              (0, x.jsxs)("div", {
+                className: "h-full bg-defaultBg dark:bg-bk dark:text-tgy",
+                children: [
+                  (0, x.jsx)("div", {
+                    className:
+                      "sticky top-0 h-16 bg-bbk flex items-end p-2 py-3 z-50",
+                    children: (0, x.jsx)(c.ee, { back: "/library" }),
+                  }),
+                  N &&
+                    i &&
+                    (0, x.jsxs)("div", {
+                      className:
+                        "bg-cover bg-top overflow-hidden px-4 py-2 relative",
+                      style: {
+                        backgroundImage: "url(".concat(
+                          null !== i &&
+                            void 0 !== i &&
+                            i.img_host &&
+                            null !== N &&
+                            void 0 !== N &&
+                            N.background_image
+                            ? "".concat(i.img_host).concat(N.background_image)
+                            : "/images/chapter_default.jpg",
+                          ")",
+                        ),
+                      },
+                      children: [
+                        (0, x.jsx)("div", {
+                          className:
+                            "absolute inset-0 bg-gray-800 bg-opacity-70 z-0",
+                        }),
+                        (0, x.jsxs)("div", {
+                          className:
+                            "flex items-center text-wrap relative z-10",
+                          children: [
+                            (0, x.jsx)("div", {
+                              className: "w-2/6",
+                              children: (0, x.jsx)("img", {
+                                src:
+                                  (null === i || void 0 === i
+                                    ? void 0
+                                    : i.img_host) &&
+                                  (null === N || void 0 === N
+                                    ? void 0
+                                    : N.author_avatar) &&
+                                  "".concat(i.img_host).concat(N.author_avatar),
+                                alt: N.author_name,
+                                loading: "lazy",
+                                onLoad: (t) => {
+                                  t.target.style.opacity = "1";
+                                },
+                                onError: (t) => {
+                                  t.target.src = "/images/ic_head.png";
+                                },
+                                style: {
+                                  opacity: "0",
+                                  transition: "opacity 0.5s ease-in-out",
+                                },
+                                className: "w-32 rounded-xl",
+                              }),
+                            }),
+                            (0, x.jsx)("div", {
+                              className: "w-4/6",
+                              children: (0, x.jsx)("p", {
+                                className: "absolute top-5 text-og text-3xl",
+                                children: N.author_name,
+                              }),
+                            }),
+                          ],
+                        }),
+                        (0, x.jsx)(h.A, {
+                          t: f,
+                          title: "creatorAuthorWorkList",
+                          filtersList: A.filters,
+                          filter: L,
+                          setFilter: S,
+                        }),
+                      ],
+                    }),
+                  (null === N ||
+                  void 0 === N ||
+                  null === (t = N.sponsor) ||
+                  void 0 === t
+                    ? void 0
+                    : t.length) > 0 &&
+                    N.sponsor.map((t, e) =>
+                      (0, x.jsx)(
+                        "a",
+                        {
+                          href: t.platform_url,
+                          target: "_blank",
+                          className: "flex justify-center mt-5",
+                          rel: "noreferrer",
+                          children: (0, x.jsxs)("button", {
+                            className: "w-11/12 bg-og rounded p-3 text-left",
+                            children: [
+                              f("library.support_author"),
+                              " \u2192 ",
+                              t.platform_name,
+                            ],
+                          }),
+                        },
+                        e,
+                      ),
+                    ),
+                  (0, x.jsx)("div", {
+                    className: "py-8",
+                    children:
+                      !w &&
+                      (0, x.jsx)(g.A, {
+                        title: "creatorAuthorWorkList",
+                        creatorId: _,
+                        list: N.related_works,
+                        setting: i,
+                      }),
+                  }),
+                  (0, x.jsx)(s.A, {}),
+                ],
+              }),
+            ],
+          })
+        );
+      };
+    },
+    2101: (t, e, i) => {
+      i.d(e, { A: () => o });
+      var r = i(9662),
+        n = i(579);
+      const o = (0, r.A)(
+        (0, n.jsx)("path", {
+          d: "m12 8-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z",
+        }),
+        "ExpandLess",
+      );
+    },
+    6328: (t, e, i) => {
+      i.d(e, { A: () => f });
+      var r = i(9379),
+        n = i(45),
+        o = i(5043),
+        a = i(3593),
+        s = i(3198),
+        l = i(9998),
+        c = i(6240),
+        d = i(653),
+        u = i(5849),
+        g = i(579);
+      const m = [
+          "addEndListener",
+          "appear",
+          "children",
+          "easing",
+          "in",
+          "onEnter",
+          "onEntered",
+          "onEntering",
+          "onExit",
+          "onExited",
+          "onExiting",
+          "style",
+          "timeout",
+          "TransitionComponent",
+        ],
+        h = ["ownerState"];
+      function p(t) {
+        return "scale(".concat(t, ", ").concat(t ** 2, ")");
+      }
+      const x = {
+          entering: { opacity: 1, transform: p(1) },
+          entered: { opacity: 1, transform: "none" },
+        },
+        v =
+          "undefined" !== typeof navigator &&
+          /^((?!chrome|android).)*(safari|mobile)/i.test(navigator.userAgent) &&
+          /(os |version\/)15(.|_)4/i.test(navigator.userAgent),
+        y = o.forwardRef(function (t, e) {
+          const {
+              addEndListener: i,
+              appear: y = !0,
+              children: f,
+              easing: b,
+              in: j,
+              onEnter: A,
+              onEntered: w,
+              onEntering: _,
+              onExit: k,
+              onExited: E,
+              onExiting: N,
+              style: L,
+              timeout: S = "auto",
+              TransitionComponent: z = l.Ay,
+            } = t,
+            I = (0, n.A)(t, m),
+            C = (0, a.A)(),
+            T = o.useRef(),
+            R = (0, c.A)(),
+            F = o.useRef(null),
+            H = (0, u.A)(F, (0, s.A)(f), e),
+            W = (t) => (e) => {
+              if (t) {
+                const i = F.current;
+                void 0 === e ? t(i) : t(i, e);
+              }
+            },
+            D = W(_),
+            B = W((t, e) => {
+              (0, d.q)(t);
+              const {
+                duration: i,
+                delay: r,
+                easing: n,
+              } = (0, d.c)(
+                { style: L, timeout: S, easing: b },
+                { mode: "enter" },
+              );
+              let o;
+              ("auto" === S
+                ? ((o = R.transitions.getAutoHeightDuration(t.clientHeight)),
+                  (T.current = o))
+                : (o = i),
+                (t.style.transition = [
+                  R.transitions.create("opacity", { duration: o, delay: r }),
+                  R.transitions.create("transform", {
+                    duration: v ? o : 0.666 * o,
+                    delay: r,
+                    easing: n,
+                  }),
+                ].join(",")),
+                A && A(t, e));
+            }),
+            M = W(w),
+            P = W(N),
+            q = W((t) => {
+              const {
+                duration: e,
+                delay: i,
+                easing: r,
+              } = (0, d.c)(
+                { style: L, timeout: S, easing: b },
+                { mode: "exit" },
+              );
+              let n;
+              ("auto" === S
+                ? ((n = R.transitions.getAutoHeightDuration(t.clientHeight)),
+                  (T.current = n))
+                : (n = e),
+                (t.style.transition = [
+                  R.transitions.create("opacity", { duration: n, delay: i }),
+                  R.transitions.create("transform", {
+                    duration: v ? n : 0.666 * n,
+                    delay: v ? i : i || 0.333 * n,
+                    easing: r,
+                  }),
+                ].join(",")),
+                (t.style.opacity = 0),
+                (t.style.transform = p(0.75)),
+                k && k(t));
+            }),
+            G = W(E);
+          return (0, g.jsx)(
+            z,
+            (0, r.A)(
+              (0, r.A)(
+                {
+                  appear: y,
+                  in: j,
+                  nodeRef: F,
+                  onEnter: B,
+                  onEntered: M,
+                  onEntering: D,
+                  onExit: q,
+                  onExited: G,
+                  onExiting: P,
+                  addEndListener: (t) => {
+                    ("auto" === S && C.start(T.current || 0, t),
+                      i && i(F.current, t));
+                  },
+                  timeout: "auto" === S ? null : S,
+                },
+                I,
+              ),
+              {},
+              {
+                children: (t, e) => {
+                  let { ownerState: i } = e,
+                    a = (0, n.A)(e, h);
+                  return o.cloneElement(
+                    f,
+                    (0, r.A)(
+                      {
+                        style: (0, r.A)(
+                          (0, r.A)(
+                            (0, r.A)(
+                              {
+                                opacity: 0,
+                                transform: p(0.75),
+                                visibility:
+                                  "exited" !== t || j ? void 0 : "hidden",
+                              },
+                              x[t],
+                            ),
+                            L,
+                          ),
+                          f.props.style,
+                        ),
+                        ref: H,
+                      },
+                      a,
+                    ),
+                  );
+                },
+              },
+            ),
+          );
+        });
+      y && (y.muiSupportAuto = !0);
+      const f = y;
+    },
+  },
+]);
+//# sourceMappingURL=3319.9cb802c3.chunk.js.map

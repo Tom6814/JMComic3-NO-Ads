@@ -1,0 +1,1862 @@
+"use strict";
+(self.webpackChunk_18comic_react = self.webpackChunk_18comic_react || []).push([
+  [8838],
+  {
+    9144: (e, t, s) => {
+      s.d(t, { A: () => p });
+      var n = s(9379),
+        a = s(5043),
+        o = s(6580),
+        r = s(7421),
+        l = s(6687),
+        c = s(7225),
+        i = s(9484),
+        d = s(7044),
+        m = s(3944),
+        x = s(7883),
+        u = s(5090),
+        h = s(4117),
+        g = s(4694),
+        f = s(579);
+      const p = (e) => {
+        var t, s;
+        const {
+            setTabChange: p,
+            filter: v,
+            setFilter: b,
+            currentPage: j,
+            catList: A,
+            subList: k,
+            mode: w,
+            setMode: y,
+          } = e,
+          { config: N } = (0, m.H)(),
+          { setting: _ } = N,
+          { t: S } = (0, h.Bd)(),
+          [C, L] = (0, a.useState)({ catMore: !1, imageSource: !1 }),
+          T = { fontSize: 20, stroke: "white", strokeWidth: 1 },
+          z = (0, u.hz)(),
+          M = [
+            {
+              icon: (0, f.jsx)(r.A, { sx: (0, n.A)({}, T) }),
+              onClick: () =>
+                L((0, n.A)((0, n.A)({}, C), {}, { imageSource: !0 })),
+            },
+            { icon: (0, f.jsx)(l.A, { sx: (0, n.A)({}, T) }), link: "/blogs" },
+            { icon: (0, f.jsx)(c.A, { sx: (0, n.A)({}, T) }), link: "/week" },
+            { icon: (0, f.jsx)(i.A, { sx: (0, n.A)({}, T) }), link: "/search" },
+          ];
+        return (0, f.jsxs)("header", {
+          className: "sticky top-safe w-full bg-bbk text-white z-30",
+          children: [
+            (0, f.jsxs)("div", {
+              className: "h-14 flex items-center",
+              children: [
+                (0, f.jsx)("div", {
+                  className: "flex w-6/12 pl-3",
+                  children: (0, f.jsx)(o.N_, {
+                    to: "/",
+                    children: (0, f.jsx)("img", {
+                      src: "/images/new_logo.webp",
+                      alt: "logo",
+                      width: "100px",
+                      height: "20px",
+                      className: "animation-click-item",
+                    }),
+                  }),
+                }),
+                (0, f.jsx)("div", {
+                  className:
+                    "text-white top-bar-icon flex w-6/12 justify-around",
+                  children: M.map((e, t) =>
+                    (0, f.jsx)(
+                      o.N_,
+                      {
+                        to: e.link || "#",
+                        onClick: e.onClick,
+                        children: (0, f.jsx)("button", {
+                          className: "animation-click-item",
+                          children: e.icon,
+                        }),
+                      },
+                      t,
+                    ),
+                  ),
+                }),
+              ],
+            }),
+            "categories" === j &&
+              (null === (t = A.cat) || void 0 === t ? void 0 : t.length) > 0 &&
+              (0, f.jsxs)("div", {
+                className: "text-tgy relative bg-nbk",
+                children: [
+                  (0, f.jsxs)("div", {
+                    className:
+                      "h-10 w-11/12 flex items-center overflow-x-auto whitespace-nowrap pr-8",
+                    style: { scrollbarWidth: "none", msOverflowStyle: "none" },
+                    children: [
+                      A.cat.map((e, t) =>
+                        (0, f.jsxs)(
+                          "div",
+                          {
+                            children: [
+                              (0, f.jsx)("span", {
+                                title: e.name,
+                                className: "pl-4 ".concat(
+                                  v.slug === e.slug ? "text-og" : "",
+                                ),
+                                onClick: () => {
+                                  (b(
+                                    (0, n.A)(
+                                      (0, n.A)({}, v),
+                                      {},
+                                      {
+                                        tabChange: !0,
+                                        slug: e.slug,
+                                        sub_slug: "",
+                                        sort: "",
+                                      },
+                                    ),
+                                  ),
+                                    p(!0));
+                                },
+                                children: e.name,
+                              }),
+                              0 === t &&
+                                (0, f.jsx)(o.N_, {
+                                  to: "/library?from=categories",
+                                  className: "pl-4",
+                                  children: S(
+                                    "library.forbidden_comic_library",
+                                  ),
+                                }),
+                            ],
+                          },
+                          e.slug,
+                        ),
+                      ),
+                      (0, f.jsx)("div", {
+                        className: "bg-bbk p-1 absolute top-0 right-0",
+                        children: (0, f.jsx)(x.A, {
+                          sx: {
+                            fontSize: 28,
+                            stroke: "#ff6f00",
+                            strokeWidth: 1,
+                            color: "#ff6f00",
+                          },
+                          onClick: () =>
+                            L((0, n.A)((0, n.A)({}, C), {}, { catMore: !0 })),
+                        }),
+                      }),
+                    ],
+                  }),
+                  (0, f.jsx)("div", {
+                    className: "h-10 flex items-center",
+                    children:
+                      null ===
+                        (s =
+                          "" === v.slug
+                            ? null === A || void 0 === A
+                              ? void 0
+                              : A.ranking
+                            : null === A || void 0 === A
+                              ? void 0
+                              : A.ranking.slice(0, -1)) || void 0 === s
+                        ? void 0
+                        : s.map((e) =>
+                            (0, f.jsx)(
+                              "span",
+                              {
+                                className: "pl-4 cursor-pointer ".concat(
+                                  v.sort === e.key ? "text-og" : "",
+                                ),
+                                onClick: () => {
+                                  (b(
+                                    (0, n.A)(
+                                      (0, n.A)({}, v),
+                                      {},
+                                      { sort: e.key },
+                                    ),
+                                  ),
+                                    p(!0));
+                                },
+                                children: e.title,
+                              },
+                              e.key,
+                            ),
+                          ),
+                  }),
+                  k.length > 0 &&
+                    (0, f.jsx)("div", {
+                      className: "h-10 flex items-center",
+                      children: k.map((e) =>
+                        (0, f.jsx)(
+                          "span",
+                          {
+                            className: "pl-4 ".concat(
+                              v.sub_slug === e.slug ? "text-og" : "",
+                            ),
+                            onClick: () => {
+                              (p(!0),
+                                b(
+                                  (0, n.A)(
+                                    (0, n.A)({}, v),
+                                    {},
+                                    { sub_slug: e.slug },
+                                  ),
+                                ));
+                            },
+                            children: e.name,
+                          },
+                          e.slug,
+                        ),
+                      ),
+                    }),
+                ],
+              }),
+            "forum" === j &&
+              (0, f.jsx)("div", {
+                className:
+                  "h-20 w-full text-tgy flex items-end py-2 bg-nbk z-50",
+                children: z.map((e) =>
+                  (0, f.jsxs)(
+                    "div",
+                    {
+                      className: "relative px-4 text-lg cursor-pointer",
+                      onClick: () => {
+                        (p(!0), y(e.mode));
+                      },
+                      children: [
+                        (0, f.jsx)("p", {
+                          className: "transition-colors duration-300 ".concat(
+                            w === e.mode ? "text-og pb-2" : "pb-3",
+                          ),
+                          children: e.tabName,
+                        }),
+                        w === e.mode &&
+                          (0, f.jsx)(g.P.div, {
+                            className: "h-1 bg-og rounded",
+                            animate: { width: w === e.mode ? "100%" : "0%" },
+                            initial: { width: "0%" },
+                            transition: {
+                              type: "spring",
+                              stiffness: 500,
+                              damping: 30,
+                            },
+                            style: { transformOrigin: "left" },
+                          }),
+                      ],
+                    },
+                    e.mode,
+                  ),
+                ),
+              }),
+            C.imageSource &&
+              (0, f.jsx)(d.A, { setDialogOpen: L, dialogOpen: C, setting: _ }),
+            C.catMore &&
+              (0, f.jsx)(d.A, {
+                setDialogOpen: L,
+                dialogOpen: C,
+                catList: C.catMore ? A : {},
+                setFilter: b,
+                filter: v,
+              }),
+          ],
+        });
+      };
+    },
+    2028: (e, t, s) => {
+      s.d(t, { A: () => r });
+      var n = s(5043),
+        a = s(2101),
+        o = s(579);
+      const r = () => {
+        const [e, t] = (0, n.useState)(!1);
+        (0, n.useEffect)(() => {
+          const e = () => {
+            window.scrollY > 500 ? t(!0) : t(!1);
+          };
+          return (
+            window.addEventListener("scroll", e),
+            () => window.removeEventListener("scroll", e)
+          );
+        }, []);
+        return (0, o.jsx)(o.Fragment, {
+          children:
+            e &&
+            (0, o.jsx)("button", {
+              onClick: () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              },
+              className:
+                "w-14 h-14 rounded-full fixed bottom-[10rem] right-3 bg-og text-white z-50",
+              children: (0, o.jsx)(a.A, {}),
+            }),
+        });
+      };
+    },
+    5360: (e, t, s) => {
+      s.d(t, { A: () => T });
+      var n = s(9379),
+        a = s(45),
+        o = s(5043),
+        r = s(6580),
+        l = s(8038),
+        c = s(3392),
+        i = s(1637),
+        d = s(7353),
+        m = s(8293),
+        x = s(2108),
+        u = s(2110),
+        h = s(9958),
+        g = s(6494),
+        f = s(7600),
+        p = s(279),
+        v = s(1045),
+        b = s(7392),
+        j = s(4496),
+        A = s(2432),
+        k = s(5412),
+        w = s(2873),
+        y = s(5843),
+        N = s(6148),
+        _ = s(5073),
+        S = s(579);
+      const C = ["expand"],
+        L = (0, x.Ay)((e) => {
+          const { expand: t } = e,
+            s = (0, a.A)(e, C);
+          return (0, S.jsx)(b.A, (0, n.A)({}, s));
+        })((e) => {
+          let { theme: t } = e;
+          return {
+            marginLeft: "auto",
+            transition: t.transitions.create("transform", {
+              duration: t.transitions.duration.shortest,
+            }),
+            variants: [
+              {
+                props: (e) => {
+                  let { expand: t } = e;
+                  return !t;
+                },
+                style: { transform: "rotate(0deg)" },
+              },
+              {
+                props: (e) => {
+                  let { expand: t } = e;
+                  return !!t;
+                },
+                style: { transform: "rotate(180deg)" },
+              },
+            ],
+          };
+        }),
+        T = (e) => {
+          var t, s;
+          const {
+              t: a,
+              setting: x,
+              list: C,
+              isLoading: T,
+              responds: z,
+              setResponds: M,
+              page: H,
+              setPage: R,
+              loadList: E,
+              showSnackbar: V,
+              section: O,
+            } = e,
+            D = (0, r.Zp)(),
+            I = (0, r.zy)(),
+            Y = (0, N.j)(),
+            P = new URLSearchParams(I.search).get("id") || "",
+            F =
+              null !== (t = I.pathname) && void 0 !== t && t.includes("detail")
+                ? P
+                : "",
+            [X, W] = (0, o.useState)({}),
+            [U, B] = (0, o.useState)((0, k.hb)()),
+            [G, Z] = (0, o.useState)(""),
+            [J, K] = (0, o.useState)(null),
+            [q, Q] = (0, o.useState)(!0),
+            { ref: $, inView: ee } = (0, y.Wx)(),
+            { forumList: te, isLoadMore: se } = (0, N.G)((e) => e.forum),
+            ne = te.total ? Math.ceil(Number(te.total) / 10) : 0,
+            ae = H <= ne,
+            oe = () => {
+              const e = (0, k.hb)();
+              (B(e), Z(""), K(null));
+            },
+            re = () => {
+              G === U.answer
+                ? (K(!0),
+                  (async () => {
+                    const { comment: e, comment_id: t, aid: s } = z;
+                    if ("" !== e && "" !== t) {
+                      const a = await Y(
+                        (0, w.T)({ comment: e, aid: s, comment_id: t }),
+                      ).unwrap();
+                      if (200 === a.code) {
+                        const { msg: e, status: t } = a.data;
+                        (V(e, "ok" !== t ? "error" : "success"),
+                          M((e) =>
+                            (0, n.A)(
+                              (0, n.A)({}, e),
+                              {},
+                              { comment: "", comment_id: "", aid: "" },
+                            ),
+                          ));
+                      }
+                    }
+                  })(),
+                  Z(""))
+                : (K(!1), Z(""));
+            },
+            le = (e, t) => {
+              W((s) =>
+                (0, n.A)((0, n.A)({}, s), {}, { [e]: !s[e], replyArea: t }),
+              );
+            },
+            ce = () => {
+              V("".concat(a("novel.report"), "\u6210\u529f"), "success");
+            },
+            ie = (0, o.useCallback)(() => {
+              if (!ee || !ae) return;
+              const e = H + 1;
+              (R(e), E(!0, !1, 1e3, "all", e));
+            }, [ee, ae]);
+          return (
+            (0, o.useEffect)(() => {
+              ie();
+            }, [ee]),
+            (0, S.jsxs)("div", {
+              children: [
+                (null === C || void 0 === C ? void 0 : C.length) > 0
+                  ? C.map((e, t) => {
+                      var s, n, o;
+                      return (0, S.jsxs)(
+                        "div",
+                        {
+                          className: "text-base mx-2 mt-3",
+                          children: [
+                            t > 0 &&
+                              t % 7 === 0 &&
+                              (0, S.jsxs)(u.A, {
+                                className: "dark:bg-nbk dark:text-tgy my-3",
+                                children: [
+                                  (0, S.jsx)(h.A, {
+                                    className:
+                                      "flex justify-center items-start pb-0",
+                                    avatar: (0, S.jsx)(v.A, {
+                                      "aria-label": "recipe",
+                                      sx: { width: 45, height: 45 },
+                                      children: (0, S.jsx)("img", {
+                                        src: "".concat(
+                                          null === x || void 0 === x
+                                            ? void 0
+                                            : x.img_host,
+                                          "/media/users/nopic-Male.gif",
+                                        ),
+                                        alt: "avatar" + t,
+                                      }),
+                                    }),
+                                    title: (0, S.jsx)(d.A, {
+                                      className: "text-base text-og",
+                                      children: a("forum.sponsor_JM"),
+                                    }),
+                                    subheader: (0, S.jsx)(d.A, {
+                                      className: "mt-1 text-base dark:text-tgy",
+                                      children: a(
+                                        "forum.LV100_click_to_save_forbidden_comics",
+                                      ),
+                                    }),
+                                  }),
+                                  (0, S.jsx)("div", {
+                                    className: "bg-white py-4 p-2 dark:bg-nbk",
+                                    children: (0, S.jsx)("div", {
+                                      className:
+                                        "w-full flex justify-center flex-row",
+                                      children: (0, S.jsx)(l.A, {
+                                        adKey: "app_forum_middle",
+                                        comicId: F,
+                                      }),
+                                    }),
+                                  }),
+                                ],
+                              }),
+                            (0, S.jsx)("div", {
+                              children: (0, S.jsx)(
+                                "div",
+                                {
+                                  children: (0, S.jsxs)(u.A, {
+                                    className: "dark:bg-nbk dark:text-tgy my-3",
+                                    children: [
+                                      (0, S.jsx)(h.A, {
+                                        className:
+                                          "flex justify-center items-start pb-0",
+                                        avatar: (0, S.jsxs)(d.A, {
+                                          className:
+                                            "flex flex-col items-center",
+                                          children: [
+                                            (0, S.jsx)(v.A, {
+                                              "aria-label": "recipe",
+                                              sx: { width: 45, height: 45 },
+                                              children: (0, S.jsx)("img", {
+                                                src: ""
+                                                  .concat(
+                                                    null === x || void 0 === x
+                                                      ? void 0
+                                                      : x.img_host,
+                                                    "/media/users/",
+                                                  )
+                                                  .concat(e.photo),
+                                                alt: e.nickname,
+                                                onError: (e) => {
+                                                  e.target.src =
+                                                    "/images/ic_head.png";
+                                                },
+                                                width: "100%",
+                                                height: "100%",
+                                                className: "bg-gy",
+                                              }),
+                                            }),
+                                            (0, S.jsxs)(j.A, {
+                                              variant: "body2",
+                                              className:
+                                                "mt-1 text-base text-lgy dark:text-tgy",
+                                              children: [
+                                                "Lv.",
+                                                e.expinfo.level,
+                                              ],
+                                            }),
+                                          ],
+                                        }),
+                                        action: (0, S.jsxs)(b.A, {
+                                          "aria-label": "settings",
+                                          className: "text-og text-sm",
+                                          onClick: ce,
+                                          children: [
+                                            (0, S.jsx)(c.A, {
+                                              className: "text-base",
+                                            }),
+                                            a("novel.report"),
+                                          ],
+                                        }),
+                                        title: (0, S.jsxs)(d.A, {
+                                          className:
+                                            "flex items-center text-base",
+                                          children: [
+                                            (0, S.jsx)("p", {
+                                              className: "text-og font-bold",
+                                              children: e.nickname,
+                                            }),
+                                            (0, S.jsxs)("span", {
+                                              className:
+                                                "text-lgy dark:text-tgy",
+                                              children: [
+                                                "\xa0\xb7\xa0",
+                                                e.expinfo.level_name,
+                                              ],
+                                            }),
+                                          ],
+                                        }),
+                                        subheader: (0, S.jsxs)(d.A, {
+                                          children: [
+                                            (0, S.jsx)("p", {
+                                              className: "dark:text-tgy",
+                                              children: e.addtime,
+                                            }),
+                                            (0, S.jsx)(d.A, {
+                                              className:
+                                                "mt-2 flex items-center",
+                                              children:
+                                                null ===
+                                                  (s = e.expinfo.badges) ||
+                                                void 0 === s
+                                                  ? void 0
+                                                  : s.map((e, t) =>
+                                                      (0, S.jsx)(
+                                                        "img",
+                                                        {
+                                                          src:
+                                                            (null === x ||
+                                                            void 0 === x
+                                                              ? void 0
+                                                              : x.img_host) +
+                                                            e.content,
+                                                          alt: e.name,
+                                                          className:
+                                                            "w-8 h-8 rounded-full mr-1",
+                                                        },
+                                                        t,
+                                                      ),
+                                                    ),
+                                            }),
+                                          ],
+                                        }),
+                                      }),
+                                      (0, S.jsx)(g.A, {
+                                        className:
+                                          "w-[82%] text-gy text-lg flex justify-start ml-auto py-0 dark:text-tgy",
+                                        children: (0, S.jsx)("div", {
+                                          className:
+                                            "w-[80%] break-words whitespace-pre-wrap",
+                                          dangerouslySetInnerHTML: {
+                                            __html:
+                                              null === e || void 0 === e
+                                                ? void 0
+                                                : e.content,
+                                          },
+                                        }),
+                                      }),
+                                      (0, S.jsx)("button", {
+                                        className:
+                                          "text-gy text-sm flex justify-end ml-auto pr-5 dark:text-tgy",
+                                        onClick: () =>
+                                          ((e) => {
+                                            const t = e.split("JM")[1];
+                                            P !== t &&
+                                              D("/comic/detail?id=".concat(t));
+                                          })(e.name),
+                                        children: e.name,
+                                      }),
+                                      (0, S.jsxs)(f.A, {
+                                        disableSpacing: !0,
+                                        className: "pl-20",
+                                        children: [
+                                          (0, S.jsx)(b.A, {
+                                            "aria-label": "add reply",
+                                            className: "text-base dark:text-og",
+                                            onClick: () => le(t, !0),
+                                            children: a("novel.reply"),
+                                          }),
+                                          (null === (n = e.replys) ||
+                                          void 0 === n
+                                            ? void 0
+                                            : n.length) > 0 &&
+                                            (0, S.jsxs)(S.Fragment, {
+                                              children: [
+                                                (0, S.jsx)(b.A, {
+                                                  "aria-label": "more reply",
+                                                  className:
+                                                    "text-base dark:text-og",
+                                                  onClick: () => le(t, !1),
+                                                  children:
+                                                    a("novel.more_replies"),
+                                                }),
+                                                (0, S.jsx)(L, {
+                                                  expand: X[t],
+                                                  onClick: () => le(t, !1),
+                                                  "aria-expanded": X[t],
+                                                  "aria-label": "show more",
+                                                  children: (0, S.jsx)(m.A, {
+                                                    className: "dark:text-og",
+                                                  }),
+                                                }),
+                                              ],
+                                            }),
+                                        ],
+                                      }),
+                                      (0, S.jsxs)(p.A, {
+                                        in: X[t],
+                                        timeout: "auto",
+                                        unmountOnExit: !0,
+                                        children: [
+                                          X[t] &&
+                                            X.replyArea &&
+                                            (0, S.jsx)(_.A, {
+                                              t: a,
+                                              ncid: "",
+                                              aid: e.AID,
+                                              comment_id: e.CID,
+                                              responds: z,
+                                              setResponds: M,
+                                              problem: U,
+                                              userAnswer: G,
+                                              setUserAnswer: Z,
+                                              handleRegenerateProblem: oe,
+                                              checkAnswer: re,
+                                            }),
+                                          (null === (o = e.replys) ||
+                                          void 0 === o
+                                            ? void 0
+                                            : o.length) > 0 &&
+                                            X[t] &&
+                                            !X.replyArea &&
+                                            e.replys.map((e, t) => {
+                                              var s;
+                                              return (0, S.jsxs)(
+                                                u.A,
+                                                {
+                                                  className:
+                                                    "w-[95%] ml-auto shadow-none dark:bg-nbk dark:text-tgy",
+                                                  children: [
+                                                    (0, S.jsx)(h.A, {
+                                                      className:
+                                                        "flex justify-center items-start pb-0",
+                                                      avatar: (0, S.jsxs)(d.A, {
+                                                        className:
+                                                          "flex flex-col items-center",
+                                                        children: [
+                                                          (0, S.jsx)(v.A, {
+                                                            "aria-label":
+                                                              "recipe",
+                                                            sx: {
+                                                              width: 35,
+                                                              height: 35,
+                                                            },
+                                                            children: (0,
+                                                            S.jsx)("img", {
+                                                              src: ""
+                                                                .concat(
+                                                                  null === x ||
+                                                                    void 0 === x
+                                                                    ? void 0
+                                                                    : x.img_host,
+                                                                  "/media/users/",
+                                                                )
+                                                                .concat(
+                                                                  e.photo,
+                                                                ),
+                                                              alt: e.nickname,
+                                                              onError: (e) => {
+                                                                e.target.src =
+                                                                  "/images/ic_head.png";
+                                                              },
+                                                              width: "100%",
+                                                              height: "100%",
+                                                              className:
+                                                                "bg-gy",
+                                                            }),
+                                                          }),
+                                                          (0, S.jsxs)(j.A, {
+                                                            variant: "body2",
+                                                            className:
+                                                              "mt-1 text-sm text-lgy dark:text-tgy",
+                                                            children: [
+                                                              "Lv.",
+                                                              e.expinfo.level,
+                                                            ],
+                                                          }),
+                                                        ],
+                                                      }),
+                                                      action: (0, S.jsxs)(b.A, {
+                                                        "aria-label":
+                                                          "settings",
+                                                        className:
+                                                          "text-og text-sm pt-1",
+                                                        onClick: ce,
+                                                        children: [
+                                                          (0, S.jsx)(c.A, {
+                                                            className:
+                                                              "text-base",
+                                                          }),
+                                                          a("novel.report"),
+                                                        ],
+                                                      }),
+                                                      title: (0, S.jsxs)(d.A, {
+                                                        className:
+                                                          "flex items-center",
+                                                        children: [
+                                                          (0, S.jsx)("p", {
+                                                            className:
+                                                              "text-og",
+                                                            children:
+                                                              e.nickname,
+                                                          }),
+                                                          (0, S.jsxs)("span", {
+                                                            className:
+                                                              "text-lgy dark:text-tgy",
+                                                            children: [
+                                                              "\xa0\xb7\xa0",
+                                                              e.expinfo
+                                                                .level_name,
+                                                            ],
+                                                          }),
+                                                        ],
+                                                      }),
+                                                      subheader: (0, S.jsxs)(
+                                                        d.A,
+                                                        {
+                                                          children: [
+                                                            (0, S.jsx)("p", {
+                                                              className:
+                                                                "dark:text-tgy",
+                                                              children:
+                                                                e.addtime,
+                                                            }),
+                                                            (0, S.jsx)(d.A, {
+                                                              className:
+                                                                "mt-2 flex items-center",
+                                                              children:
+                                                                null ===
+                                                                  (s =
+                                                                    e.expinfo
+                                                                      .badges) ||
+                                                                void 0 === s
+                                                                  ? void 0
+                                                                  : s.map(
+                                                                      (e, t) =>
+                                                                        (0,
+                                                                        S.jsx)(
+                                                                          "img",
+                                                                          {
+                                                                            src:
+                                                                              (null ===
+                                                                                x ||
+                                                                              void 0 ===
+                                                                                x
+                                                                                ? void 0
+                                                                                : x.img_host) +
+                                                                              e.content,
+                                                                            alt: e.name,
+                                                                            className:
+                                                                              "w-8 h-8 rounded-full mr-1",
+                                                                          },
+                                                                          t,
+                                                                        ),
+                                                                    ),
+                                                            }),
+                                                          ],
+                                                        },
+                                                      ),
+                                                    }),
+                                                    (0, S.jsx)(g.A, {
+                                                      className:
+                                                        "w-[82%] text-gy text-lg flex justify-start ml-auto dark:text-tgy pt-0",
+                                                      children: (0, S.jsx)(
+                                                        "div",
+                                                        {
+                                                          className:
+                                                            "w-[80%] break-words whitespace-pre-wrap",
+                                                          dangerouslySetInnerHTML:
+                                                            {
+                                                              __html: e.content,
+                                                            },
+                                                        },
+                                                      ),
+                                                    }),
+                                                  ],
+                                                },
+                                                t,
+                                              );
+                                            }),
+                                        ],
+                                      }),
+                                    ],
+                                  }),
+                                },
+                                e.nickname + t,
+                              ),
+                            }),
+                          ],
+                        },
+                        e.nickname + t,
+                      );
+                    })
+                  : !T &&
+                    (0, S.jsx)("p", {
+                      className: "text-center my-10",
+                      children: a("forum.no_comments_yet"),
+                    }),
+                "member_comments" !== O &&
+                  (0, S.jsx)("button", {
+                    ref: $,
+                    onClick: ie,
+                    className: "w-full flex justify-center py-4",
+                    children:
+                      (null === (s = te.list) || void 0 === s
+                        ? void 0
+                        : s.length) > 0 &&
+                      (ae && se
+                        ? (0, S.jsxs)("div", {
+                            className: "flex items-center",
+                            children: [
+                              (0, S.jsx)(i.A, { color: "inherit", size: 12 }),
+                              (0, S.jsx)("p", {
+                                className: "ml-2",
+                                children: a("comic.pull_to_load"),
+                              }),
+                            ],
+                          })
+                        : (0, S.jsx)("p", {
+                            className: "text-center",
+                            children: a("comic.no_more"),
+                          })),
+                  }),
+                (!q || (!J && null !== J)) &&
+                  (0, S.jsx)(A.Fe, {
+                    isLogined: q,
+                    setIsLogined: Q,
+                    isCorrect: J,
+                    setIsCorrect: K,
+                    setUserAnswer: Z,
+                  }),
+              ],
+            })
+          );
+        };
+    },
+    787: (e, t, s) => {
+      s.d(t, { A: () => p });
+      var n = s(5043),
+        a = s(6580),
+        o = s(6148),
+        r = s(9275),
+        l = s(1500),
+        c = s(6671),
+        i = s(9354),
+        d = s(8390),
+        m = s(4149),
+        x = s(4117),
+        u = s(8038),
+        h = s(1100),
+        g = s(3944),
+        f = s(579);
+      const p = (e) => {
+        const { currentPage: t } = e,
+          {
+            config: { logined: s, ads: p },
+          } = (0, g.H)(),
+          { t: v } = (0, x.Bd)(),
+          b = (0, o.j)(),
+          { unread: j, notifResult: A } = (0, o.G)((e) => e.member),
+          k = sessionStorage.getItem("catTab") || "";
+        (0, n.useEffect)(() => {
+          s && 0 === Object.keys(j).length && b((0, h.Zg)());
+        }, [s, A]);
+        const w = [
+            {
+              icon: (0, f.jsx)(r.A, { className: "text-3xl" }),
+              nav: "main",
+              label: v("nav.home"),
+              link: "/",
+            },
+            {
+              icon: (0, f.jsx)(l.A, { className: "text-3xl" }),
+              nav: "categories",
+              label: v("nav.categories"),
+              link: "/categories?slug=".concat(k),
+            },
+            {
+              icon: (0, f.jsx)(i.A, { className: "text-3xl" }),
+              nav: "movies",
+              label: v("nav.movie"),
+              link: "/movies",
+            },
+            {
+              icon: (0, f.jsx)(d.A, { className: "text-3xl" }),
+              nav: "forum",
+              label: v("nav.forum"),
+              link: "/forum",
+            },
+            {
+              icon: (0, f.jsx)(m.A, { className: "text-3xl" }),
+              nav: "member",
+              label: v("nav.member"),
+              link: "/member",
+            },
+          ],
+          [y, N] = (0, n.useState)(!1),
+          _ = (0, n.useRef)(null),
+          S = {
+            main: "app_bottom_bar_jm3",
+            categories: "app_categories_bottom_jm3",
+            movies: "app_movies_fixed_bottom_jm3",
+            member: "board1",
+          }[t];
+        return (0, f.jsxs)(f.Fragment, {
+          children: [
+            "forum" !== t &&
+              (0, f.jsx)("div", {
+                ref: _,
+                className:
+                  "fixed left-0 right-0 flex justify-center transition-all duration-300 ease-in-out ".concat(
+                    y ? "bottom-[3rem]" : "bottom-[4.5em]",
+                  ),
+                children:
+                  S &&
+                  (0, f.jsx)(u.A, {
+                    adKey: S,
+                    closeBtn: !0,
+                    handleAdResize: () => {
+                      N(!0);
+                    },
+                  }),
+              }),
+            (0, f.jsx)("div", {
+              className: "fixed bottom-0 left-0 right-0 w-full z-30",
+              children: (0, f.jsx)("div", {
+                className:
+                  "flex justify-around items-start bg-bbk text-gy z-50 min-h-[6rem] pt-3 overflow-hidden",
+                children: w.map((e, n) =>
+                  (0, f.jsxs)(
+                    a.N_,
+                    {
+                      to: e.link,
+                      className:
+                        "animation-click-item flex flex-col items-center relative ".concat(
+                          e.nav === t ? "text-og" : "",
+                        ),
+                      children: [
+                        (0, f.jsxs)("div", {
+                          className: "relative",
+                          children: [
+                            e.icon,
+                            s &&
+                              5 === n &&
+                              j.comic_follow + j.site_notice > 0 &&
+                              (0, f.jsx)("span", {
+                                className:
+                                  "absolute -top-1 -right-5 bg-red-600 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center",
+                                children: j.comic_follow + j.site_notice,
+                              }),
+                          ],
+                        }),
+                        (0, f.jsx)("span", {
+                          className: "text-center",
+                          children: e.label,
+                        }),
+                      ],
+                    },
+                    n,
+                  ),
+                ),
+              }),
+            }),
+          ],
+        });
+      };
+    },
+    5073: (e, t, s) => {
+      s.d(t, { A: () => m });
+      var n = s(9379),
+        a = s(8911),
+        o = s(7353),
+        r = s(802),
+        l = s(2110),
+        c = s(6494),
+        i = s(7392),
+        d = s(579);
+      const m = (e) => {
+        const {
+          t: t,
+          aid: s,
+          ncid: m,
+          comment_id: x,
+          responds: u,
+          setResponds: h,
+          problem: g,
+          userAnswer: f,
+          setUserAnswer: p,
+          handleRegenerateProblem: v,
+          checkAnswer: b,
+        } = e;
+        return (
+          console.log(u),
+          (0, d.jsx)(l.A, {
+            className: "dark:bg-nbk dark:text-tgy",
+            children: (0, d.jsxs)(c.A, {
+              className: "",
+              children: [
+                (0, d.jsxs)(o.A, {
+                  className: "w-full flex justify-end ml-auto pt-0",
+                  children: [
+                    (0, d.jsx)("label", { htmlFor: "reply" }),
+                    (0, d.jsx)(r.A, {
+                      value: u.reply,
+                      id: "reply",
+                      "aria-label": "reply textarea",
+                      minRows: 3,
+                      maxLength: 200,
+                      placeholder: "\u5206\u4eab\u4f60\u7684\u60f3\u6cd5\u5427",
+                      className:
+                        "border-2 border-tgy text-base text-lgy w-full rounded-md p-1 focus:border-gray-500 focus:outline-none dark:bg-bbk",
+                      onChange: (e) =>
+                        h((t) =>
+                          (0, n.A)(
+                            (0, n.A)({}, t),
+                            {},
+                            {
+                              comment: e.target.value,
+                              comment_id: x,
+                              ncid: m,
+                              aid: s,
+                            },
+                          ),
+                        ),
+                    }),
+                  ],
+                }),
+                g.problem
+                  ? (0, d.jsxs)(o.A, {
+                      className:
+                        "flex justify-center items-center text-base pt-4",
+                      children: [
+                        (0, d.jsxs)("p", {
+                          className: "text-2xl",
+                          children: [g.problem, " ="],
+                        }),
+                        (0, d.jsx)("input", {
+                          type: "text",
+                          id: "captcha-answer",
+                          value: f,
+                          maxLength: 10,
+                          onChange: (e) => p(e.target.value),
+                          placeholder: t("detail.enter_answer"),
+                          className:
+                            "w-28 h-12 text-lgy text-base border-2 border-tgy rounded-md px-2 ml-2 dark:bg-bbk",
+                        }),
+                        (0, d.jsx)(i.A, {
+                          "aria-label": "reset",
+                          className: "rounded-full bg-gray-200 ml-2 p-1",
+                          onClick: v,
+                          children: (0, d.jsx)(a.A, { className: "text-2xl" }),
+                        }),
+                        (0, d.jsx)("button", {
+                          className:
+                            "bg-og rounded-md text-white ml-8 py-2 px-5",
+                          onClick: () => b(),
+                          children: t("detail.responds"),
+                        }),
+                      ],
+                    })
+                  : (0, d.jsx)("div", {
+                      className: "text-center py-6 text-gray-500",
+                      children: "Loading captcha...",
+                    }),
+              ],
+            }),
+          })
+        );
+      };
+    },
+    8838: (e, t, s) => {
+      (s.r(t), s.d(t, { default: () => S }));
+      var n = s(9379),
+        a = s(5043),
+        o = s(6580),
+        r = s(3944),
+        l = s(6148),
+        c = s(4117),
+        i = s(319),
+        d = s(5874),
+        m = s(9144),
+        x = s(787),
+        u = s(5360),
+        h = s(5411),
+        g = s(7044),
+        f = s(7738),
+        p = s(2873),
+        v = s(223),
+        b = s(7947),
+        j = s(5090),
+        A = s(5412),
+        k = s(1299),
+        w = s(2028),
+        y = s(9011),
+        N = s(1020),
+        _ = s(579);
+      const S = () => {
+        var e, t;
+        const { config: s, setConfig: S } = (0, r.H)(),
+          { setting: C, logined: L, memberInfo: T } = s,
+          { t: z } = (0, c.Bd)(),
+          M = (0, j.zk)(),
+          H = (0, o.zy)(),
+          R = (0, y.bs)(),
+          { snackbars: E, setSnackbars: V, showSnackbar: O } = (0, k.q)(),
+          D = M[2].text_section[0].content.slice(0, 7),
+          [I, Y] = (0, a.useState)({
+            login: !1,
+            signUp: !1,
+            forgot: !1,
+            newTopic: !1,
+          }),
+          [P, F] = (0, a.useState)({
+            newTopic: "",
+            spoilers: !1,
+            activeIndex: null,
+            comment: "",
+            comment_id: "",
+            aid: "",
+          }),
+          X = (0, l.j)(),
+          {
+            forumList: W,
+            isLoading: U,
+            isRefreshing: B,
+          } = (0, l.G)((e) => e.forum),
+          [G, Z] = (0, a.useState)(b.Z),
+          [J, K] =
+            (new URLSearchParams(H.search),
+            (0, a.useState)(() => {
+              const e = sessionStorage.getItem("forumTab");
+              return null !== e ? e : "all";
+            })),
+          [q, Q] = (0, a.useState)(!1),
+          [$, ee] = (0, a.useState)(1),
+          [te, se] = (0, a.useState)(null),
+          ne = sessionStorage.getItem("forumFrom"),
+          ae = function () {
+            let e =
+                arguments.length > 0 && void 0 !== arguments[0] && arguments[0],
+              t =
+                arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
+              s =
+                arguments.length > 2 && void 0 !== arguments[2]
+                  ? arguments[2]
+                  : "all",
+              n =
+                arguments.length > 3 && void 0 !== arguments[3]
+                  ? arguments[3]
+                  : 0,
+              a =
+                arguments.length > 4 && void 0 !== arguments[4]
+                  ? arguments[4]
+                  : 1;
+            (X((0, v.Ah)({ isLoading: !0, isLoadMore: e, isRefreshing: t })),
+              t && (ee(1), X((0, v.f9)("forumList"))),
+              setTimeout(() => {
+                X((0, p.e)({ mode: s, page: a }));
+              }, n),
+              Q(!1));
+          };
+        (0, a.useEffect)(() => {
+          var e;
+          ((0 === (null === (e = W.list) || void 0 === e ? void 0 : e.length) ||
+            q ||
+            "forum" !== ne) &&
+            (R(),
+            ae(!1, !1, J),
+            ee(1),
+            sessionStorage.setItem("forumTab", String(J)),
+            sessionStorage.setItem("forumFrom", "forum")),
+            sessionStorage.setItem(
+              "fromPage",
+              "".concat(H.pathname, "?mode=").concat(J),
+            ));
+        }, [null === (e = W.list) || void 0 === e ? void 0 : e.length, q, ne]);
+        return (0, _.jsxs)("div", {
+          className: "h-full dark:bg-bk",
+          children: [
+            U && (0, _.jsx)(h.A, {}),
+            (0, _.jsx)(m.A, {
+              currentPage: "forum",
+              setTabChange: Q,
+              setMode: K,
+              mode: J,
+            }),
+            (null === (t = W.list) || void 0 === t ? void 0 : t.length) > 0 &&
+              (0, _.jsx)(i.u, {
+                completeDelay: 1e3,
+                refreshing: B,
+                onRefresh: () => {
+                  ae(!1, !0, J);
+                },
+                renderText: A.S5,
+                className: "overflow-y-visible",
+                children: (0, _.jsxs)("div", {
+                  className: "text-bbk mt-3 pb-10 dark:text-tgy",
+                  children: [
+                    "chat" === J &&
+                      (0, _.jsxs)("div", {
+                        className:
+                          "bg-white flex justify-center text-bbk mx-3 py-4 dark:text-tgy dark:bg-bbk",
+                        children: [
+                          M[2].text_section[0].content[0].slice(0, 3),
+                          (0, _.jsx)("span", {
+                            children: (0, _.jsx)("button", {
+                              onClick: (e) => se(e.currentTarget),
+                              className: "text-og font-bold p-0 ml-1",
+                              children: M[2].text_section[0].content[0].slice(
+                                3,
+                                9,
+                              ),
+                            }),
+                          }),
+                          M[2].text_section[0].content[0].slice(9, 30),
+                        ],
+                      }),
+                    (0, _.jsx)(u.A, {
+                      t: z,
+                      setting: C,
+                      logined: L,
+                      list: W.list,
+                      isLoading: U,
+                      setDialogOpen: Y,
+                      dialogOpen: I,
+                      responds: P,
+                      setResponds: F,
+                      page: $,
+                      setPage: ee,
+                      loadList: ae,
+                      showSnackbar: O,
+                    }),
+                  ],
+                }),
+              }),
+            "chat" === J &&
+              (0, _.jsxs)("div", {
+                className:
+                  "w-full fixed bottom-16 bg-bbk h-20 flex items-center justify-center mb-4",
+                children: [
+                  (0, _.jsx)("input", {
+                    type: "text",
+                    maxLength: 200,
+                    placeholder: z("forum.start_new_topic"),
+                    className: "w-10/12 h-10 rounded outline-none p-2",
+                    value: P.newTopic,
+                    onChange: () =>
+                      Y(
+                        (0, n.A)(
+                          (0, n.A)({}, I),
+                          {},
+                          { [L ? "newTopic" : "login"]: !0 },
+                        ),
+                      ),
+                    onClick: () =>
+                      Y(
+                        (0, n.A)(
+                          (0, n.A)({}, I),
+                          {},
+                          { [L ? "newTopic" : "login"]: !0 },
+                        ),
+                      ),
+                  }),
+                  (0, _.jsx)("button", {
+                    className: "rounded-full bg-og p-2 ml-2",
+                    children: (0, _.jsx)(d.A, {
+                      sx: {
+                        color: "white",
+                        fontSize: 18,
+                        stroke: "white",
+                        strokeWidth: 1,
+                      },
+                    }),
+                  }),
+                ],
+              }),
+            (0, _.jsx)(N.Ay, {
+              open: Boolean(te),
+              anchorEl: te,
+              onClose: () => se(null),
+              anchorOrigin: { vertical: "bottom", horizontal: "center" },
+              transformOrigin: { vertical: "top", horizontal: "center" },
+              children: (0, _.jsxs)("div", {
+                className: "p-3 text-gy dark:text-[#bbb] dark:bg-nbk",
+                children: [
+                  (0, _.jsxs)("p", {
+                    className: "border-b py-2",
+                    children: [
+                      " ",
+                      M[3].text_section[0].content[0].slice(3, 9),
+                    ],
+                  }),
+                  (0, _.jsx)("div", {
+                    className: "py-2",
+                    children: D.slice(1, 10).map((e) =>
+                      (0, _.jsx)("p", { children: e }, e),
+                    ),
+                  }),
+                ],
+              }),
+            }),
+            (0, _.jsx)(x.A, { currentPage: "forum" }),
+            I.newTopic &&
+              (0, _.jsx)(g.A, {
+                setDialogOpen: Y,
+                dialogOpen: I,
+                responds: P,
+                setResponds: F,
+                handleSendNewTopic: async () => {
+                  const { newTopic: e, aid: t } = P;
+                  if (I.newTopic && "" !== e) {
+                    const s = await X(
+                      (0, p.T)({ comment: e, aid: t }),
+                    ).unwrap();
+                    if (200 === s.code) {
+                      const { msg: e, status: t } = s.data;
+                      (O(e, "ok" !== t ? "error" : "success"),
+                        F((e) =>
+                          (0, n.A)(
+                            (0, n.A)({}, e),
+                            {},
+                            { newTopic: "", aid: "" },
+                          ),
+                        ),
+                        Y((0, n.A)((0, n.A)({}, I), {}, { newTopic: !1 })));
+                    }
+                  }
+                },
+              }),
+            (I.login || I.signUp || I.forgot) &&
+              !L &&
+              (0, _.jsx)(f.A, {
+                setFormData: Z,
+                formData: G,
+                setConfig: S,
+                logined: L,
+                isLoading: U,
+                setDialogOpen: Y,
+                dialogOpen: I,
+                showSnackbar: O,
+              }),
+            (0, _.jsx)(w.A, {}),
+            (0, _.jsx)(k.A, { setSnackbars: V, snackbars: E }),
+          ],
+        });
+      };
+    },
+    4149: (e, t, s) => {
+      s.d(t, { A: () => o });
+      var n = s(9662),
+        a = s(579);
+      const o = (0, n.A)(
+        (0, a.jsx)("path", {
+          d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6m0 14c-2.03 0-4.43-.82-6.14-2.88C7.55 15.8 9.68 15 12 15s4.45.8 6.14 2.12C16.43 19.18 14.03 20 12 20",
+        }),
+        "AccountCircle",
+      );
+    },
+    7225: (e, t, s) => {
+      s.d(t, { A: () => o });
+      var n = s(9662),
+        a = s(579);
+      const o = (0, n.A)(
+        (0, a.jsx)("path", {
+          d: "M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m0 18H4V8h16z",
+        }),
+        "CalendarToday",
+      );
+    },
+    7421: (e, t, s) => {
+      s.d(t, { A: () => o });
+      var n = s(9662),
+        a = s(579);
+      const o = (0, n.A)(
+        (0, a.jsx)("path", { d: "M7 2v11h3v9l7-12h-4l4-8z" }),
+        "FlashOn",
+      );
+    },
+    9275: (e, t, s) => {
+      s.d(t, { A: () => o });
+      var n = s(9662),
+        a = s(579);
+      const o = (0, n.A)(
+        (0, a.jsx)("path", { d: "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" }),
+        "Home",
+      );
+    },
+    7883: (e, t, s) => {
+      s.d(t, { A: () => o });
+      var n = s(9662),
+        a = s(579);
+      const o = (0, n.A)(
+        (0, a.jsx)("path", {
+          d: "M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2m12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2m-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2",
+        }),
+        "MoreHoriz",
+      );
+    },
+    6687: (e, t, s) => {
+      s.d(t, { A: () => o });
+      var n = s(9662),
+        a = s(579);
+      const o = (0, n.A)(
+        (0, a.jsx)("path", {
+          d: "M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4",
+        }),
+        "Restaurant",
+      );
+    },
+    9484: (e, t, s) => {
+      s.d(t, { A: () => o });
+      var n = s(9662),
+        a = s(579);
+      const o = (0, n.A)(
+        (0, a.jsx)("path", {
+          d: "M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14",
+        }),
+        "Search",
+      );
+    },
+    5874: (e, t, s) => {
+      s.d(t, { A: () => o });
+      var n = s(9662),
+        a = s(579);
+      const o = (0, n.A)(
+        (0, a.jsx)("path", { d: "M2.01 21 23 12 2.01 3 2 10l15 2-15 2z" }),
+        "Send",
+      );
+    },
+    8390: (e, t, s) => {
+      s.d(t, { A: () => o });
+      var n = s(9662),
+        a = s(579);
+      const o = (0, n.A)(
+        (0, a.jsx)("path", {
+          d: "M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2M9 11H7V9h2zm4 0h-2V9h2zm4 0h-2V9h2z",
+        }),
+        "Textsms",
+      );
+    },
+    9354: (e, t, s) => {
+      s.d(t, { A: () => o });
+      var n = s(9662),
+        a = s(579);
+      const o = (0, n.A)(
+        (0, a.jsx)("path", {
+          d: "M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11z",
+        }),
+        "Videocam",
+      );
+    },
+    6671: (e, t, s) => {
+      s.d(t, { A: () => o });
+      var n = s(9662),
+        a = s(579);
+      const o = (0, n.A)(
+        (0, a.jsx)("path", {
+          d: "M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2m-10 7H8v3H6v-3H3v-2h3V8h2v3h3zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5m4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5",
+        }),
+        "VideogameAsset",
+      );
+    },
+    1500: (e, t, s) => {
+      s.d(t, { A: () => o });
+      var n = s(9662),
+        a = s(579);
+      const o = (0, n.A)(
+        (0, a.jsx)("path", {
+          d: "M11 11V3H5c-1.1 0-2 .9-2 2v6zm2 0h8V5c0-1.1-.9-2-2-2h-6zm-2 2H3v6c0 1.1.9 2 2 2h6zm2 0v8h6c1.1 0 2-.9 2-2v-6z",
+        }),
+        "Window",
+      );
+    },
+    319: (e, t, s) => {
+      s.d(t, { u: () => h });
+      var n = s(9379),
+        a = s(579),
+        o = s(5043);
+      const r = (e) =>
+        e === document.documentElement
+          ? (document.scrollingElement || document.documentElement).scrollTop
+          : e === window
+            ? Math.max(
+                window.pageYOffset,
+                document.documentElement.scrollTop,
+                document.body.scrollTop,
+              )
+            : e.scrollTop;
+      let l = !1;
+      try {
+        const e = Object.defineProperty({}, "passive", {
+          get() {
+            l = !0;
+          },
+        });
+        window.addEventListener("test", null, e);
+      } catch (g) {}
+      const c = {
+          isSupportsPassive: () => l,
+          on(e, t, s) {
+            let n =
+              arguments.length > 3 && void 0 !== arguments[3]
+                ? arguments[3]
+                : { passive: !1 };
+            e.addEventListener(t, s, !!l && n);
+          },
+          off(e, t, s) {
+            let n =
+              arguments.length > 3 && void 0 !== arguments[3]
+                ? arguments[3]
+                : { passive: !1 };
+            e.removeEventListener(t, s, !!l && n);
+          },
+        },
+        i = () => {
+          const e = (0, o.useRef)(),
+            t = (0, o.useRef)(0),
+            s = (0, o.useRef)(window),
+            n = (0, o.useRef)(() => {});
+          return (
+            (0, o.useEffect)(() => {
+              const a = ((e) => {
+                for (; e && e.parentNode && e.parentNode !== document.body; ) {
+                  const t = window.getComputedStyle(e);
+                  if (
+                    (["scroll", "auto"].indexOf(t.overflowY) > -1 ||
+                      ["scroll", "auto"].indexOf(t.overflow) > -1) &&
+                    (parseInt(t.height, 10) > 0 ||
+                      parseInt(t.maxHeight, 10) > 0)
+                  )
+                    return e;
+                  e = e.parentNode;
+                }
+                return window;
+              })(e.current);
+              a !== s.current &&
+                (n.current(),
+                (n.current = ((s) => {
+                  t.current = 0;
+                  const n = (e) => {
+                      const s = e.touches[0];
+                      t.current = s.pageY;
+                    },
+                    a = (n) => {
+                      var a;
+                      n.touches[0].pageY - t.current > 0 &&
+                        n.cancelable &&
+                        0 === r(s) &&
+                        null != (a = e.current) &&
+                        a.contains(n.target) &&
+                        n.preventDefault();
+                    },
+                    o = () => {
+                      t.current = 0;
+                    };
+                  return (
+                    c.on(s, "touchstart", n),
+                    c.on(s, "touchmove", a),
+                    c.on(s, "touchend", o),
+                    c.on(s, "touchcancel", o),
+                    () => {
+                      (c.off(s, "touchstart", n),
+                        c.off(s, "touchmove", a),
+                        c.off(s, "touchend", o),
+                        c.off(s, "touchcancel", o));
+                    }
+                  );
+                })(a)),
+                (s.current = a));
+            }),
+            [e, s]
+          );
+        },
+        d = (e, t) => {
+          const s = (() => {
+            const e = (0, o.useRef)(!0);
+            return e.current ? ((e.current = !1), !0) : e.current;
+          })();
+          (0, o.useEffect)(() => {
+            if (!s) return e();
+          }, t);
+        },
+        m = (e) => {
+          const t = (0, o.useRef)(e);
+          return ((t.current = e), t);
+        },
+        x = { startX: 0, startY: 0, offsetX: 0, offsetY: 0 };
+      function u(e) {
+        return e && !("touches" in e);
+      }
+      const h = (e) => {
+        let {
+          className: t,
+          style: s,
+          animationDuration: l = 300,
+          completeDelay: h = 500,
+          refreshing: g = !1,
+          headHeight: f = 50,
+          startDistance: p = 30,
+          resistance: v = 0.6,
+          threshold: b = f,
+          onRefresh: j,
+          disabled: A = !1,
+          prefixCls: k = "pull-to-refreshify",
+          renderText: w,
+          children: y,
+        } = e;
+        const [N, _] = i(),
+          S = (() => {
+            const e = (0, o.useRef)(!1);
+            return (
+              (0, o.useEffect)(
+                () => (
+                  (e.current = !1),
+                  () => {
+                    e.current = !0;
+                  }
+                ),
+                [],
+              ),
+              e
+            );
+          })(),
+          [[C, L, T], z] = (0, o.useState)(
+            g ? [f, l, "refreshing"] : [0, 0, "normal"],
+          ),
+          M = function (e) {
+            let t =
+              arguments.length > 1 && void 0 !== arguments[1]
+                ? arguments[1]
+                : 0;
+            switch (e) {
+              case "pulling":
+              case "canRelease":
+                z([t, 0, e]);
+                break;
+              case "refreshing":
+                z([f, l, e]);
+                break;
+              case "complete":
+                if ((z([f, l, e]), S.current)) return;
+                setTimeout(() => {
+                  M("normal");
+                }, h);
+                break;
+              default:
+                z([0, l, e]);
+            }
+          };
+        d(() => {
+          M(g ? "refreshing" : "complete");
+        }, [g]);
+        const H = ((e) => {
+          let { onDragStart: t, onDragMove: s, onDragEnd: a } = e;
+          const r = (0, o.useRef)(null),
+            l = m(t),
+            i = m(s),
+            d = m(a);
+          return (
+            (0, o.useEffect)(() => {
+              const e = r && r.current;
+              if (!e) return;
+              let t,
+                s = !1;
+              const a = () => {
+                t = (0, n.A)({}, x);
+              };
+              a();
+              const o = (e) => {
+                  var n;
+                  if (((s = !0), a(), u(e)))
+                    ((t.startX = e.clientX), (t.startY = e.clientY));
+                  else {
+                    const {
+                      touches: [s],
+                    } = e;
+                    ((t.startX = s.pageX), (t.startY = s.pageY));
+                  }
+                  null == (n = l.current) || n.call(l, e, t);
+                },
+                m = (e) => {
+                  var a;
+                  if (!s) return;
+                  let o = 0,
+                    r = 0;
+                  if (u(e)) ((o = e.clientX), (r = e.clientY));
+                  else {
+                    const t = e.touches[0];
+                    ((o = t.pageX), (r = t.pageY));
+                  }
+                  const l = o - t.startX,
+                    c = r - t.startY,
+                    d = (0, n.A)(
+                      (0, n.A)({}, t),
+                      {},
+                      { offsetX: l, offsetY: c },
+                    );
+                  null != (a = i.current) && a.call(i, e, d) && (t = d);
+                },
+                h = (e) => {
+                  var n;
+                  ((s = !1), null == (n = d.current) || n.call(d, e, t), a());
+                };
+              return (
+                c.on(e, "touchstart", o),
+                c.on(e, "touchmove", m),
+                c.on(e, "touchend", h),
+                c.on(e, "touchcancel", h),
+                c.on(e, "mousedown", o),
+                c.on(e, "mousemove", m),
+                c.on(e, "mouseup", h),
+                () => {
+                  (c.off(e, "touchstart", o),
+                    c.off(e, "touchmove", m),
+                    c.off(e, "touchend", h),
+                    c.off(e, "touchcancel", h),
+                    c.off(e, "mousedown", o),
+                    c.off(e, "mousemove", m),
+                    c.off(e, "mouseup", h));
+                }
+              );
+            }, []),
+            r
+          );
+        })({
+          onDragMove: (e, t) => {
+            let { offsetY: s } = t;
+            if (
+              !j ||
+              s <= 0 ||
+              (s > 0 && r(_.current) > 0) ||
+              ["refreshing", "complete"].includes(T) ||
+              A
+            )
+              return !1;
+            c.isSupportsPassive() || e.preventDefault();
+            const n = s * (1 - s / window.screen.height) * v;
+            return (M(n - p < b ? "pulling" : "canRelease", n), !0);
+          },
+          onDragEnd: (e, t) => {
+            let { offsetY: s } = t;
+            if (s) {
+              if ("pulling" === T) return void M("normal");
+              "function" == typeof j && j();
+            }
+          },
+        });
+        let R = 0;
+        return (
+          C >= p && (R = (100 * (C - p < b ? C - p : b)) / b),
+          (0, a.jsx)("div", {
+            ref: H,
+            className: t ? "".concat(k, " ").concat(t) : k,
+            style: (0, n.A)(
+              { minHeight: f, overflowY: "hidden", touchAction: "pan-y" },
+              s,
+            ),
+            children: (0, a.jsxs)("div", {
+              ref: N,
+              className: "".concat(k, "__content"),
+              style: {
+                willChange: "transform",
+                WebkitTransition: "all ".concat(L, "ms"),
+                transition: "all ".concat(L, "ms"),
+                WebkitTransform: "translate3d(0, ".concat(C, "px, 0)"),
+                transform: "translate3d(0, ".concat(C, "px, 0)"),
+              },
+              children: [
+                (0, a.jsx)(
+                  "div",
+                  {
+                    className: "".concat(k, "__refresh"),
+                    style: {
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "#909090",
+                      fontSize: "14px",
+                      marginTop: -f,
+                      height: f,
+                    },
+                    children: w(T, R),
+                  },
+                  C.toFixed(0),
+                ),
+                (0, a.jsx)("div", {
+                  className: "".concat(k, "__body"),
+                  children: y,
+                }),
+              ],
+            }),
+          })
+        );
+      };
+    },
+  },
+]);
+//# sourceMappingURL=8838.74a76819.chunk.js.map

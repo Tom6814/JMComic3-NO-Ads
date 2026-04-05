@@ -1,0 +1,893 @@
+"use strict";
+(self.webpackChunk_18comic_react = self.webpackChunk_18comic_react || []).push([
+  [3224],
+  {
+    787: (e, s, t) => {
+      t.d(s, { A: () => p });
+      var a = t(5043),
+        i = t(6580),
+        l = t(6148),
+        o = t(9275),
+        n = t(1500),
+        c = t(6671),
+        d = t(9354),
+        r = t(8390),
+        m = t(4149),
+        v = t(4117),
+        x = t(8038),
+        u = t(1100),
+        g = t(3944),
+        h = t(579);
+      const p = (e) => {
+        const { currentPage: s } = e,
+          {
+            config: { logined: t, ads: p },
+          } = (0, g.H)(),
+          { t: f } = (0, v.Bd)(),
+          j = (0, l.j)(),
+          { unread: b, notifResult: _ } = (0, l.G)((e) => e.member),
+          k = sessionStorage.getItem("catTab") || "";
+        (0, a.useEffect)(() => {
+          t && 0 === Object.keys(b).length && j((0, u.Zg)());
+        }, [t, _]);
+        const N = [
+            {
+              icon: (0, h.jsx)(o.A, { className: "text-3xl" }),
+              nav: "main",
+              label: f("nav.home"),
+              link: "/",
+            },
+            {
+              icon: (0, h.jsx)(n.A, { className: "text-3xl" }),
+              nav: "categories",
+              label: f("nav.categories"),
+              link: "/categories?slug=".concat(k),
+            },
+            {
+              icon: (0, h.jsx)(d.A, { className: "text-3xl" }),
+              nav: "movies",
+              label: f("nav.movie"),
+              link: "/movies",
+            },
+            {
+              icon: (0, h.jsx)(r.A, { className: "text-3xl" }),
+              nav: "forum",
+              label: f("nav.forum"),
+              link: "/forum",
+            },
+            {
+              icon: (0, h.jsx)(m.A, { className: "text-3xl" }),
+              nav: "member",
+              label: f("nav.member"),
+              link: "/member",
+            },
+          ],
+          [A, y] = (0, a.useState)(!1),
+          w = (0, a.useRef)(null),
+          S = {
+            main: "app_bottom_bar_jm3",
+            categories: "app_categories_bottom_jm3",
+            movies: "app_movies_fixed_bottom_jm3",
+            member: "board1",
+          }[s];
+        return (0, h.jsxs)(h.Fragment, {
+          children: [
+            "forum" !== s &&
+              (0, h.jsx)("div", {
+                ref: w,
+                className:
+                  "fixed left-0 right-0 flex justify-center transition-all duration-300 ease-in-out ".concat(
+                    A ? "bottom-[3rem]" : "bottom-[4.5em]",
+                  ),
+                children:
+                  S &&
+                  (0, h.jsx)(x.A, {
+                    adKey: S,
+                    closeBtn: !0,
+                    handleAdResize: () => {
+                      y(!0);
+                    },
+                  }),
+              }),
+            (0, h.jsx)("div", {
+              className: "fixed bottom-0 left-0 right-0 w-full z-30",
+              children: (0, h.jsx)("div", {
+                className:
+                  "flex justify-around items-start bg-bbk text-gy z-50 min-h-[6rem] pt-3 overflow-hidden",
+                children: N.map((e, a) =>
+                  (0, h.jsxs)(
+                    i.N_,
+                    {
+                      to: e.link,
+                      className:
+                        "animation-click-item flex flex-col items-center relative ".concat(
+                          e.nav === s ? "text-og" : "",
+                        ),
+                      children: [
+                        (0, h.jsxs)("div", {
+                          className: "relative",
+                          children: [
+                            e.icon,
+                            t &&
+                              5 === a &&
+                              b.comic_follow + b.site_notice > 0 &&
+                              (0, h.jsx)("span", {
+                                className:
+                                  "absolute -top-1 -right-5 bg-red-600 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center",
+                                children: b.comic_follow + b.site_notice,
+                              }),
+                          ],
+                        }),
+                        (0, h.jsx)("span", {
+                          className: "text-center",
+                          children: e.label,
+                        }),
+                      ],
+                    },
+                    a,
+                  ),
+                ),
+              }),
+            }),
+          ],
+        });
+      };
+    },
+    3224: (e, s, t) => {
+      (t.r(s), t.d(s, { default: () => H }));
+      var a = t(9379),
+        i = t(5043),
+        l = t(6580),
+        o = t(3944),
+        n = t(6148),
+        c = t(4117),
+        d = t(9011),
+        r = t(5244),
+        m = t(7466),
+        v = t(8390),
+        x = t(1784),
+        u = t(2782),
+        g = t(3752),
+        h = t(9662),
+        p = t(579);
+      const f = (0, h.A)(
+        (0, p.jsx)("path", { d: "M3 18h6v-2H3zM3 6v2h18V6zm0 7h12v-2H3z" }),
+        "Sort",
+      );
+      var j = t(8038),
+        b = t(1299),
+        _ = t(2028),
+        k = t(787),
+        N = t(2226),
+        A = t(5858),
+        y = t(5412),
+        w = t(5411),
+        S = t(9295),
+        C = t(7947),
+        I = t(7738),
+        z = t(2873),
+        D = t(223),
+        L = t(7044),
+        O = t(3344);
+      const H = () => {
+        var e, s, t;
+        const { config: h, setConfig: H } = (0, o.H)(),
+          { setting: M, logined: R, darkMode: V } = h,
+          { t: E } = (0, c.Bd)(),
+          F = (0, l.zy)(),
+          K = (0, l.Zp)(),
+          U = (0, n.j)(),
+          J = (0, d.bs)(),
+          { snackbars: P, setSnackbars: T, showSnackbar: B } = (0, b.q)(),
+          {
+            novelDetail: Z,
+            novelFavoritesList: G,
+            isLoading: X,
+          } = (0, n.G)((e) => e.novel),
+          q = new URLSearchParams(F.search),
+          Q = q.get("nid"),
+          W = q.get("ncid"),
+          Y = "true" === q.get("back"),
+          $ = null !== (e = q.get("filter")) && void 0 !== e ? e : "",
+          [ee, se] = (0, i.useState)(!1),
+          [te, ae] = (0, i.useState)(1),
+          [ie, le] = (0, i.useState)("asc"),
+          oe = (0, i.useRef)(null),
+          [ne, ce] = (0, i.useState)(C.x),
+          [de, re] = (0, i.useState)(!1),
+          [me, ve] = (0, i.useState)(() => ({
+            like: JSON.parse(localStorage.getItem("novelLikeItems") || "[]"),
+            mark: JSON.parse(localStorage.getItem("novelMarkItems") || "[]"),
+          })),
+          [xe, ue] = (0, i.useState)(C.Z),
+          [ge, he] = (0, i.useState)({
+            login: !1,
+            signUp: !1,
+            forgot: !1,
+            folder: !1,
+            buyComic: !1,
+            alert: !1,
+            buyNovel: !1,
+          }),
+          [pe, fe] = (0, i.useState)(""),
+          [je, be] = (0, i.useState)(() => {
+            const e = localStorage.getItem("novelRead");
+            return e ? JSON.parse(e) : {};
+          }),
+          _e = function () {
+            let e =
+                arguments.length > 0 && void 0 !== arguments[0] && arguments[0],
+              s =
+                arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
+              t =
+                arguments.length > 2 && void 0 !== arguments[2]
+                  ? arguments[2]
+                  : 0,
+              a =
+                arguments.length > 3 && void 0 !== arguments[3]
+                  ? arguments[3]
+                  : 1;
+            (U((0, D.Ah)({ isLoading: !0, isLoadMore: e, isRefreshing: s })),
+              s && U((0, D.f9)("forumList")),
+              setTimeout(() => {
+                U((0, z.e)({ mode: "novel", nid: Q, page: a }));
+              }, t));
+          };
+        ((0, i.useEffect)(() => {
+          var e;
+          (J(),
+            ((Q && !Y) ||
+              0 ===
+                (null === (e = Object.keys(Z)) || void 0 === e
+                  ? void 0
+                  : e.length)) &&
+              (U((0, N.kX)("novelDetail")), U((0, A.Pb)({ nid: Q })), _e()));
+        }, [Q]),
+          (0, i.useEffect)(() => {
+            var e, s;
+            const t = je[Number(Q)],
+              a =
+                W ||
+                (null === t || void 0 === t ? void 0 : t[t.length - 1]) ||
+                (null === Z ||
+                void 0 === Z ||
+                null === (e = Z.series) ||
+                void 0 === e ||
+                null === (s = e[0]) ||
+                void 0 === s
+                  ? void 0
+                  : s.NCID);
+            a !== pe && fe(a);
+          }, [Q, je, Z]));
+        const ke = (e) => {
+            var s, t;
+            const i =
+              null === Z ||
+              void 0 === Z ||
+              null === (s = Z.series) ||
+              void 0 === s
+                ? void 0
+                : s.find((s) => s.NCID === e);
+            if ((fe(e), !i)) return;
+            const l =
+              null !==
+                (t = null === i || void 0 === i ? void 0 : i.is_buy_ok) &&
+              void 0 !== t
+                ? t
+                : "0";
+            "1" === i.is_need_buy_nc && "0" === l
+              ? he((0, a.A)((0, a.A)({}, ge), {}, { buyNovel: !0 }))
+              : (((e) => {
+                  be((s) => {
+                    const t = s[Q] || [];
+                    if (!t.includes(e)) {
+                      const i = (0, a.A)(
+                        (0, a.A)({}, s),
+                        {},
+                        { [Q]: [...t, e] },
+                      );
+                      return (
+                        localStorage.setItem("novelRead", JSON.stringify(i)),
+                        i
+                      );
+                    }
+                    return s;
+                  });
+                })(e),
+                K(
+                  "/novels/detail/read?nid="
+                    .concat(Q, "&ncid=")
+                    .concat(e, "&title=")
+                    .concat(
+                      encodeURIComponent(
+                        null === Z || void 0 === Z ? void 0 : Z.name,
+                      ),
+                      "&filter=",
+                    )
+                    .concat($),
+                ));
+          },
+          Ne = (e, s) => {
+            ve((t) => {
+              let i;
+              return (
+                (i =
+                  "mark" === e
+                    ? t[e].includes(s)
+                      ? t[e].filter((e) => e !== s)
+                      : [...t[e], s]
+                    : t[e].includes(s)
+                      ? t[e]
+                      : [...t[e], s]),
+                localStorage.setItem(
+                  "novel".concat(
+                    e.charAt(0).toUpperCase() + e.slice(1),
+                    "Items",
+                  ),
+                  JSON.stringify(i),
+                ),
+                (0, a.A)((0, a.A)({}, t), {}, { [e]: i })
+              );
+            });
+          },
+          Ae = async (e, s) => {
+            if ("like" === e) {
+              if (me.like.includes(s))
+                return void B(E("snack.already_rated"), "success");
+              Ne("like", s);
+              const e = await U((0, A.DQ)({ id: s })).unwrap(),
+                { code: t, msg: a, status: i } = e;
+              200 === t && B(a, "success" !== i ? "error" : "success");
+            }
+            if ("mark" === e)
+              if (R) {
+                (re(!0),
+                  (async () => {
+                    (U((0, N.kX)("novelFavoritesList")),
+                      await U(
+                        (0, A.EK)({ page: 1, folder_id: "", o: "" }),
+                      ).unwrap());
+                  })(),
+                  Ne("mark", s));
+                const e = await U((0, A.vA)({ nid: Q })).unwrap(),
+                  { status: t, msg: i, type: l } = e,
+                  o = "ok" !== t ? "error" : "success";
+                if ("ok" === t)
+                  switch (l) {
+                    case "add":
+                    case "edit":
+                    case "move":
+                      (ce((e) =>
+                        (0, a.A)((0, a.A)({}, e), {}, { aid: s, alert: !1 }),
+                      ),
+                        he((0, a.A)((0, a.A)({}, ge), {}, { folder: !0 })));
+                      break;
+                    case "remove":
+                      ce((e) => (0, a.A)((0, a.A)({}, e), C.x));
+                  }
+                B(i, o);
+              } else
+                (B(E("login.please_login"), "error"),
+                  he((0, a.A)((0, a.A)({}, ge), {}, { login: !0 })));
+          };
+        return (0, p.jsxs)(p.Fragment, {
+          children: [
+            (0, p.jsxs)("div", {
+              className: "h-full text-gy pb-40 dark:text-tgy dark:bg-bbk pb-40",
+              children: [
+                X && (0, p.jsx)(w.A, {}),
+                (0, p.jsxs)("div", {
+                  className:
+                    "sticky top-safe z-50 h-14 bg-bbk text-white flex items-end p-2 py-3",
+                  children: [
+                    (0, p.jsx)(d.ee, { back: "/novels?filter=".concat($) }),
+                    (0, p.jsx)("p", {
+                      className: "w-[85%] ml-auto pr-1 text-og truncate mr-4",
+                      children: null === Z || void 0 === Z ? void 0 : Z.name,
+                    }),
+                  ],
+                }),
+                (0, p.jsxs)("div", {
+                  className: "flex flex-col-2 gap-4 p-4",
+                  children: [
+                    (0, p.jsx)(j.A, { adKey: "app-novel_intro_top_1" }),
+                    (0, p.jsx)(j.A, { adKey: "app-novel_intro_top_2" }),
+                  ],
+                }),
+                (0, p.jsxs)("div", {
+                  className: "bg-white text-base p-5 mx-4 dark:bg-bbk",
+                  children: [
+                    (0, p.jsxs)("div", {
+                      className: "pb-4 border-b",
+                      children: [
+                        (0, p.jsx)("p", {
+                          className: "text-xl mb-4",
+                          children:
+                            null === Z || void 0 === Z ? void 0 : Z.name,
+                        }),
+                        null === Z ||
+                        void 0 === Z ||
+                        null === (s = Z.tags) ||
+                        void 0 === s
+                          ? void 0
+                          : s.map((e, s) =>
+                              (0, p.jsx)(
+                                "button",
+                                {
+                                  className:
+                                    "border border-solid border-gy rounded-md p-1 mr-2 mb-2 dark:bg-nbk",
+                                  onClick: () => K("/novels?filter=".concat(e)),
+                                  children: e,
+                                },
+                                s,
+                              ),
+                            ),
+                      ],
+                    }),
+                    (0, p.jsxs)("div", {
+                      className: "flex justify-center gap-2 rounded mt-4",
+                      children: [
+                        (0, p.jsx)("div", {
+                          className: "w-1/2",
+                          children: (0, p.jsx)("img", {
+                            src:
+                              (null === M || void 0 === M
+                                ? void 0
+                                : M.img_host) +
+                              (null === Z || void 0 === Z ? void 0 : Z.images),
+                            alt: null === Z || void 0 === Z ? void 0 : Z.id,
+                            loading: "lazy",
+                            onLoad: (e) => {
+                              e.target.style.opacity = "1";
+                            },
+                            onError: (e) => {
+                              e.target.src = "/images/cover_default.jpg";
+                            },
+                            className: "object-contain rounded-md",
+                            style: {
+                              opacity: "0",
+                              transition: "opacity 0.5s ease-in-out",
+                            },
+                          }),
+                        }),
+                        (0, p.jsxs)("div", {
+                          className: "w-1/2",
+                          children: [
+                            (0, p.jsxs)("p", {
+                              children: [
+                                E("detail.forbidden_comics"),
+                                "\uff1aNVL",
+                                null === Z || void 0 === Z ? void 0 : Z.id,
+                              ],
+                            }),
+                            (0, p.jsxs)("p", {
+                              children: [
+                                E("detail.author"),
+                                "\uff1a",
+                                (0, p.jsx)(l.N_, {
+                                  to: "/novels?filter=".concat(
+                                    null === Z || void 0 === Z
+                                      ? void 0
+                                      : Z.author,
+                                  ),
+                                  className: "text-og underline",
+                                  children:
+                                    null === Z || void 0 === Z
+                                      ? void 0
+                                      : Z.author,
+                                }),
+                              ],
+                            }),
+                            (0, p.jsxs)("p", {
+                              children: [
+                                E("novel.serialization_status"),
+                                "\uff1a",
+                                "Ongoing" ===
+                                (null === Z || void 0 === Z
+                                  ? void 0
+                                  : Z.serial_status)
+                                  ? "\u9023\u8f09\u4e2d"
+                                  : "\u5b8c\u7d50",
+                              ],
+                            }),
+                            (0, p.jsxs)("p", {
+                              children: [
+                                E("novel.chapter_count"),
+                                "\uff1a",
+                                null === Z ||
+                                void 0 === Z ||
+                                null === (t = Z.series) ||
+                                void 0 === t
+                                  ? void 0
+                                  : t.length,
+                              ],
+                            }),
+                            (0, p.jsxs)("p", {
+                              children: [
+                                "\u4e0a\u67b6\u65e5\u671f\uff1a",
+                                (0, y.fk)(
+                                  null === Z || void 0 === Z
+                                    ? void 0
+                                    : Z.addtime,
+                                ),
+                              ],
+                            }),
+                            (0, p.jsxs)("p", {
+                              children: [
+                                "\u66f4\u65b0\u65e5\u671f\uff1a",
+                                (0, y.fk)(
+                                  (null === Z || void 0 === Z
+                                    ? void 0
+                                    : Z.update_time) ||
+                                    (null === Z || void 0 === Z
+                                      ? void 0
+                                      : Z.addtime),
+                                ),
+                              ],
+                            }),
+                            (0, p.jsxs)("div", {
+                              className: "mt-6",
+                              children: [
+                                (0, p.jsxs)("div", {
+                                  children: [
+                                    (0, p.jsx)(x.A, { className: "text-xl" }),
+                                    (0, p.jsx)("span", {
+                                      children:
+                                        null === Z || void 0 === Z
+                                          ? void 0
+                                          : Z.total_views,
+                                    }),
+                                  ],
+                                }),
+                                (0, p.jsxs)("div", {
+                                  children: [
+                                    (0, p.jsx)(r.A, { className: "text-xl" }),
+                                    (0, p.jsx)("span", {
+                                      children:
+                                        null === Z || void 0 === Z
+                                          ? void 0
+                                          : Z.likes,
+                                    }),
+                                  ],
+                                }),
+                              ],
+                            }),
+                          ],
+                        }),
+                      ],
+                    }),
+                    (0, p.jsx)("button", {
+                      className:
+                        "w-full bg-og rounded flex justify-center text-white my-2",
+                      onClick: () => ke(pe),
+                      children: (0, p.jsxs)("p", {
+                        className: "py-3",
+                        children: [
+                          " ",
+                          E(
+                            Q in je
+                              ? "detail.continue_reading"
+                              : "detail.start_reading",
+                          ),
+                        ],
+                      }),
+                    }),
+                    (0, p.jsxs)("div", {
+                      className: "grid grid-cols-3 text-center text-og mb-4",
+                      children: [
+                        (0, p.jsxs)("div", {
+                          className:
+                            "flex justify-center items-center border-r border-og",
+                          onClick: () => Ae("mark", Q),
+                          children: [
+                            me.mark.includes(Q)
+                              ? (0, p.jsx)(g.A, { className: "text-og" })
+                              : (0, p.jsx)(u.A, { className: "text-og" }),
+                            (0, p.jsx)("span", { children: "\u6536\u85cf" }),
+                          ],
+                        }),
+                        (0, p.jsxs)("div", {
+                          className:
+                            "flex justify-center items-center border-r border-og",
+                          onClick: () => Ae("like", Q),
+                          children: [
+                            me.like.includes(Q)
+                              ? (0, p.jsx)(r.A, { className: "text-red-600" })
+                              : (0, p.jsx)(m.A, { className: "text-og" }),
+                            (0, p.jsx)("span", {
+                              className: "mx-1",
+                              children: E("detail.like"),
+                            }),
+                          ],
+                        }),
+                        (0, p.jsxs)("div", {
+                          className: "flex justify-center items-center",
+                          onClick: () => {
+                            oe.current &&
+                              (oe.current.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start",
+                              }),
+                              ae(2));
+                          },
+                          children: [
+                            (0, p.jsx)(v.A, { className: "text-og" }),
+                            (0, p.jsx)("span", {
+                              className: "mx-1",
+                              children: E("detail.comments"),
+                            }),
+                          ],
+                        }),
+                      ],
+                    }),
+                    (0, p.jsx)("div", {
+                      className: "pt-2 ".concat(
+                        ee ? "" : "h-20 overflow-hidden relative",
+                      ),
+                      children: (0, p.jsx)("div", {
+                        className: "min-h-[200px]",
+                        dangerouslySetInnerHTML: {
+                          __html:
+                            null === Z || void 0 === Z ? void 0 : Z.description,
+                        },
+                        onClick: () => se(!ee),
+                      }),
+                    }),
+                    (0, p.jsx)("div", {
+                      className: "flex justify-end",
+                      children: (0, p.jsx)("button", {
+                        className: "bg-gy text-white rounded p-1 px-2",
+                        onClick: () => se(!ee),
+                        children: E(
+                          ee ? "detail.show_less" : "detail.show_all",
+                        ),
+                      }),
+                    }),
+                    (0, p.jsxs)("div", {
+                      className: "flex justify-start items-center mt-2",
+                      ref: oe,
+                      onClick: () => le((e) => ("asc" === e ? "desc" : "asc")),
+                      children: [
+                        (0, p.jsx)("span", {
+                          children: E("novel.sort_switch"),
+                        }),
+                        (0, p.jsx)(f, { className: "text-2xl" }),
+                      ],
+                    }),
+                    (0, p.jsx)("div", {
+                      className: "h-48 overflow-y-auto py-1",
+                      children: [
+                        ...((null === Z || void 0 === Z ? void 0 : Z.series) ||
+                          []),
+                      ]
+                        .sort((e, s) =>
+                          "asc" === ie ? e.sort - s.sort : s.sort - e.sort,
+                        )
+                        .map((e, s, t) => {
+                          var a;
+                          return (0, p.jsx)(
+                            "div",
+                            {
+                              onClick: () => ke(e.NCID),
+                              children: (0, p.jsxs)("p", {
+                                className:
+                                  "border border-solid border-gray-400 rounded-md px-2 my-1 \n                       ".concat(
+                                    pe === e.NCID
+                                      ? "bg-og text-white"
+                                      : null !== (a = je[Q]) &&
+                                          void 0 !== a &&
+                                          a.includes(e.NCID)
+                                        ? "bg-white text-og"
+                                        : "",
+                                  ),
+                                children: [
+                                  "asc" === ie ? s + 1 : t.length - s,
+                                  ". ",
+                                  e.title,
+                                  e.new &&
+                                    (0, p.jsx)("span", {
+                                      className: "text-orange-500 ml-3 ".concat(
+                                        pe === e.NCID ? "text-white" : "",
+                                      ),
+                                      children: E("cat_sort.latest"),
+                                    }),
+                                ],
+                              }),
+                            },
+                            e.id,
+                          );
+                        }),
+                    }),
+                    (0, p.jsx)("div", {
+                      className: "max-h-[70px] overflow-hidden mt-4",
+                      children: (0, p.jsx)(j.A, {
+                        adKey: "app-novel_intro_mid",
+                      }),
+                    }),
+                  ],
+                }),
+                (0, p.jsx)(S.A, {
+                  t: E,
+                  nid: Q,
+                  filter: $,
+                  config: h,
+                  showSnackbar: B,
+                  tab: te,
+                  setTab: ae,
+                  relatedList:
+                    (null === Z || void 0 === Z ? void 0 : Z.related_list) ||
+                    [],
+                  loadForumList: _e,
+                  dialogOpen: ge,
+                  setDialogOpen: he,
+                  favoriteSave: me,
+                  handleEngagementAction: Ae,
+                }),
+                (0, p.jsxs)("div", {
+                  className: "flex flex-col-2 gap-4 px-4 py-2",
+                  children: [
+                    (0, p.jsx)(j.A, { adKey: "app-novel_intro_bottom_1" }),
+                    (0, p.jsx)(j.A, { adKey: "app-novel_intro_bottom_2" }),
+                  ],
+                }),
+                (0, p.jsxs)("div", {
+                  className: "flex flex-col-2 gap-4 px-4 py-2",
+                  children: [
+                    (0, p.jsx)(j.A, { adKey: "app-novel_intro_bottom_3" }),
+                    (0, p.jsx)(j.A, { adKey: "app-novel_intro_bottom_4" }),
+                  ],
+                }),
+              ],
+            }),
+            (0, p.jsx)(k.A, {}),
+            (0, p.jsx)(_.A, {}),
+            (0, p.jsx)(b.A, { snackbars: P, setSnackbars: T }),
+            (ge.login || ge.signUp || ge.forgot) &&
+              !R &&
+              (0, p.jsx)(I.A, {
+                setFormData: ue,
+                formData: xe,
+                setConfig: H,
+                logined: R,
+                isLoading: X,
+                setDialogOpen: he,
+                dialogOpen: ge,
+                showSnackbar: B,
+              }),
+            ge.buyNovel &&
+              (0, p.jsx)(L.A, {
+                setDialogOpen: he,
+                dialogOpen: ge,
+                showSnackbar: B,
+                handleDecensored: async () => {
+                  if (!R) return void B(E("login.please_login"), "error");
+                  const e = await U((0, A.Cl)({ id: pe })).unwrap(),
+                    { status: s, msg: t } = e;
+                  if ((B(t, "ok" !== s ? "error" : "success"), "ok" === s)) {
+                    const e = await U((0, A.Pb)({ nid: Q })).unwrap();
+                    if (e) {
+                      var a, i;
+                      "1" ===
+                        (null === e ||
+                        void 0 === e ||
+                        null === (a = e.series) ||
+                        void 0 === a ||
+                        null === (i = a.find((e) => e.NCID === pe)) ||
+                        void 0 === i
+                          ? void 0
+                          : i.is_buy_ok) &&
+                        K(
+                          "/novels/detail/read?nid="
+                            .concat(Q, "&ncid=")
+                            .concat(pe, "&title=")
+                            .concat(
+                              encodeURIComponent(
+                                null === Z || void 0 === Z ? void 0 : Z.name,
+                              ),
+                              "&filter=",
+                            )
+                            .concat($),
+                        );
+                    }
+                  }
+                },
+              }),
+            ge.folder &&
+              (0, p.jsx)(O.A, {
+                folderList: G.folder_list,
+                dialogOpen: ge,
+                setDialogOpen: he,
+                editFolder: ne,
+                setEditFolder: ce,
+                handleEditFolder: async (e) => {
+                  (re(!0),
+                    "del" === e &&
+                      he((0, a.A)((0, a.A)({}, ge), {}, { alert: !0 })));
+                  const { folder_id: s, folder_name: t, aid: i } = ne;
+                  if ("" !== t) {
+                    const a = await U(
+                        (0, A.iC)({
+                          type: e,
+                          folder_id: s,
+                          folder_name: t,
+                          nid: i,
+                        }),
+                      ).unwrap(),
+                      { status: l, msg: o } = a;
+                    l && o && B(o, "ok" !== l ? "error" : "success");
+                  } else B(E("comic.added_to_favorites_success"), "success");
+                  ce((e) => (0, a.A)((0, a.A)({}, e), C.x));
+                },
+                tagsList: [],
+              }),
+          ],
+        });
+      };
+    },
+    4149: (e, s, t) => {
+      t.d(s, { A: () => l });
+      var a = t(9662),
+        i = t(579);
+      const l = (0, a.A)(
+        (0, i.jsx)("path", {
+          d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6m0 14c-2.03 0-4.43-.82-6.14-2.88C7.55 15.8 9.68 15 12 15s4.45.8 6.14 2.12C16.43 19.18 14.03 20 12 20",
+        }),
+        "AccountCircle",
+      );
+    },
+    9275: (e, s, t) => {
+      t.d(s, { A: () => l });
+      var a = t(9662),
+        i = t(579);
+      const l = (0, a.A)(
+        (0, i.jsx)("path", { d: "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" }),
+        "Home",
+      );
+    },
+    1784: (e, s, t) => {
+      t.d(s, { A: () => l });
+      var a = t(9662),
+        i = t(579);
+      const l = (0, a.A)(
+        (0, i.jsx)("path", {
+          d: "M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5M12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5m0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3",
+        }),
+        "RemoveRedEye",
+      );
+    },
+    9354: (e, s, t) => {
+      t.d(s, { A: () => l });
+      var a = t(9662),
+        i = t(579);
+      const l = (0, a.A)(
+        (0, i.jsx)("path", {
+          d: "M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11z",
+        }),
+        "Videocam",
+      );
+    },
+    6671: (e, s, t) => {
+      t.d(s, { A: () => l });
+      var a = t(9662),
+        i = t(579);
+      const l = (0, a.A)(
+        (0, i.jsx)("path", {
+          d: "M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2m-10 7H8v3H6v-3H3v-2h3V8h2v3h3zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5m4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5",
+        }),
+        "VideogameAsset",
+      );
+    },
+    1500: (e, s, t) => {
+      t.d(s, { A: () => l });
+      var a = t(9662),
+        i = t(579);
+      const l = (0, a.A)(
+        (0, i.jsx)("path", {
+          d: "M11 11V3H5c-1.1 0-2 .9-2 2v6zm2 0h8V5c0-1.1-.9-2-2-2h-6zm-2 2H3v6c0 1.1.9 2 2 2h6zm2 0v8h6c1.1 0 2-.9 2-2v-6z",
+        }),
+        "Window",
+      );
+    },
+  },
+]);
+//# sourceMappingURL=3224.c11009bb.chunk.js.map

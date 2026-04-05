@@ -1,0 +1,691 @@
+"use strict";
+(self.webpackChunk_18comic_react = self.webpackChunk_18comic_react || []).push([
+  [6120],
+  {
+    6120: (e, s, l) => {
+      (l.r(s), l.d(s, { default: () => _ }));
+      var a = l(5043),
+        o = l(6580),
+        i = l(6148),
+        c = l(2663),
+        d = l(4593),
+        t = l(6050),
+        r = l(1906),
+        n = l(9634),
+        v = l(4975),
+        m = l(50),
+        x = l(9788),
+        p = l(579);
+      const h = (e) => {
+        let { src: s } = e;
+        const l = (0, a.useRef)(null);
+        return (
+          (0, a.useImperativeHandle)(l, () => l.current),
+          (0, a.useEffect)(() => {
+            const e = l.current;
+            if (!e) return;
+            const a = s.toLowerCase().includes("prvhls2");
+            let o = null;
+            try {
+              a
+                ? (e.src = s)
+                : x.Ay.isSupported()
+                  ? ((o = new x.Ay()),
+                    o.loadSource(s),
+                    o.attachMedia(e),
+                    o.on(x.Ay.Events.MANIFEST_PARSED, () => {
+                      console.log("HLS Manifest Loaded");
+                    }))
+                  : e.canPlayType("application/vnd.apple.mpegurl")
+                    ? (e.src = s)
+                    : console.error(
+                        "\u6b64\u700f\u89bd\u5668\u4e0d\u652f\u63f4 HLS",
+                      );
+            } catch (i) {
+              console.error("HlsPlayer \u521d\u59cb\u5316\u932f\u8aa4:", i);
+            }
+            return () => {
+              o && o.destroy();
+            };
+          }, [s]),
+          (0, p.jsx)("video", {
+            ref: l,
+            controls: !0,
+            autoPlay: !0,
+            width: "100%",
+          })
+        );
+      };
+      var u = l(7270),
+        j = l(6342),
+        g = l(8038),
+        y = l(4117),
+        N = l(3865),
+        b = l(9011),
+        f = l(3944);
+      const w = N.A.apiUrl || "",
+        _ = () => {
+          var e, s;
+          const { config: l, setConfig: x } = (0, f.H)(),
+            { setting: N } = l,
+            _ = (0, i.j)(),
+            k = (0, o.Zp)(),
+            A = (0, o.zy)(),
+            { id: C } = (0, o.g)(),
+            { moviesDetail: S, isLoading: I } = (0, i.G)((e) => e.MoviesPlayer),
+            L = new URLSearchParams(A.search),
+            R = L.get("videoType") || "movie",
+            P = L.get("searchQuery") || "",
+            T = null === S || void 0 === S ? void 0 : S.video,
+            U = null === S || void 0 === S ? void 0 : S.related_videos,
+            Q = null === S || void 0 === S ? void 0 : S.videoSeries,
+            K = null === S || void 0 === S ? void 0 : S.originalManga,
+            z = "cos" !== R,
+            { t: M } = (0, y.Bd)(),
+            E = (0, b.bs)(),
+            [H, q] = (0, a.useState)(!1),
+            [B, D] = (0, a.useState)(!1);
+          return (
+            (0, a.useEffect)(() => {
+              (_((0, j.KS)()),
+                C && R && (E(), _((0, u.l)({ id: C, video_type: R }))));
+            }, [C, R]),
+            (0, p.jsxs)("div", {
+              className: "pb-40",
+              children: [
+                (0, p.jsxs)("div", {
+                  className:
+                    "sticky top-0 h-20 bg-[#242424] text-white flex items-end p-2 py-3 z-50",
+                  children: [
+                    (0, p.jsx)(o.N_, {
+                      to: "/movies?videoType="
+                        .concat(R, "&searchQuery=")
+                        .concat(encodeURIComponent(P)),
+                      children: (0, p.jsx)(c.A, {
+                        className: "text-3xl p-r-5",
+                      }),
+                    }),
+                    (0, p.jsx)("span", {
+                      className: "pl-2 line-clamp-1",
+                      children: null === T || void 0 === T ? void 0 : T.title,
+                    }),
+                  ],
+                }),
+                !H &&
+                  (0, p.jsxs)("div", {
+                    className: "relative w-full",
+                    children: [
+                      (0, p.jsxs)("div", {
+                        className: "aspect-[16/9] overflow-hidden w-full",
+                        children: [
+                          !B &&
+                            (0, p.jsx)("div", {
+                              className: "absolute inset-0 bg-black z-10",
+                            }),
+                          (0, p.jsx)("img", {
+                            src: null === T || void 0 === T ? void 0 : T.photo,
+                            alt: "\u5f71\u7247\u9810\u89bd\u5716",
+                            className:
+                              "w-full h-full object-cover object-center transition-opacity duration-300 ".concat(
+                                B ? "opacity-100" : "opacity-0",
+                              ),
+                            onLoad: () => D(!0),
+                          }),
+                        ],
+                      }),
+                      (0, p.jsx)("button", {
+                        onClick: () => {
+                          q(!0);
+                        },
+                        className:
+                          "absolute m-auto w-16 h-16 bg-og rounded-full flex items-center justify-center shadow-lg",
+                        style: {
+                          top: "50%",
+                          left: "50%",
+                          transform: "translate(-50%, -50%)",
+                        },
+                        children: (0, p.jsx)(d.A, {
+                          className: "text-5xl text-white",
+                        }),
+                      }),
+                    ],
+                  }),
+                H &&
+                  (0, p.jsx)(h, {
+                    src:
+                      null !==
+                        (e =
+                          null === T || void 0 === T ? void 0 : T.video_src) &&
+                      void 0 !== e
+                        ? e
+                        : "",
+                  }),
+                (0, p.jsxs)("div", {
+                  className: "p-3",
+                  children: [
+                    (0, p.jsxs)("div", {
+                      className: "flex items-center justify-center gap-4 mb-4",
+                      children: [
+                        z &&
+                          (0, p.jsxs)(r.A, {
+                            className:
+                              "w-1/2 bg-nbk text-white text-base shadow-lg shadow-stone-700/50",
+                            onClick: (e) => {
+                              (e.preventDefault(),
+                                window.open(
+                                  "https://" +
+                                    (null === N || void 0 === N
+                                      ? void 0
+                                      : N.iqq_app_download_page),
+                                  "_blank",
+                                ));
+                            },
+                            children: [
+                              (0, p.jsx)("span", {
+                                className: "mr-2",
+                                children: "APP\u770b\u5b8c\u6574\u7248",
+                              }),
+                              (0, p.jsx)(t.A, {
+                                className: "align-middle text-4xl",
+                              }),
+                            ],
+                          }),
+                        (0, p.jsxs)(r.A, {
+                          className: "".concat(
+                            z ? "w-1/2" : "w-full",
+                            " bg-og text-white text-base shadow-lg shadow-stone-700/50",
+                          ),
+                          onClick: (e) => {
+                            (e.preventDefault(),
+                              window.open(
+                                null === T || void 0 === T
+                                  ? void 0
+                                  : T.full_url,
+                                "_blank",
+                              ));
+                          },
+                          children: [
+                            (0, p.jsx)("span", {
+                              className: "mr-2",
+                              children: M("movies.watch_full_video"),
+                            }),
+                            (0, p.jsx)(t.A, {
+                              className: "align-middle text-4xl",
+                            }),
+                          ],
+                        }),
+                      ],
+                    }),
+                    (0, p.jsxs)("div", {
+                      className: "flex flex-col gap-2 mb-4",
+                      children: [
+                        (0, p.jsxs)("p", {
+                          className: "text-lg text-gray-500",
+                          children: [
+                            (null === T || void 0 === T ? void 0 : T.date) &&
+                              (0, p.jsxs)("span", {
+                                children: [
+                                  null === T || void 0 === T ? void 0 : T.date,
+                                  "\uff0e",
+                                ],
+                              }),
+                            M("movies.views"),
+                            ":",
+                            null === T || void 0 === T ? void 0 : T.view,
+                          ],
+                        }),
+                        "cos" !== R &&
+                          (0, p.jsxs)("div", {
+                            className: "flex flex-wrap gap-2 ",
+                            children: [
+                              (0, p.jsxs)("p", {
+                                className: "text-lg self-center",
+                                children: [M("movies.studio"), "\uff1a"],
+                              }),
+                              "\u7121\u8cc7\u6599" ===
+                              (null === T || void 0 === T ? void 0 : T.factory)
+                                ? (0, p.jsx)("div", {
+                                    children:
+                                      null === T || void 0 === T
+                                        ? void 0
+                                        : T.factory,
+                                  })
+                                : (0, p.jsx)("div", {
+                                    className:
+                                      "text-black px-3 py-1 rounded border border-gray-800 dark:text-white",
+                                    children: (0, p.jsx)(o.N_, {
+                                      to: "/movies?videoType="
+                                        .concat(R, "&searchQuery=")
+                                        .concat(
+                                          encodeURIComponent(
+                                            null === T || void 0 === T
+                                              ? void 0
+                                              : T.factory,
+                                          ),
+                                        ),
+                                      children:
+                                        null === T || void 0 === T
+                                          ? void 0
+                                          : T.factory,
+                                    }),
+                                  }),
+                            ],
+                          }),
+                        "cos" === R &&
+                          (0, p.jsxs)("div", {
+                            className: "",
+                            children: [
+                              (0, p.jsxs)("div", {
+                                className: "flex flex-wrap gap-2 mb-4",
+                                children: [
+                                  (0, p.jsxs)("p", {
+                                    className: "text-lg self-center",
+                                    children: [M("movies.work"), "\uff1a"],
+                                  }),
+                                  "\u7121\u8cc7\u6599" ===
+                                  (null === T || void 0 === T
+                                    ? void 0
+                                    : T.works)
+                                    ? (0, p.jsx)("div", {
+                                        children:
+                                          null === T || void 0 === T
+                                            ? void 0
+                                            : T.works,
+                                      })
+                                    : (0, p.jsx)("div", {
+                                        className:
+                                          "text-black px-3 py-1 rounded border border-gray-800 dark:text-white",
+                                        children: (0, p.jsx)(o.N_, {
+                                          to: "/movies?videoType="
+                                            .concat(R, "&searchQuery=")
+                                            .concat(
+                                              encodeURIComponent(
+                                                null === T || void 0 === T
+                                                  ? void 0
+                                                  : T.works,
+                                              ),
+                                            ),
+                                          children:
+                                            null === T || void 0 === T
+                                              ? void 0
+                                              : T.works,
+                                        }),
+                                      }),
+                                ],
+                              }),
+                              (0, p.jsxs)("div", {
+                                className: "flex flex-wrap gap-2 ",
+                                children: [
+                                  (0, p.jsxs)("p", {
+                                    className: "text-lg self-center",
+                                    children: [M("movies.character"), "\uff1a"],
+                                  }),
+                                  "\u7121\u8cc7\u6599" ===
+                                  (null === T || void 0 === T
+                                    ? void 0
+                                    : T.characters)
+                                    ? (0, p.jsx)("div", {
+                                        children:
+                                          null === T || void 0 === T
+                                            ? void 0
+                                            : T.characters,
+                                      })
+                                    : (0, p.jsx)("div", {
+                                        className:
+                                          "text-black px-3 py-1 rounded border border-gray-800 dark:text-white",
+                                        children: (0, p.jsx)(o.N_, {
+                                          to: "/movies?videoType="
+                                            .concat(R, "&searchQuery=")
+                                            .concat(
+                                              encodeURIComponent(
+                                                null === T || void 0 === T
+                                                  ? void 0
+                                                  : T.characters,
+                                              ),
+                                            ),
+                                          children:
+                                            null === T || void 0 === T
+                                              ? void 0
+                                              : T.characters,
+                                        }),
+                                      }),
+                                ],
+                              }),
+                            ],
+                          }),
+                        "movie" === R &&
+                          (0, p.jsxs)("div", {
+                            className: "flex flex-wrap gap-2 ",
+                            children: [
+                              (0, p.jsxs)("p", {
+                                className: "text-lg",
+                                children: [M("movies.actress"), "\uff1a"],
+                              }),
+                              Array.isArray(
+                                null === T || void 0 === T ? void 0 : T.girls,
+                              ) &&
+                                (null === T || void 0 === T
+                                  ? void 0
+                                  : T.girls.map((e, s) =>
+                                      "\u7121\u8cc7\u6599" === e
+                                        ? (0, p.jsx)(
+                                            "span",
+                                            {
+                                              className:
+                                                "text-black dark:text-white",
+                                              children: e,
+                                            },
+                                            s,
+                                          )
+                                        : (0, p.jsx)(
+                                            o.N_,
+                                            {
+                                              className:
+                                                "px-3 py-1 border-gray-800 border rounded text-sm",
+                                              to: "/movies?videoType="
+                                                .concat(R, "&searchQuery=")
+                                                .concat(encodeURIComponent(e)),
+                                              children: e,
+                                            },
+                                            s,
+                                          ),
+                                    )),
+                            ],
+                          }),
+                        "movie" === R &&
+                          (0, p.jsx)("div", {
+                            className: "text-lg",
+                            children: (0, p.jsxs)("p", {
+                              children: [
+                                M("movies.description"),
+                                "\uff1a",
+                                (0, p.jsx)("span", {
+                                  className: "text-gray-500",
+                                  children:
+                                    null !== T &&
+                                    void 0 !== T &&
+                                    null !== (s = T.description) &&
+                                    void 0 !== s &&
+                                    s.trim()
+                                      ? T.description
+                                      : M("movies.no_data"),
+                                }),
+                              ],
+                            }),
+                          }),
+                      ],
+                    }),
+                    (null === T || void 0 === T ? void 0 : T.tags) &&
+                      (null === T || void 0 === T ? void 0 : T.tags.length) >
+                        0 &&
+                      (0, p.jsxs)("div", {
+                        className: "flex flex-wrap gap-2 mb-4",
+                        children: [
+                          (0, p.jsxs)("p", {
+                            className: "text-lg",
+                            children: [M("movies.tag"), "\uff1a"],
+                          }),
+                          null === T || void 0 === T
+                            ? void 0
+                            : T.tags.map((e, s) =>
+                                (0, p.jsxs)(
+                                  o.N_,
+                                  {
+                                    className:
+                                      "px-3 py-1 border-gray-800 border rounded text-sm",
+                                    to: "/movies?videoType="
+                                      .concat(R, "&searchQuery=")
+                                      .concat(encodeURIComponent(e)),
+                                    children: ["#", e],
+                                  },
+                                  s,
+                                ),
+                              ),
+                        ],
+                      }),
+                    Q &&
+                      Q.length > 0 &&
+                      (0, p.jsxs)("div", {
+                        className: "border border-gray-700 rounded ",
+                        children: [
+                          (0, p.jsxs)("div", {
+                            className: "bg-gray-700 text-white p-3 text-lg",
+                            children: [
+                              (0, p.jsx)("p", {
+                                children: M("movies.series_movies"),
+                              }),
+                              (0, p.jsxs)("small", {
+                                children: [Q.length, M("movies.movies")],
+                              }),
+                            ],
+                          }),
+                          (0, p.jsx)("div", {
+                            className: "p-3 h-60 ",
+                            children: (0, p.jsx)("ul", {
+                              className:
+                                "overflow-scroll scrollbar-hidden h-full",
+                              children:
+                                null === Q || void 0 === Q
+                                  ? void 0
+                                  : Q.map((e, s) =>
+                                      (0, p.jsxs)(
+                                        "li",
+                                        {
+                                          onClick: () => {
+                                            k(
+                                              "/movies/"
+                                                .concat(e.vid, "?videoType=")
+                                                .concat(R, "&searchQuery=")
+                                                .concat(encodeURIComponent(P)),
+                                              { replace: !0 },
+                                            );
+                                          },
+                                          className:
+                                            "flex items-center space-x-2 mb-5",
+                                          children: [
+                                            (0, p.jsx)("div", {
+                                              className:
+                                                "aspect-[16/9] overflow-hidden w-1/2",
+                                              children: (0, p.jsx)(
+                                                n.LazyLoadImage,
+                                                {
+                                                  className:
+                                                    "object-cover w-full h-full",
+                                                  src:
+                                                    (null === N || void 0 === N
+                                                      ? void 0
+                                                      : N.img_host) &&
+                                                    N.img_host +
+                                                      e.photo +
+                                                      e.date,
+                                                  alt: e.title,
+                                                },
+                                              ),
+                                            }),
+                                            (0, p.jsx)("p", {
+                                              className:
+                                                "line-clamp-3 text-og w-1/2",
+                                              children: e.title,
+                                            }),
+                                          ],
+                                        },
+                                        s,
+                                      ),
+                                    ),
+                            }),
+                          }),
+                        ],
+                      }),
+                    K &&
+                      K.length > 0 &&
+                      (0, p.jsxs)("div", {
+                        className: "border border-gray-700 rounded ",
+                        children: [
+                          (0, p.jsxs)("div", {
+                            className: "bg-gray-700 text-white p-3 text-lg",
+                            children: [
+                              (0, p.jsx)("p", {
+                                children: M("movies.originalManga"),
+                              }),
+                              (0, p.jsxs)("small", {
+                                children: [K.length, M("member.this_comic")],
+                              }),
+                            ],
+                          }),
+                          (0, p.jsx)(v.RC, {
+                            spaceBetween: 8,
+                            slidesPerView: 2.5,
+                            centeredSlides: !1,
+                            slidesPerGroupSkip: 3,
+                            grabCursor: !0,
+                            keyboard: { enabled: !0 },
+                            scrollbar: !0,
+                            modules: [m.s3, m.Ze],
+                            className: "p-3",
+                            children:
+                              null === K || void 0 === K
+                                ? void 0
+                                : K.map((e, s) =>
+                                    (0, p.jsx)(
+                                      v.qr,
+                                      {
+                                        children: (0, p.jsxs)(
+                                          "li",
+                                          {
+                                            onClick: () => {
+                                              k(
+                                                "/comic/detail?id=".concat(
+                                                  e.id,
+                                                ),
+                                                { replace: !0 },
+                                              );
+                                            },
+                                            children: [
+                                              (0, p.jsx)(n.LazyLoadImage, {
+                                                className:
+                                                  "object-cover w-full h-full",
+                                                src: e.image,
+                                                alt: e.id,
+                                              }),
+                                              (0, p.jsx)("p", {
+                                                className:
+                                                  "line-clamp-3 text-og p-1",
+                                                children: e.name,
+                                              }),
+                                            ],
+                                          },
+                                          s,
+                                        ),
+                                      },
+                                      s,
+                                    ),
+                                  ),
+                          }),
+                        ],
+                      }),
+                  ],
+                }),
+                U &&
+                  U.length > 0 &&
+                  (0, p.jsxs)("div", {
+                    className: "mb-4",
+                    children: [
+                      (0, p.jsx)("p", {
+                        className: "p-2",
+                        children: M("movies.related_movies"),
+                      }),
+                      (0, p.jsx)(v.RC, {
+                        spaceBetween: 8,
+                        slidesPerView: 2.5,
+                        centeredSlides: !1,
+                        slidesPerGroupSkip: 3,
+                        grabCursor: !0,
+                        keyboard: { enabled: !0 },
+                        scrollbar: !0,
+                        modules: [m.s3, m.Ze],
+                        className: "p-2",
+                        children:
+                          null === U || void 0 === U
+                            ? void 0
+                            : U.map((e, s) =>
+                                (0, p.jsx)(
+                                  v.qr,
+                                  {
+                                    children: (0, p.jsxs)("div", {
+                                      className: "cursor-pointer ",
+                                      onClick: () => {
+                                        k(
+                                          "/movies/"
+                                            .concat(e.id, "?videoType=")
+                                            .concat(R, "&searchQuery=")
+                                            .concat(encodeURIComponent(P)),
+                                          { replace: !0 },
+                                        );
+                                      },
+                                      children: [
+                                        (0, p.jsx)("p", {
+                                          className:
+                                            "aspect-[16/9] overflow-hidden",
+                                          children: (0, p.jsx)(
+                                            n.LazyLoadImage,
+                                            {
+                                              className:
+                                                "w-full h-full object-cover rounded",
+                                              placeholderSrc:
+                                                "/images/title-circle.webp",
+                                              src: e.photo.startsWith("http")
+                                                ? e.photo
+                                                : "".concat(w).concat(e.photo),
+                                              alt: e.title,
+                                            },
+                                          ),
+                                        }),
+                                        (0, p.jsx)("p", {
+                                          className: "line-clamp-2",
+                                          children: e.title,
+                                        }),
+                                      ],
+                                    }),
+                                  },
+                                  s,
+                                ),
+                              ),
+                      }),
+                    ],
+                  }),
+                (0, p.jsxs)("div", {
+                  className: "mt-2",
+                  children: [
+                    (0, p.jsxs)("div", {
+                      className: "grid grid-cols-2 h-48 overflow-hidden",
+                      children: [
+                        (0, p.jsx)(g.A, { adKey: "app_movie_bottom_left_1" }),
+                        (0, p.jsx)(g.A, { adKey: "app_movie_bottom_right_1" }),
+                      ],
+                    }),
+                    (0, p.jsx)(g.A, { adKey: "app_movie_bottom_center_jm3" }),
+                    (0, p.jsxs)("div", {
+                      className: "grid grid-cols-2 h-48 overflow-hidden",
+                      children: [
+                        (0, p.jsx)(g.A, { adKey: "app_movie_bottom_left_2" }),
+                        (0, p.jsx)(g.A, { adKey: "app_movie_bottom_right_2" }),
+                      ],
+                    }),
+                    (0, p.jsx)(g.A, { adKey: "app_movie_bottom" }),
+                  ],
+                }),
+                (0, p.jsx)("div", {
+                  className: "fixed bottom-0 w-full z-10",
+                  children: (0, p.jsx)(g.A, {
+                    adKey: "app_movie_fixed_bottom_jm3",
+                    closeBtn: !0,
+                  }),
+                }),
+              ],
+            })
+          );
+        };
+    },
+  },
+]);
+//# sourceMappingURL=6120.662e4716.chunk.js.map
