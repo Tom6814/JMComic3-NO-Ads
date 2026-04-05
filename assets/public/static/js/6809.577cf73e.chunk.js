@@ -1240,14 +1240,12 @@
               onTouchStart: () => n(!0),
               onTouchEnd: () => setTimeout(() => n(!1), 100),
               className: "mySwiper h-[250px]",
-              children:
-                (null === c || void 0 === c ? void 0 : c.length) > 0 &&
-                c.map((e) =>
+              children: [0, 1, 2, 3].map((e) =>
                   (0, N.jsx)(
                     j.qr,
                     {
                       children: (0, N.jsxs)("div", {
-                        className: "relative",
+                        className: "relative w-full h-[250px]",
                         children: [
                           (0, N.jsx)("div", {
                             className: "absolute inset-0 z-10",
@@ -1257,9 +1255,10 @@
                               backgroundColor: "transparent",
                             },
                           }),
-                          (0, N.jsx)(v.A, {
-                            adKey: "app_home_top",
-                            adIndex: e,
+                          (0, N.jsx)("img", {
+                            src: ["/images/hero1.jpg", "/images/hero2.png", "/images/hero3.jpg", "/images/hero4.jpg"][e],
+                            className: "w-full h-full object-cover",
+                            alt: "hero banner",
                           }),
                         ],
                       }),
