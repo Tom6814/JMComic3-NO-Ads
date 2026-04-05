@@ -1,23 +1,84 @@
 <!doctype html><html lang="TW"><head><meta charset="utf-8"/><link rel="icon" href="/logo.png"/><link rel="apple-touch-icon" href="/logo.png"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><meta name="apple-mobile-web-app-capable" content="no"/><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/><link rel="apple-touch-icon" href="/logo192.png"/><link rel="manifest" href="/manifest.json"/><title>JMComic3 (Ad-Free & Beautified)</title>
 <style>
+  /* Global Resets & Smooth Transitions */
   body {
-    font-family: system-ui, -apple-system, sans-serif !important;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
-  img {
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  * {
+    -webkit-tap-highlight-color: transparent;
   }
+
+  /* Custom Themed Scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
-  ::-webkit-scrollbar-thumb {
-    background: #bbb;
-    border-radius: 3px;
+  ::-webkit-scrollbar-track {
+    background: transparent;
   }
-  /* Improve tap highlight on mobile */
-  * {
-    -webkit-tap-highlight-color: transparent;
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 123, 0, 0.5);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 123, 0, 0.8);
+  }
+
+  /* Images & Cards Soft UI */
+  img {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  .rounded-md, .rounded-lg, .rounded-xl {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Buttons & Interactions */
+  button, a {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+  button:active, a:active {
+    transform: scale(0.96);
+  }
+
+  /* Theme Color (og) Enhancements */
+  .bg-og {
+    background: linear-gradient(135deg, #ff7b00 0%, #ff9500 100%) !important;
+    box-shadow: 0 4px 14px rgba(255, 123, 0, 0.35) !important;
+    border: none !important;
+  }
+  .text-og {
+    color: #ff7b00 !important;
+    text-shadow: 0 1px 2px rgba(255, 123, 0, 0.1);
+  }
+
+  /* Glassmorphism for Nav & Headers */
+  .fixed.top-0, .fixed.bottom-0, .sticky.top-0, .sticky.bottom-0 {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  /* Dark Mode Enhancements */
+  .dark body {
+    background-color: #121212 !important;
+  }
+  .dark .bg-white {
+    background-color: #1e1e1e !important;
+  }
+  .dark .text-gray-800, .dark .text-gray-900 {
+    color: #f0f0f0 !important;
+  }
+  .dark .fixed.top-0, .dark .fixed.bottom-0, .dark .sticky.top-0, .dark .sticky.bottom-0 {
+    background-color: rgba(30, 30, 30, 0.85) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+  }
+  .dark .rounded-md, .dark .rounded-lg, .dark .rounded-xl {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   }
 </style>
 <script defer="defer" src="/static/js/main.f4aaa06c.js"></script><link href="/static/css/main.5da8a208.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
