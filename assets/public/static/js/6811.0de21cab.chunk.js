@@ -76,7 +76,7 @@
                             className: "flex justify-center items-center p-6",
                             children: [
                               (0, p.jsxs)("p", {
-                                className: "text-2xl ml-2",
+                                className: "text-2xl ml-2 font-bold text-black dark:text-white select-none",
                                 children: [A.problem, " ="],
                               }),
                               (0, p.jsx)("input", {
@@ -85,7 +85,7 @@
                                 maxLength: 10,
                                 onChange: (e) => g(e.target.value),
                                 placeholder: e("detail.enter_answer"),
-                                className: "w-32 h-12 px-2 ml-2",
+                                className: "w-32 h-12 px-2 ml-2 border-2 border-gray-300 rounded text-black dark:text-white dark:bg-gray-800 dark:border-gray-600 focus:border-og focus:outline-none",
                               }),
                               (0, p.jsx)("button", {
                                 className:
@@ -102,7 +102,7 @@
                                 children: e("detail.download"),
                               }),
                               (0, p.jsx)(s.A, {
-                                className: "text-3xl ml-2",
+                                className: "text-3xl ml-2 text-gray-600 dark:text-gray-300 hover:text-og transition-colors cursor-pointer",
                                 onClick: () => {
                                   const e = (0, m.hb)();
                                   (S(e), g(""), b(null));

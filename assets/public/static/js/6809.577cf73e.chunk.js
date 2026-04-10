@@ -250,7 +250,7 @@
                         "div",
                         {
                           className:
-                            "grid grid-cols-3 bg-white gap-2 my-3 p-2 relative dark:bg-nbk dark:text-white",
+                            "grid grid-cols-3 gap-3 my-4 p-3 relative",
                           style: { paddingTop: C || "" },
                           children: e.map((e, a) => {
                             var o, m, x;
@@ -428,12 +428,12 @@
                                       : "#",
                                     children: [
                                       (0, f.jsx)("p", {
-                                        className: "truncate py-2",
+                                        className: "truncate font-bold text-sm mt-2 text-gray-800 dark:text-gray-200",
                                         children: e.name,
                                       }),
                                       (0, f.jsx)("p", {
                                         className:
-                                          "truncate text-gy text-t08 dark:text-lgy",
+                                          "truncate text-gray-500 text-xs mt-1 dark:text-gray-400",
                                         children: e.author,
                                       }),
                                     ],
@@ -1577,13 +1577,13 @@
                                             }),
                                     }),
                                     (0, N.jsx)("p", {
-                                      className: "truncate py-2",
+                                      className: "truncate font-bold text-sm mt-2 text-gray-800 dark:text-gray-200",
                                       children: s.name,
                                     }),
                                     (0, N.jsx)("p", {
                                       className:
-                                        "truncate text-gy text-t08 dark:text-lgy",
-                                      children: s.author,
+                                          "truncate text-gray-500 text-xs mt-1 dark:text-gray-400",
+                                        children: s.author,
                                     }),
                                   ],
                                 },
