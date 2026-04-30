@@ -26,9 +26,10 @@ def download(url: str, dst: Path) -> None:
 
 def ensure_android_build_tools(version: str = "34.0.0") -> tuple[Path, Path]:
     base = cache_root() / "android-build-tools" / version
-    zipalign = base / "zipalign"
-    apksigner = base / "apksigner"
-    if zipalign.exists() and apksigner.exists():
+    home = base / "home"
+    zipalign = home / "zipalign"
+    apksigner = home / "apksigner"
+    if zipalign.exists() and apksigner.exists() and (home / "lib" / "apksigner.jar").exists():
         return zipalign, apksigner
 
     base.mkdir(parents=True, exist_ok=True)
@@ -61,20 +62,19 @@ def ensure_android_build_tools(version: str = "34.0.0") -> tuple[Path, Path]:
     with zipfile.ZipFile(archive) as z:
         z.extractall(extract_dir)
 
-    zipalign_src = None
-    apksigner_src = None
-    for p in extract_dir.rglob("*"):
-        if p.is_file() and p.name == "zipalign":
-            zipalign_src = p
-        if p.is_file() and p.name == "apksigner":
-            apksigner_src = p
-    if not zipalign_src or not apksigner_src:
-        raise RuntimeError("android build-tools download succeeded but zipalign/apksigner not found")
+    bt_dir = None
+    for p in extract_dir.iterdir():
+        if p.is_dir() and (p / "apksigner").exists() and (p / "lib" / "apksigner.jar").exists():
+            bt_dir = p
+            break
+    if not bt_dir:
+        raise RuntimeError("android build-tools download succeeded but expected layout not found")
 
-    shutil.copy2(zipalign_src, zipalign)
-    shutil.copy2(apksigner_src, apksigner)
-    zipalign.chmod(0o755)
-    apksigner.chmod(0o755)
-
+    if home.exists():
+        shutil.rmtree(home)
+    shutil.move(str(bt_dir), str(home))
     shutil.rmtree(extract_dir)
+
+    (home / "zipalign").chmod(0o755)
+    (home / "apksigner").chmod(0o755)
     return zipalign, apksigner

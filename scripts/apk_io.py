@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import shutil
+import os
 import subprocess
 import zipfile
 from pathlib import Path
@@ -42,7 +43,11 @@ def zipalign_and_sign(
     signed_apk.parent.mkdir(parents=True, exist_ok=True)
 
     try:
-        subprocess.run([str(zipalign), "-f", "4", str(unsigned_apk), str(aligned_apk)], check=True)
+        env = os.environ.copy()
+        lib64 = zipalign.parent / "lib64"
+        if lib64.exists():
+            env["LD_LIBRARY_PATH"] = str(lib64) + (":" + env["LD_LIBRARY_PATH"] if env.get("LD_LIBRARY_PATH") else "")
+        subprocess.run([str(zipalign), "-f", "4", str(unsigned_apk), str(aligned_apk)], check=True, env=env)
     except Exception:
         shutil.copy2(unsigned_apk, aligned_apk)
     subprocess.run(
