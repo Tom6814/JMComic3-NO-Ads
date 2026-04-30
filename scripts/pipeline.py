@@ -13,7 +13,7 @@ _ROOT = Path(__file__).resolve().parents[1]
 if str(_ROOT) not in sys.path:
     sys.path.insert(0, str(_ROOT))
 
-from scripts.apk_io import unzip_apk, zip_dir, zipalign_and_sign
+from scripts.apk_io import strip_v1_signature_files, unzip_apk, zip_dir, zipalign_and_sign
 from scripts.git_utils import current_repo_slug, git
 from scripts.github_release import ensure_release, upload_asset
 from scripts.patcher import apply_rules
@@ -99,6 +99,8 @@ def sync_unpacked_into_repo(unpacked_root: Path) -> None:
         ".git",
         ".gitignore",
         ".cache",
+        "README.md",
+        "LICENSE",
         "docs",
         "scripts",
         "rules",
@@ -158,6 +160,8 @@ def main() -> int:
     if not validation.ok:
         log(tag, {"stage": "validate", "errors": validation.errors, "patch_hits": patch_report.hits})
         return 2
+
+    strip_v1_signature_files(unpacked)
 
     unsigned_apk = out_dir / f"jmcomic3_adfree_{tag}_unsigned.apk"
     aligned_apk = out_dir / f"jmcomic3_adfree_{tag}_aligned.apk"

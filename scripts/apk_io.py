@@ -28,6 +28,20 @@ def zip_dir(src_dir: Path, out_apk: Path) -> None:
             z.write(p, p.relative_to(src_dir).as_posix())
 
 
+def strip_v1_signature_files(unpacked_root: Path) -> int:
+    meta = unpacked_root / "META-INF"
+    if not meta.exists() or not meta.is_dir():
+        return 0
+    removed = 0
+    patterns = ["*.RSA", "*.DSA", "*.EC", "*.SF", "MANIFEST.MF"]
+    for pat in patterns:
+        for p in meta.glob(pat):
+            if p.is_file():
+                p.unlink()
+                removed += 1
+    return removed
+
+
 def zipalign_and_sign(
     unsigned_apk: Path,
     aligned_apk: Path,
@@ -54,6 +68,10 @@ def zipalign_and_sign(
         [
             str(apksigner),
             "sign",
+            "--v1-signing-enabled",
+            "true",
+            "--v2-signing-enabled",
+            "true",
             "--ks",
             str(keystore),
             "--ks-pass",
