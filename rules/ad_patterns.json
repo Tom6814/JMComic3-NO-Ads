@@ -26,6 +26,26 @@
       "name": "rename_custom_ad",
       "pattern": "custom_ad",
       "replace": "cover_default"
+    },
+    {
+      "name": "disable_ad_component_force_hide",
+      "pattern": "z=!0===\\(null===j\\|\\|void 0===j\\?void 0:j\\.ad_free\\)&&!S\\.includes\\(G\\)",
+      "replace": "z=!0"
+    },
+    {
+      "name": "disable_feed_inline_ads_1",
+      "pattern": "!r\\.ad_free&&i>0&&i%10===0",
+      "replace": "!1"
+    },
+    {
+      "name": "disable_feed_inline_ads_2",
+      "pattern": "!s\\.ad_free&&\\(t\\+1\\)%10===1&&0!==t",
+      "replace": "!1"
+    },
+    {
+      "name": "remove_clarity",
+      "pattern": "c\\.src=\\\"https://www\\\\.clarity\\\\.ms/tag/[^\\\"]+\\\",\\(i=e\\.getElementsByTagName\\(o\\)\\[0\\]\\)\\.parentNode\\.insertBefore\\(c,i\\)",
+      "replace": "0"
     }
   ],
   "resource_drop_globs": [
