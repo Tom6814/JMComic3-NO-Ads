@@ -9,6 +9,10 @@ import sys
 from pathlib import Path
 from typing import Any
 
+_ROOT = Path(__file__).resolve().parents[1]
+if str(_ROOT) not in sys.path:
+    sys.path.insert(0, str(_ROOT))
+
 from scripts.apk_io import unzip_apk, zip_dir, zipalign_and_sign
 from scripts.git_utils import current_repo_slug, git
 from scripts.github_release import ensure_release, upload_asset
@@ -199,4 +203,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
