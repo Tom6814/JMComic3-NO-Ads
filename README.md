@@ -8,7 +8,12 @@
 - **防封处理**：修改了包名为 `com.jmcomic3.qqq` 以防止相关检测和拦截。
 
 ## 如何使用 / 下载
- [Releases](../../releases) 页面下载最新的 `jmcomic3_final.apk` 安装包。
+ [Releases](../../releases) 页面下载 `jmcomic3_adfree_<版本>.apk` 安装包。
 
 ## 源码说明
 此仓库包含的是解包并经过修改后的 APK 内部文件（React Chunks, 资源文件等），您可以使用 `jar c0Mf` 打包，再用 `zipalign` 进行对齐，并使用 `apksigner` 进行 V2 签名后安装。
+
+## 自动化
+- 手动执行：`python scripts/pipeline.py`
+- 需要发布 Release 时，优先提供 `GITHUB_TOKEN`（未提供则尝试使用仓库 origin 的 x-access-token）
+- 失败日志：`artifacts/logs/<upstream_tag>.json`

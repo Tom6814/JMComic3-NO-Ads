@@ -2,8 +2,12 @@
   "file_globs": [
     "assets/public/static/js/*.js",
     "assets/public/static/css/*.css",
+    "assets/public/index.html"
+  ],
+  "scan_file_globs": [
+    "assets/public/static/js/*.js",
     "assets/public/index.html",
-    "AndroidManifest.xml"
+    "assets/public/asset-manifest.json"
   ],
   "string_blocklist": [
     "admob",
@@ -19,6 +23,11 @@
       "name": "disable_ad_init_common",
       "pattern": "(?s)\\b(initAd|initAds|loadAd|loadAds)\\s*\\(",
       "replace": "(function(){return;})("
+    },
+    {
+      "name": "rename_custom_ad",
+      "pattern": "custom_ad",
+      "replace": "cover_default"
     }
   ],
   "resource_drop_globs": [
