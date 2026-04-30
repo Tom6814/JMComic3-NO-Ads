@@ -55,6 +55,16 @@
       "replace": "0"
     },
     {
+      "name": "disable_ads_content_cache_write",
+      "pattern": "localStorage\\.setItem\\(\\\"adsContent\\\",JSON\\.stringify\\(n\\.data\\)\\)",
+      "replace": "0"
+    },
+    {
+      "name": "disable_cover_ads_content_usage",
+      "pattern": "p=localStorage\\.getItem\\(\\\"adsContent\\\"\\),f=p\\?JSON\\.parse\\(p\\):Object\\.keys\\(g\\|\\|\\{\\}\\)\\.length>0\\?g:\\{\\}",
+      "replace": "p=localStorage.getItem(\"adsContent\"),f={}"
+    },
+    {
       "name": "disable_thewayhome_route_keylist",
       "pattern": "h=\\[\\\"app_thewayhome\\\"\\]",
       "replace": "h=[]"
