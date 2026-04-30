@@ -65,6 +65,26 @@
       "replace": "window.location.href=window.location.href"
     },
     {
+      "name": "disable_exit_app_gate",
+      "pattern": "const n=!0===window\\.__IS_NATIVE_APP__\\|\\|\\\"android\\\"===p\\.Ii\\.getPlatform\\(\\),r=window\\.location\\.href\\.includes\\(\\\"devapp\\\"\\);",
+      "replace": "const n=!0,r=!1;"
+    },
+    {
+      "name": "disable_devtools_time_check",
+      "pattern": "Date\\.now\\(\\)-e>160&&r\\(\\)",
+      "replace": "0"
+    },
+    {
+      "name": "disable_devtools_console_check",
+      "pattern": "performance\\.now\\(\\)-e>100&&r\\(\\)",
+      "replace": "0"
+    },
+    {
+      "name": "disable_notif_ads_dialog",
+      "pattern": "b\\.notifAds&&\\(0,D\\.jsxs\\)\\(j\\.A",
+      "replace": "!1&&(0,D.jsxs)(j.A"
+    },
+    {
       "name": "disable_cover_ads_content_usage",
       "pattern": "p=localStorage\\.getItem\\(\\\"adsContent\\\"\\),f=p\\?JSON\\.parse\\(p\\):Object\\.keys\\(g\\|\\|\\{\\}\\)\\.length>0\\?g:\\{\\}",
       "replace": "p=localStorage.getItem(\"adsContent\"),f={}"
