@@ -1,7 +1,7 @@
 {
   "upstream_repo": "hect0x7/JMComic-APK",
-  "last_processed_tag": null,
-  "last_processed_published_at": null,
-  "last_asset_name": null,
-  "last_asset_sha256": null
+  "last_processed_tag": "2.0.21",
+  "last_processed_published_at": "2026-04-30T09:57:58Z",
+  "last_asset_name": "2.0.21.apk",
+  "last_asset_sha256": "9ee715cb246bfa9189e1c434f42ac5ddac21576fd7bee5748feeafabcd26090f"
 }
