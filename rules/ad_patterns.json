@@ -2,12 +2,14 @@
   "file_globs": [
     "assets/public/static/js/*.js",
     "assets/public/static/css/*.css",
-    "assets/public/index.html"
+    "assets/public/index.html",
+    "assets/public/manifest.json"
   ],
   "scan_file_globs": [
     "assets/public/static/js/*.js",
     "assets/public/index.html",
-    "assets/public/asset-manifest.json"
+    "assets/public/asset-manifest.json",
+    "assets/public/manifest.json"
   ],
   "string_blocklist": [
     "admob",
@@ -38,6 +40,11 @@
       "replace": "(0,l.S0)(3e3),k=(0,o.useRef)(null),[q,w]=(0,o.useState)(!0)"
     },
     {
+      "name": "disable_ad_component_render_gate",
+      "pattern": "children:!q&&F&&null!==\\(null===F\\|\\|void 0===F\\?void 0:F\\.advs\\)",
+      "replace": "children:!1&&F&&null!==(null===F||void 0===F?void 0:F.advs)"
+    },
+    {
       "name": "disable_feed_inline_ads_1",
       "pattern": "!r\\.ad_free&&i>0&&i%10===0",
       "replace": "!1"
@@ -46,6 +53,26 @@
       "name": "disable_feed_inline_ads_2",
       "pattern": "!s\\.ad_free&&\\(t\\+1\\)%10===1&&0!==t",
       "replace": "!1"
+    },
+    {
+      "name": "mark_title_adfree",
+      "pattern": "<title>JMComic3</title>",
+      "replace": "<title>JMComic3 AdFree</title>"
+    },
+    {
+      "name": "mark_manifest_adfree",
+      "pattern": "\"name\": \"JMComic3\"",
+      "replace": "\"name\": \"JMComic3 AdFree\""
+    },
+    {
+      "name": "mark_manifest_shortname_adfree",
+      "pattern": "\"short_name\": \"JMComic3\"",
+      "replace": "\"short_name\": \"JMComic3 AdFree\""
+    },
+    {
+      "name": "disable_clarity_loader",
+      "pattern": "\"localhost\"===window\\.location\\.hostname\\|\\|window\\.location\\.href\\.includes\\(\"devapp\"\\)\\|\\|function",
+      "replace": "\"localhost\"===window.location.hostname||true||function"
     },
     {
       "name": "remove_clarity",
