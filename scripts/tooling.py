@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import shutil
+import urllib.error
 import urllib.request
 import zipfile
 from pathlib import Path
@@ -33,7 +34,24 @@ def ensure_android_build_tools(version: str = "34.0.0") -> tuple[Path, Path]:
     base.mkdir(parents=True, exist_ok=True)
     archive = base / f"build-tools_r{version}-linux.zip"
     if not archive.exists():
-        download(f"https://dl.google.com/android/repository/build-tools_r{version}-linux.zip", archive)
+        major = version.split(".", 1)[0]
+        candidates = [
+            f"https://dl.google.com/android/repository/build-tools_r{version}-linux.zip",
+            f"https://dl.google.com/android/repository/build-tools_r{major}-linux.zip",
+            f"https://dl.google.com/android/repository/build-tools_r{major}-rc3-linux.zip",
+            f"https://dl.google.com/android/repository/build-tools_r{major}-rc2-linux.zip",
+            f"https://dl.google.com/android/repository/build-tools_r{major}-rc1-linux.zip",
+        ]
+        last_err: Exception | None = None
+        for url in candidates:
+            try:
+                download(url, archive)
+                last_err = None
+                break
+            except (urllib.error.HTTPError, urllib.error.URLError) as e:
+                last_err = e
+        if last_err:
+            raise last_err
 
     extract_dir = base / "_extract"
     if extract_dir.exists():
@@ -60,4 +78,3 @@ def ensure_android_build_tools(version: str = "34.0.0") -> tuple[Path, Path]:
 
     shutil.rmtree(extract_dir)
     return zipalign, apksigner
-
