@@ -1,14 +1,21 @@
-# JMComic-NO-Ads
-自用，JMComic3 的去广告/纯净版构建仓库。
+# JMComic3-APK-NO-Ads
+自用，JMComic3的去广告版。
 
-## 下载
-- Releases 页面下载 `jmcomic3_adfree_<版本>.apk`
+## 特性说明
+- **完全去除广告**：移除了所有应用内广告、等待页面、浮动广告。
+- **暗色模式修复**：重写了暗色模式的状态同步逻辑，完美适配系统的深色主题切换。
+- **移除游戏板块**：精简了底部导航栏，移除了游戏相关的路由和入口。
+- **防封处理**：旧版使用自定义包名；新版 `v2.0.21` 官方已改为随机包名，继续具备更强的规避能力。
 
-## 自动化
-- 手动执行：`python scripts/pipeline.py`
-- 自动执行：每小时检查上游 `hect0x7/JMComic-APK` 最新 Release，有新版本则自动下载→解包→去广/小美化→重打包签名→发布 Release，并将解包后的修改文件提交到仓库
-- 失败日志：`artifacts/logs/<upstream_tag>.json`
+## 如何使用 / 下载
+ [Releases](../../releases) 页面下载最新的 APK 安装包。
 
-## 说明
-- 该仓库保存的是解包后的 APK 文件（React chunks、资源等）及自动化脚本
-- APK 使用新签名重新签名，仅保证“纯净版→纯净版”可覆盖升级，不保证覆盖官方签名包
+## 源码说明
+此仓库包含的是解包并经过修改后的 APK 内部文件（React Chunks、资源文件等）。
+
+重新打包时不要直接使用 `jar c0Mf`，否则容易把 `resources.arsc` 压缩错误，导致安装时报 `-2`。
+
+建议流程：
+- 使用 `zip`/Python 脚本重新打包，并确保 `resources.arsc` 与图片资源以 `STORED` 方式写入
+- 使用 `zipalign` 做 4 字节对齐
+- 使用 `apksigner` 进行 V1/V2 签名
