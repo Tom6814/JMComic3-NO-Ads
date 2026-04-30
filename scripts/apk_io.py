@@ -25,7 +25,13 @@ def zip_dir(src_dir: Path, out_apk: Path) -> None:
         for p in sorted(src_dir.rglob("*")):
             if p.is_dir():
                 continue
-            z.write(p, p.relative_to(src_dir).as_posix())
+            rel = p.relative_to(src_dir).as_posix()
+            compress_type = zipfile.ZIP_DEFLATED
+            if rel == "resources.arsc":
+                compress_type = zipfile.ZIP_STORED
+            if rel.startswith("lib/") and rel.endswith(".so"):
+                compress_type = zipfile.ZIP_STORED
+            z.write(p, rel, compress_type=compress_type)
 
 
 def strip_v1_signature_files(unpacked_root: Path) -> int:
