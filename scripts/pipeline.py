@@ -145,20 +145,23 @@ def sync_unpacked_into_repo(unpacked_root: Path) -> None:
 def main() -> int:
     args = parse_args()
 
-    ensure_git_clean()
-
     state_path = repo_root() / "state" / "upstream.json"
     ad_rules = repo_root() / "rules" / "ad_patterns.json"
     ui_rules = repo_root() / "rules" / "ui_tweaks.json"
 
-    state = json.loads(state_path.read_text(encoding="utf-8"))
-    upstream_repo = str(state["upstream_repo"])
-    rel = get_latest_release(upstream_repo)
+    tag = "unknown"
+    try:
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        upstream_repo = str(state["upstream_repo"])
+        rel = get_latest_release(upstream_repo)
+        if not args.force and not should_process(state_path, rel):
+            return 0
+        tag = rel.tag_name.replace("/", "_")
+    except Exception as e:
+        log(tag, {"stage": "preflight", "error": sanitize_text(str(e)), "type": type(e).__name__})
+        return 2
 
-    if not args.force and not should_process(state_path, rel):
-        return 0
-
-    tag = rel.tag_name.replace("/", "_")
+    ensure_git_clean()
     input_dir = repo_root() / "artifacts" / "input" / tag
     work_dir = repo_root() / "artifacts" / "work" / tag
     out_dir = repo_root() / "artifacts" / "output" / tag
